@@ -7,7 +7,7 @@ const fourRs = [
     id: 'resistance',
     title: 'Resistance',
     icon: Shield,
-    color: 'sienna',
+    color: 'ochre',
     content: [
       {
         title: 'Community Blockades',
@@ -55,7 +55,7 @@ const fourRs = [
     id: 'reclamation',
     title: 'Reclamation',
     icon: Sparkles,
-    color: 'sage',
+    color: 'ochre',
     content: [
       {
         title: 'Coming Home',
@@ -83,7 +83,7 @@ const fourRs = [
     id: 'resurgence',
     title: 'Resurgence',
     icon: TrendingUp,
-    color: 'cream',
+    color: 'ochre',
     content: [
       {
         title: 'Land-Based Healing',
