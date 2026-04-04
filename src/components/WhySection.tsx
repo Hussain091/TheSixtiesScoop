@@ -99,7 +99,7 @@ export default function WhySection() {
             This was cultural genocide by another name.
           </p>
           <p className="font-sans text-cream/80 text-lg max-w-3xl mx-auto leading-relaxed">
-            The deliberate destruction of Indigenous families, cultures, and communities through the forced removal of children under the guise of child welfare.
+            The forced removal of Indigenous children, which tore apart families, cultures, and entire communities, all justified as “child welfare.”
           </p>
         </div>
       </div>
