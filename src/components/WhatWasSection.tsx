@@ -53,13 +53,13 @@ export default function WhatWasSection() {
 
           <div className="font-sans text-cream/90 space-y-6 leading-relaxed">
             <p>
-              In 1951, the Indian Act was amended to give provincial governments power over Indigenous child welfare. Residential schools were being phased out, but the goal of assimilation never stopped.
+              In 1951, the Indian Act was created to give provincial governments power over Indigenous child welfare. Residential schools were being phased out, but they goal of assimilation never stopped.
             </p>
             <p>
-              When Indian Residential Schools didn't "kill the Indian in the child," Child Welfare agencies stepped in to finish the job.
+              When Indian Residential Schools didn't "kill the Indigenous in the child," Child Welfare agencies stepped in to finish the job.
             </p>
             <p>
-              Children were taken without consent. Without warning. Without families being told where their children went.
+              They took children without consent, without warning, without families being told where their children went.
             </p>
             <p>
               Between the 1950s and 1980s, over 20,000 Indigenous children were removed from their families and communities and placed into non-Indigenous homes across Canada and around the world.
