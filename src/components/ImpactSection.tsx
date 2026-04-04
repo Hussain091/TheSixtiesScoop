@@ -7,37 +7,37 @@ const impactAreas = [
     icon: User,
     title: 'Identity',
     content:
-      'Many adoptees did not learn they were Indigenous until adulthood. Birth records were sealed and could only be opened with consent of both parties. Survivors grew up not knowing their language, their nation, their family. Identity is not just a name or a status number. It is belonging. It is knowing where you come from and who your people are. The Scoop stole that.',
+      'Many children who were taken did not learn they were Indigenous until adulthood. Birth records were sealed and could only be opened with consent of both parties which meant that survivors grew up not knowing their language, their nation, their family. Identity is not just a name or a status number, it is belonging. It is knowing where you come from and who your people are and the Scoop stole that.',
   },
   {
     icon: Languages,
     title: 'Language',
     content:
-      'Indigenous languages are not just words. They carry worldview, law, medicine, spirituality. Removal of children broke intergenerational language transmission. Over 60 Indigenous languages in Canada are now endangered. When a language dies, an entire way of understanding the world disappears. The Scoop silenced thousands of voices before they could learn to speak.',
+      'Indigenous languages are not just words but they carry worldview, law, medicine, spirituality and the removal of children broke intergenerational language transmission. Over 60 Indigenous languages in Canada are now endangered. When a language dies, an entire way of understanding the world disappears and an entire community loses a part of their identity . The Scoop silenced thousands of voices before they could learn to speak.',
   },
   {
     icon: Users,
     title: 'Family and Kinship',
     content:
-      'Indigenous cultures are built around kinship networks. Removing a child does not just affect one family—it severs connections across entire communities. Many families searched for decades. Siblings were separated and never saw each other again. Grandparents lost the chance to pass on knowledge. The Scoop didn\'t just remove children. It tore apart the fabric of community.',
+      'Indigenous cultures are built around kinship networks. Removing a child does not just affect one family but it affects the connection across entire communities. Many families searched for decades but never found them. Siblings were separated and never saw each other again. Grandparents lost the chance to pass on knowledge. The Scoop didn\'t just remove children. It tore apart the foundations of a community.',
   },
   {
     icon: Heart,
     title: 'Mental Health',
     content:
-      'Long-term effects include loss of cultural identity, low self-esteem, shame, loneliness, confusion, depression, PTSD. Many survivors report abuse in adoptive homes. Suicide rates, substance use, and mental health crises in survivor communities are direct consequences. These are not individual failures. They are the predictable result of systemic trauma.',
+      'The scoop also led to long-term effects that include loss of cultural identity, low self-esteem, shame, loneliness, confusion, depression and PTSD. Many survivors reported abuse in adoptive homes. Which led to an increase in suicide rates, substance use, and mental health crises for survivors. These are not individual failures. They are the predictable result of systemic trauma.',
   },
   {
     icon: BookOpen,
     title: 'Community Continuity',
     content:
-      'Knowledge passed through oral tradition, through Elders, through lived community experience was severed. The Scoop disrupted not just individual lives but the transmission of knowledge across generations. How do you teach ceremony if the children are gone? How do you pass on stories? How do you keep a culture alive when its future is taken?',
+      'The knowledge that was passed through oral tradition, through Elders, through lived community experience was ruined. The Scoop disrupted not just individual lives but the transmission of knowledge across generations. How do you teach a ceremony if the children are gone? How do you pass on stories? How do you keep a culture alive when its future is taken?',
   },
   {
     icon: Scale,
     title: 'Legal Status',
     content:
-      'For status First Nations children, removal sometimes resulted in loss of Indian status—stripping them of treaty rights, land rights, and the ability to return to their communities. Even when survivors reconnected with their nations, they often found themselves legally excluded from the communities they belonged to. The colonial legal system created another barrier to coming home.',
+      'For status the removal of First Nations children resulted in loss of Indian status stripping them of treaty rights, land rights, and the ability to return to their communities. Even when survivors reconnected with their nations, they often found themselves legally excluded from the communities they belonged to. The colonial legal system created another barrier to coming home.',
   },
 ];
 
@@ -100,7 +100,7 @@ export default function ImpactSection() {
 
         <div className="mt-20 text-center">
           <p className="font-serif text-3xl text-sienna max-w-4xl mx-auto leading-relaxed">
-            They took everything that makes a person whole. And then they called it progress.
+            They took everything that makes a person. And then they called it progress or welfare.
           </p>
         </div>
       </div>
