@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { Shield, Heart, Sparkles, TrendingUp, ChevronRight } from 'lucide-react';
 
@@ -7,7 +7,11 @@ const fourRs = [
     id: 'resistance',
     title: 'Resistance',
     icon: Shield,
-    // Definition in the Indigenous context
+    image: {
+      src: 'https://afgj.org/wp-content/uploads/2022/11/SIERRA-AP_17069643612157-WB.jpeg',
+      alt: 'Raised fist — symbol of resistance and community solidarity',
+      caption: 'Standing together — the power of collective resistance',
+    },
     definition: {
       short: 'It means to protect what is sacred.',
       full: 'In the Indigenous perspective, Resistance is not just opposition rather it is the active defence of who you are. For example the ties between people, land, language, and spirit. For Sixties Scoop survivors and their communities, resistance meant refusing to let the colonial state define who they were. ',
@@ -35,6 +39,11 @@ const fourRs = [
     id: 'resilience',
     title: 'Resilience',
     icon: Heart,
+    image: {
+      src: 'https://worldbank.scene7.com/is/image/worldbankprod/Screenshot-2024-08-08-20181199?wid=780&hei=439&qlt=85,0&resMode=sharp',
+      alt: 'Light breaking through forest trees — resilience through darkness',
+      caption: 'Light finds a way through — as people always have',
+    },
     definition: {
       short: 'In short is the capacity to withstand or to recover quickly from difficulties.',
       full: 'Resilience for Indigenous People in Canada is the ability to survive and go forward despite facing years of colonization, oppression, and systemic barriers. For Indigenous People in Canada, resilience means refusing to disappear, holding onto their culture and language even when the law said you could not. Through an anti-discriminatory lens, resilience adds a new perspective. Indigenous People are not defined by what happened to them but instead are defined by the fact that they kept going forward. Resilience is not a personality trait but a choice they made for hundreds of years and colonial pressure could not take that away despite how hard they tried. ',
@@ -62,9 +71,14 @@ const fourRs = [
     id: 'reclamation',
     title: 'Reclamation',
     icon: Sparkles,
+    image: {
+      src: 'https://images.seattletimes.com/wp-content/uploads/2022/09/09272022_10-A1-Revisited-Historical_211228.jpg?d=1536x1279',
+      alt: 'Hands holding earth — reclamation of land and identity',
+      caption: '"Land is not property — it is relation."',
+    },
     definition: {
       short: 'To take back what was never truly lost.',
-      full: 'Reclamation from an Indigenous perspective, means taking back what was taken like their land, culture, language, and identity, and essentially restoring them so future generations can live with pride and connection to their roots. It’s about healing from the harm caused by colonization, rebuilding traditions that were disrupted, and reclaiming the right to make decisions for their own communities.',
+      full: 'Reclamation from an Indigenous perspective, means taking back what was taken like their land, culture, language, and identity, and essentially restoring them so future generations can live with pride and connection to their roots. It\'s about healing from the harm caused by colonization, rebuilding traditions that were disrupted, and reclaiming the right to make decisions for their own communities.',
     },
     content: [
       {
@@ -93,6 +107,11 @@ const fourRs = [
     id: 'resurgence',
     title: 'Resurgence',
     icon: TrendingUp,
+    image: {
+      src: 'https://imgproxy.gridwork.co/DHDG4NIqndqPOnLulxfi-DSqAZsEpEDA68LSWX-mt8U/w:1600/h:1067/rt:fill/g:fp:0.5:0.5/q:82/el:1/aHR0cHM6Ly9zMy51cy1lYXN0LTIuYW1hem9uYXdzLmNvbS9pdHQtaW1hZ2VzL0lOTS0zNi5qcGc.jpg',
+      alt: 'Indigenous elder and youth — intergenerational knowledge sharing',
+      caption: 'Carrying knowledge forward — elder to youth',
+    },
     definition: {
       short: 'In short means a growth or increase that occurs after a period without growth or increase.',
       full: 'In the Indigenous perspective resurgence is about reconnecting with the land, language, governance, and information that have always been part of Indigenous life. It is not about looking back, but about actively rejecting the ongoing effects of colonialism today. For survivors of the Sixties Scoop, resurgence means creating a future on their own terms by building communities, art, and knowledge systems that reflect their identity and answer to their people, not the government.',
@@ -122,7 +141,6 @@ const fourRs = [
   },
 ];
 
-// Tab accent colors per R
 const tabColors = {
   resistance: '#b85c2a',
   resilience: '#c8873a',
@@ -133,10 +151,8 @@ const tabColors = {
 export default function FourRsSection() {
   const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.15 });
   const [activeTab, setActiveTab] = useState('resistance');
-  const [prevTab, setPrevTab] = useState(null);
   const [animating, setAnimating] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const contentRef = useRef(null);
+  const [loadedImages, setLoadedImages] = useState({});
 
   const activeContent = fourRs.find((r) => r.id === activeTab);
   const accentColor = tabColors[activeTab];
@@ -144,11 +160,14 @@ export default function FourRsSection() {
   const switchTab = (id) => {
     if (id === activeTab || animating) return;
     setAnimating(true);
-    setPrevTab(activeTab);
     setTimeout(() => {
       setActiveTab(id);
       setAnimating(false);
     }, 220);
+  };
+
+  const handleImageLoad = (id) => {
+    setLoadedImages((prev) => ({ ...prev, [id]: true }));
   };
 
   return (
@@ -166,17 +185,9 @@ export default function FourRsSection() {
           from { opacity: 0; transform: translateX(18px); }
           to   { opacity: 1; transform: translateX(0); }
         }
-        @keyframes lineGrow {
-          from { height: 0; }
-          to   { height: 100%; }
-        }
         @keyframes glowPulse {
           0%,100% { opacity: 0.4; }
           50%      { opacity: 0.9; }
-        }
-        @keyframes borderFlow {
-          0%   { background-position: 0% 50%; }
-          100% { background-position: 200% 50%; }
         }
         @keyframes defFadeIn {
           from { opacity: 0; transform: translateY(8px); }
@@ -197,6 +208,7 @@ export default function FourRsSection() {
         .def-enter   { animation: defFadeIn 0.5s ease both; }
         .img-reveal  { animation: imgReveal 1.1s cubic-bezier(0.16,1,0.3,1) 0.3s both; }
         .soft-float  { animation: softFloat 6s ease-in-out infinite; }
+        .section-enter { animation: fadeUpIn 0.9s cubic-bezier(0.16,1,0.3,1) both; }
 
         .tab-btn {
           position: relative;
@@ -213,10 +225,6 @@ export default function FourRsSection() {
         }
         .tab-btn:hover::after { transform: translateX(100%); }
 
-        .content-card {
-          transition: border-color 0.4s ease, box-shadow 0.4s ease;
-        }
-
         .item-card {
           transition: all 0.25s ease;
           border-left-width: 3px;
@@ -228,27 +236,7 @@ export default function FourRsSection() {
           border-radius: 0 6px 6px 0;
         }
 
-        .r-number {
-          font-family: Georgia, serif;
-          font-size: 9rem;
-          line-height: 1;
-          position: absolute;
-          right: -10px;
-          top: -20px;
-          opacity: 0.04;
-          pointer-events: none;
-          user-select: none;
-          color: #f5f0e8;
-          font-weight: 700;
-        }
-
-        .glow-dot {
-          animation: glowPulse 2.5s ease-in-out infinite;
-        }
-
-        .section-enter {
-          animation: fadeUpIn 0.9s cubic-bezier(0.16,1,0.3,1) both;
-        }
+        .glow-dot { animation: glowPulse 2.5s ease-in-out infinite; }
       `}</style>
 
       <section
@@ -264,15 +252,14 @@ export default function FourRsSection() {
           isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        {/* Background texture dot grid */}
+        {/* Dot grid background */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
           backgroundImage: 'radial-gradient(circle, rgba(200,135,58,0.06) 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
-          zIndex: 0,
+          backgroundSize: '32px 32px', zIndex: 0,
         }} />
 
-        {/* Ambient glow that shifts color with active tab */}
+        {/* Ambient glow */}
         <div style={{
           position: 'absolute', top: '20%', left: '50%',
           transform: 'translateX(-50%)',
@@ -284,16 +271,12 @@ export default function FourRsSection() {
 
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
-          {/* ── HEADER ── */}
+          {/* HEADER */}
           <div className="section-enter" style={{ textAlign: 'center', marginBottom: '1rem' }}>
-            <div style={{
-              display: 'inline-flex', alignItems: 'center', gap: 10,
-              marginBottom: '1.5rem',
-            }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: '1.5rem' }}>
               <span className="glow-dot" style={{
                 width: 8, height: 8, borderRadius: '50%',
-                background: accentColor,
-                display: 'inline-block',
+                background: accentColor, display: 'inline-block',
                 transition: 'background 0.4s ease',
               }} />
               <span style={{
@@ -335,17 +318,15 @@ export default function FourRsSection() {
               maxWidth: 560, margin: '0 auto',
               lineHeight: 1.7,
             }}>
-              The 4Rs follow Indigenous philosophy which
-              describe how communities responded to the Sixties Scoop
+              The 4Rs follow Indigenous philosophy which describe how communities responded to the Sixties Scoop
               and continue to shape the path forward.
             </p>
           </div>
 
-          {/* ── TAB BUTTONS ── */}
+          {/* TAB BUTTONS */}
           <div style={{
             display: 'flex', flexWrap: 'wrap', gap: '0.75rem',
-            justifyContent: 'center', marginBottom: '2.5rem',
-            marginTop: '3rem',
+            justifyContent: 'center', marginBottom: '2.5rem', marginTop: '3rem',
           }}>
             {fourRs.map((r) => {
               const Icon = r.icon;
@@ -360,12 +341,8 @@ export default function FourRsSection() {
                     display: 'flex', alignItems: 'center', gap: 10,
                     padding: '0.75rem 1.75rem',
                     borderRadius: 8,
-                    border: isActive
-                      ? `1px solid ${color}60`
-                      : '1px solid rgba(160,82,45,0.2)',
-                    background: isActive
-                      ? `${color}22`
-                      : 'rgba(26,22,18,0.6)',
+                    border: isActive ? `1px solid ${color}60` : '1px solid rgba(160,82,45,0.2)',
+                    background: isActive ? `${color}22` : 'rgba(26,22,18,0.6)',
                     color: isActive ? color : 'rgba(245,240,232,0.55)',
                     fontFamily: 'sans-serif',
                     fontSize: '0.95rem',
@@ -382,10 +359,10 @@ export default function FourRsSection() {
             })}
           </div>
 
-          {/* ── MAIN CONTENT PANEL ── */}
+          {/* MAIN CONTENT PANEL */}
           {activeContent && (
             <div
-              className={`content-card ${animating ? 'panel-exit' : 'panel-enter'}`}
+              className={animating ? 'panel-exit' : 'panel-enter'}
               style={{
                 background: 'rgba(26,22,18,0.7)',
                 border: `1px solid ${accentColor}30`,
@@ -396,7 +373,7 @@ export default function FourRsSection() {
                 transition: 'border-color 0.4s ease, box-shadow 0.4s ease',
               }}
             >
-              {/* Panel header row */}
+              {/* Panel header: text left, image right */}
               <div style={{
                 display: 'flex', alignItems: 'flex-start',
                 justifyContent: 'space-between',
@@ -404,6 +381,7 @@ export default function FourRsSection() {
                 marginBottom: '2.5rem',
                 flexWrap: 'wrap',
               }}>
+                {/* Left: title + definition */}
                 <div style={{ flex: 1, minWidth: 240 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: '1rem' }}>
                     {(() => { const Icon = activeContent.icon; return <Icon color={accentColor} size={32} style={{ flexShrink: 0 }} />; })()}
@@ -411,14 +389,12 @@ export default function FourRsSection() {
                       fontFamily: 'Georgia, serif',
                       fontSize: 'clamp(2rem, 4vw, 3rem)',
                       color: '#f5f0e8',
-                      lineHeight: 1,
-                      margin: 0,
+                      lineHeight: 1, margin: 0,
                     }}>
                       {activeContent.title}
                     </h3>
                   </div>
 
-                  {/* ── DEFINITION BLOCK ── */}
                   <div
                     className="def-enter"
                     style={{
@@ -451,94 +427,47 @@ export default function FourRsSection() {
                   </div>
                 </div>
 
-                {/* Image — shown on Resurgence tab, fits layout */}
-                {activeContent.id === 'resurgence' && (
-                  <div
-                    className="img-reveal soft-float"
+                {/* Right: image — present for every tab */}
+                <div
+                  className="img-reveal soft-float"
+                  style={{
+                    width: 'clamp(180px, 22vw, 260px)',
+                    flexShrink: 0,
+                    borderRadius: 10,
+                    overflow: 'hidden',
+                    border: `1px solid ${accentColor}30`,
+                    boxShadow: `0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px ${accentColor}18`,
+                    position: 'relative',
+                  }}
+                >
+                  <img
+                    key={activeContent.id}
+                    src={activeContent.image.src}
+                    alt={activeContent.image.alt}
+                    onLoad={() => handleImageLoad(activeContent.id)}
                     style={{
-                      width: 'clamp(180px, 22vw, 260px)',
-                      flexShrink: 0,
-                      borderRadius: 10,
-                      overflow: 'hidden',
-                      border: `1px solid ${accentColor}30`,
-                      boxShadow: `0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px ${accentColor}18`,
-                      position: 'relative',
+                      width: '100%', display: 'block',
+                      filter: 'sepia(25%) contrast(1.06) brightness(0.82)',
+                      opacity: loadedImages[activeContent.id] ? 1 : 0,
+                      transition: 'opacity 0.8s ease',
                     }}
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1574617945027-5af1e11e5b06?w=600&q=80"
-                      alt="Indigenous elder and youth — intergenerational knowledge sharing"
-                      onLoad={() => setImageLoaded(true)}
-                      style={{
-                        width: '100%', display: 'block',
-                        filter: 'sepia(25%) contrast(1.05) brightness(0.82)',
-                        opacity: imageLoaded ? 1 : 0,
-                        transition: 'opacity 0.8s ease',
-                      }}
-                    />
-                    <div style={{
-                      position: 'absolute', inset: 0,
-                      background: 'linear-gradient(180deg, transparent 50%, rgba(26,22,18,0.8) 100%)',
-                    }} />
-                    <div style={{
-                      position: 'absolute', bottom: 0, left: 0, right: 0,
-                      padding: '0.9rem',
+                  />
+                  <div style={{
+                    position: 'absolute', inset: 0,
+                    background: 'linear-gradient(180deg, transparent 50%, rgba(26,22,18,0.85) 100%)',
+                  }} />
+                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '0.9rem' }}>
+                    <p style={{
+                      fontFamily: 'Georgia, serif',
+                      fontStyle: 'italic',
+                      fontSize: '0.72rem',
+                      color: 'rgba(245,240,232,0.65)',
+                      margin: 0, lineHeight: 1.4,
                     }}>
-                      <p style={{
-                        fontFamily: 'Georgia, serif',
-                        fontStyle: 'italic',
-                        fontSize: '0.72rem',
-                        color: 'rgba(245,240,232,0.65)',
-                        margin: 0, lineHeight: 1.4,
-                      }}>
-                        Carrying knowledge forward — elder to youth
-                      </p>
-                    </div>
+                      {activeContent.image.caption}
+                    </p>
                   </div>
-                )}
-
-                {/* Image on Reclamation tab */}
-                {activeContent.id === 'reclamation' && (
-                  <div
-                    className="img-reveal soft-float"
-                    style={{
-                      width: 'clamp(180px, 22vw, 260px)',
-                      flexShrink: 0,
-                      borderRadius: 10,
-                      overflow: 'hidden',
-                      border: `1px solid ${accentColor}30`,
-                      boxShadow: `0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px ${accentColor}18`,
-                      position: 'relative',
-                    }}
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600&q=80"
-                      alt="Hands holding earth — reclamation of land and identity"
-                      style={{
-                        width: '100%', display: 'block',
-                        filter: 'sepia(30%) contrast(1.08) brightness(0.8)',
-                      }}
-                    />
-                    <div style={{
-                      position: 'absolute', inset: 0,
-                      background: 'linear-gradient(180deg, transparent 50%, rgba(26,22,18,0.8) 100%)',
-                    }} />
-                    <div style={{
-                      position: 'absolute', bottom: 0, left: 0, right: 0,
-                      padding: '0.9rem',
-                    }}>
-                      <p style={{
-                        fontFamily: 'Georgia, serif',
-                        fontStyle: 'italic',
-                        fontSize: '0.72rem',
-                        color: 'rgba(245,240,232,0.65)',
-                        margin: 0, lineHeight: 1.4,
-                      }}>
-                        "Land is not property — it is relation."
-                      </p>
-                    </div>
-                  </div>
-                )}
+                </div>
               </div>
 
               {/* Divider */}
@@ -549,7 +478,7 @@ export default function FourRsSection() {
                 transition: 'background 0.4s ease',
               }} />
 
-              {/* ── CONTENT ITEMS ── */}
+              {/* Content items */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 {activeContent.content.map((item, index) => (
                   <div
@@ -588,7 +517,7 @@ export default function FourRsSection() {
             </div>
           )}
 
-          {/* ── CLOSING QUOTE ── */}
+          {/* Closing quote */}
           <div style={{ marginTop: '4rem', textAlign: 'center' }}>
             <div style={{
               width: 48, height: 1,
