@@ -377,7 +377,7 @@ export default function Hero() {
                 {/* Slow-zoom image */}
                 <div style={{ overflow: 'hidden', borderRadius: 4 }}>
                   <img
-                    src="https://images.unsplash.com/photo-1504870712357-65ea720d6078?w=800&q=80"
+                    src="https://bcfosterparents.ca/wp-content/uploads/SIXTIES-SCOOP-APOLOGY-still.webp"
                     alt="Indigenous child's hands holding a feather — a symbol of cultural identity"
                     className="slow-zoom"
                     onLoad={() => setImageLoaded(true)}
@@ -416,7 +416,7 @@ export default function Hero() {
                       margin: 0,
                     }}
                   >
-                    "They took everything — our language, our home, our names."
+                    "They took everything our language, our home, our names."
                   </p>
                   <p style={{ fontFamily: 'sans-serif', fontSize: '0.7rem', color: '#c8873a', marginTop: 4 }}>
                     — Sixties Scoop Survivor
@@ -566,9 +566,9 @@ export default function Hero() {
                 margin: 0,
               }}
             >
-              The Sixties Scoop was not an accident of history — it was deliberate policy.
+              The Sixties Scoop was not an accident of history rather it was a policy.
               Children were taken not because they were in danger, but because they were
-              Indigenous. Understanding this is the first step toward reconciliation.
+              Indigenous. Understanding this is the first step toward reconciliation. This website will explore this issue with an anti opressive lens, connecting topics back to the 4Rs.
             </p>
           </div>
 
