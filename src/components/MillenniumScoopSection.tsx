@@ -112,7 +112,7 @@ export default function MillenniumScoopSection() {
         <div className="bg-sienna/10 border border-sienna/30 rounded-lg p-10 mb-12">
           <h3 className="font-serif text-3xl text-cream mb-4">Birth Alerts</h3>
           <p className="font-sans text-cream/90 leading-relaxed mb-4">
-            Birth alerts — where hospitals notify child protection services when an Indigenous mother is giving birth — were still legal in many provinces until very recently.
+            Birth alerts is where hospitals notify child protection services when an Indigenous mother is giving birth, usually done to take the child away and was still legal in many provinces until very recently.
           </p>
           <p className="font-sans text-cream/90 leading-relaxed">
             This meant that Indigenous mothers could give birth and have their newborns taken before they even left the hospital. The practice of "scooping" newborns never stopped.
