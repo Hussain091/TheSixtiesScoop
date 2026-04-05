@@ -9,8 +9,8 @@ const fourRs = [
     icon: Shield,
     // Definition in the Indigenous context
     definition: {
-      short: 'To protect what is sacred.',
-      full: 'In Indigenous thought, Resistance is not merely opposition — it is the active defence of relationality: the ties between people, land, language, and spirit. For Sixties Scoop survivors and their communities, resistance meant refusing to let the colonial state define who they were. It is a sacred obligation to ancestors and descendants alike.',
+      short: 'It means to protect what is sacred.',
+      full: 'In the Indigenous perspective, Resistance is not just opposition rather it is the active defence of who you are. For example the ties between people, land, language, and spirit. For Sixties Scoop survivors and their communities, resistance meant refusing to let the colonial state define who they were. ',
     },
     content: [
       {
@@ -36,8 +36,8 @@ const fourRs = [
     title: 'Resilience',
     icon: Heart,
     definition: {
-      short: 'To bend without breaking — and grow toward the light.',
-      full: 'Indigenous resilience is rooted in the understanding that survival is communal, not individual. It draws on generations of adaptation to colonial violence while keeping the core of identity intact. For Sixties Scoop survivors, resilience is not simply enduring trauma — it is the quiet, daily act of choosing to remain fully human in the face of a system designed to erase you.',
+      short: 'In short is the capacity to withstand or to recover quickly from difficulties.',
+      full: 'Resilience for Indigenous People in Canada is the ability to survive and go forward despite facing years of colonization, oppression, and systemic barriers. For Indigenous People in Canada, resilience means refusing to disappear, holding onto their culture and language even when the law said you could not. Through an anti-discriminatory lens, resilience adds a new perspective. Indigenous People are not defined by what happened to them but instead are defined by the fact that they kept going forward. Resilience is not a personality trait but a choice they made for hundreds of years and colonial pressure could not take that away despite how hard they tried. ',
     },
     content: [
       {
@@ -64,7 +64,7 @@ const fourRs = [
     icon: Sparkles,
     definition: {
       short: 'To take back what was never truly lost.',
-      full: 'Reclamation in Indigenous frameworks means more than recovery — it is an assertion that colonial dispossession was never legitimate. Land, language, ceremony, name, and kinship were stolen but never surrendered. For Sixties Scoop survivors, reclamation is a sovereign act: returning not to what was, but to a living relationship with who they have always been.',
+      full: 'Reclamation from an Indigenous perspective, means taking back what was taken like their land, culture, language, and identity, and essentially restoring them so future generations can live with pride and connection to their roots. It’s about healing from the harm caused by colonization, rebuilding traditions that were disrupted, and reclaiming the right to make decisions for their own communities.',
     },
     content: [
       {
@@ -94,8 +94,8 @@ const fourRs = [
     title: 'Resurgence',
     icon: TrendingUp,
     definition: {
-      short: 'To rise — not back to the past, but forward into sovereignty.',
-      full: 'Leanne Betasamosake Simpson\'s concept of Indigenous resurgence calls for a return to land-based relationships, languages, governance, and ways of knowing — not as nostalgia, but as a radical refusal of the colonial present. For survivors of the Sixties Scoop, resurgence means building Indigenous futures on Indigenous terms: creating art, institutions, and knowledge systems that answer to the community, not the state.',
+      short: 'In short means a growth or increase that occurs after a period without growth or increase.',
+      full: 'In the Indigenous perspective resurgence is about reconnecting with the land, language, governance, and information that have always been part of Indigenous life. It is not about looking back, but about actively rejecting the ongoing effects of colonialism today. For survivors of the Sixties Scoop, resurgence means creating a future on their own terms by building communities, art, and knowledge systems that reflect their identity and answer to their people, not the government.',
     },
     content: [
       {
@@ -335,8 +335,8 @@ export default function FourRsSection() {
               maxWidth: 560, margin: '0 auto',
               lineHeight: 1.7,
             }}>
-              Four interconnected pillars — rooted in Indigenous philosophy —
-              that describe how communities responded to the Sixties Scoop
+              The 4Rs follow Indigenous philosophy which
+              describe how communities responded to the Sixties Scoop
               and continue to shape the path forward.
             </p>
           </div>
@@ -605,7 +605,7 @@ export default function FourRsSection() {
               lineHeight: 1.65,
               transition: 'color 0.4s ease',
             }}>
-              "Survival is not passive. It is an act of defiance — choosing to carry forward what they tried to destroy."
+              "Survival is not passive but an act of defiance, choosing to carry forward what they tried to destroy."
             </p>
             <p style={{
               fontFamily: 'sans-serif', fontSize: '0.75rem',
