@@ -29,7 +29,7 @@ export default function AntiDiscriminatorySection() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-400 mt-1">×</span>
-                <span>"Poverty and dysfunction require intervention"</span>
+                <span>"Poverty and dysfunction need intervention"</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-400 mt-1">×</span>
@@ -37,7 +37,7 @@ export default function AntiDiscriminatorySection() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-400 mt-1">×</span>
-                <span>"We're saving these children from bad situations"</span>
+                <span>"We are saving these children from bad situations"</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-400 mt-1">×</span>
@@ -55,15 +55,15 @@ export default function AntiDiscriminatorySection() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-sage mt-1">✓</span>
-                <span>"Who defined 'dysfunction'? Whose norms are being applied?"</span>
+                <span>"Who defined 'dysfunction'? and whose norms are being applied?"</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-sage mt-1">✓</span>
-                <span>"Removal severs identity, language, and community belonging"</span>
+                <span>"Removal destroys identity, language, and community belonging"</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-sage mt-1">✓</span>
-                <span>"The saviour narrative masks assimilation as care"</span>
+                <span>"The saviour narrative is actually secretly assimilation"</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-sage mt-1">✓</span>
@@ -77,21 +77,21 @@ export default function AntiDiscriminatorySection() {
           <div className="border-l-4 border-ochre pl-8">
             <h3 className="font-serif text-3xl text-cream mb-4">It Was Not a Mistake</h3>
             <p className="font-sans text-cream/90 leading-relaxed text-lg">
-              The Sixties Scoop was not a mistake or a misunderstanding. It was the deliberate weaponization of child welfare to continue the colonial project. When residential schools could no longer be defended, child welfare became the new tool for the same goal: assimilation.
+              The Sixties Scoop was not a mistake or a misunderstanding. It was a weaponization of child welfare to continue the colonial plan of assimilating Indigenous citizens. When residential schools could no longer be defended, child welfare became the new tool for the same goal assimilation.
             </p>
           </div>
 
           <div className="border-l-4 border-ochre pl-8">
             <h3 className="font-serif text-3xl text-cream mb-4">The Circular Trap</h3>
             <p className="font-sans text-cream/90 leading-relaxed text-lg">
-              Poverty caused by the Indian Act was then used as evidence of "unfit parenting"—a circular trap built into the law. The same system that dispossessed Indigenous peoples of their land and livelihood then judged them for being poor.
+              Poverty that was caused by the Indian Act was then used as evidence of "unfit parenting" which is a circular trap built into the law. The same system that removed Indigenous peoples of their land and livelihood then judged them for being poor.
             </p>
           </div>
 
           <div className="border-l-4 border-ochre pl-8">
             <h3 className="font-serif text-3xl text-cream mb-4">Unchecked Power</h3>
             <p className="font-sans text-cream/90 leading-relaxed text-lg">
-              Social workers were untrained in Indigenous culture, operated under racist assumptions, and were given unchecked discretionary power over Indigenous children's lives. They did not need evidence of abuse. They only needed their own judgment.
+              Social workers were not trained in Indigenous culture, operated under racist assumptions, and were given unchecked power over Indigenous children's lives. They did not need evidence of abuse. They only needed their own judgment.
             </p>
           </div>
 
