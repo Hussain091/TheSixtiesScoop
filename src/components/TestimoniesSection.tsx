@@ -11,16 +11,18 @@ const testimonies = [
     tags: ['Memoir', 'Reclamation', 'Education'],
     story:
       'She was taken as a child and placed in the child welfare system. In her 2021 memoir These Are the Stories: Memories of a 60s Scoop Survivor, she describes moving through the system, losing connection to her birth mother, and eventually reconnecting before her mother died. She wrote that reconnection allowed her to finally feel "complete, whole, and home." She has since published two books, earned a Master\'s in Education in Social Justice, and edits anthologies of survivor voices. Her work is an act of reclamation and resurgence.',
+    
     // Timeline of key life moments
     timeline: [
       { phase: 'Taken', label: 'Removed from family as a child' },
       { phase: 'Lost', label: 'Lost connection to birth mother' },
-      { phase: 'Reconnected', label: 'Reunited before her mother's passing' },
-      { phase: 'Reclaimed', label: 'Master's in Education, author, editor' },
+      { phase: 'Reconnected', label: 'Reunited before her mother\'s passing' },
+      { phase: 'Reclaimed', label: 'Master\'s in Education, author, editor' },
     ],
+
     analysis: {
-      impact: 'Christine\'s story illustrates the long-term psychological violence of the Sixties Scoop — the severing of the mother-child bond, one of the most fundamental human relationships. The colonial system treated her as a problem to be managed, not a person to be loved.',
-      lens: 'Through an anti-oppressive lens, Christine\'s journey from ward of the state to published author and educator is not a story of "success despite the odds" — it is a story of survival under conditions the state created. Her academic work on social justice is also an indictment: she now teaches the system about its own harm. Her editing of survivor anthologies directly transfers narrative power back to those the state tried to silence. This is what self-determination looks like in practice.',
+      impact: 'Christine\'s story illustrates the long-term psychological violence of the Sixties Scoop - the severing of the mother-child bond, one of the most fundamental human relationships. The colonial system treated her as a problem to be managed, not a person to be loved.',
+      lens: 'Through an anti-oppressive lens, Christine\'s journey from ward of the state to published author and educator is not a story of "success despite the odds" - it is a story of survival under conditions the state created. Her academic work on social justice is also an indictment: she now teaches the system about its own harm. Her editing of survivor anthologies directly transfers narrative power back to those the state tried to silence. This is what self-determination looks like in practice.',
     },
   },
   {
