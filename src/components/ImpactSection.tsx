@@ -17,7 +17,7 @@ const impactAreas = [
     icon: Languages,
     title: 'Language',
     accentColor: '#b85c2a',
-    image: 'https://www.mcislanguages.com/wp-content/uploads/2-3.22.23-PM.png,
+    image: 'https://www.mcislanguages.com/wp-content/uploads/2-3.22.23-PM.png',
     imageAlt: 'Open book — the loss of written and spoken language',
     content:
       'Indigenous languages are not just words but they carry worldview, law, medicine, spirituality and the removal of children broke intergenerational language transmission. Over 60 Indigenous languages in Canada are now endangered. When a language dies, an entire way of understanding the world disappears and an entire community loses a part of their identity. The Scoop silenced thousands of voices before they could learn to speak.',
