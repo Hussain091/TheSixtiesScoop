@@ -281,7 +281,7 @@ export default function Hero() {
               >
                 Between 1951 and the mid-1980s, the Canadian government systematically removed
                 Indigenous children from their families and communities. They were placed with
-                non-Indigenous families — erasing language, culture, and identity.
+                non-Indigenous families and led to the erasure of language, culture, and identity.
                 This is their story.
               </p>
 
