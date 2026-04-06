@@ -78,8 +78,8 @@ const testimonies = [
       { phase: 'Processing', label: 'Rebuilding identity, engaging reconciliation' },
     ],
     analysis: {
-      impact: 'David\'s case reveals how deeply the colonial state embedded deception into the Sixties Scoop. His birth mother was told he died. He was told nothing. Both were denied the truth of each other\'s existence — and that erasure persisted for more than fifty years. This is not bureaucratic error. It is deliberate severance.',
-      lens: 'Through an anti-oppressive lens, David\'s story challenges us to look beyond the individual trauma and see the systemic architecture of lies. The state actively prevented Indigenous mothers from searching for their children and gave adoptees false identities. His reflection that reconciliation "requires vulnerability" is profound — but we must also ask: vulnerable to what? To the truth that the state was an active agent of harm. His journey is a case study in what it costs individuals when institutions refuse accountability.',
+      impact: 'David\’s story shows just how cruel and personal the Sixties Scoop was. His birth mother was told he had died, while he grew up knowing nothing about her. For over fifty years, both of them lived without the truth. This wasn’t just a mistake in the system but a choice that tore families apart and kept them that way.',
+      lens: 'Through an anti-oppressive lens it shows more than just one person’s pain but a system built on lies. Indigenous mothers were blocked from finding their children, and adoptees were given identities that hid the truth. When David says reconciliation “requires vulnerability,” it really makes you think, vulnerable to what? His experience shows what people are forced to carry when institutions refuse to take responsibility.',
     },
   },
   {
@@ -97,8 +97,8 @@ const testimonies = [
       { phase: 'Teaching', label: 'Educator, artist, language learner, community builder' },
     ],
     analysis: {
-      impact: 'Rolanda\'s story demonstrates the intergenerational dimension of the Sixties Scoop: taken at 8 months, she had no conscious memory of family, land, or language to hold onto. Her reconnection had to be built from nothing — not recovered, but re-learned. The eagle feather she was gifted is significant: it represents recognition from the community she was stolen from, welcoming her back.',
-      lens: 'An anti-oppressive framework sees Rolanda not as an exceptional individual who "overcame" her circumstances, but as evidence of what communities lose when children are taken. Every student she teaches, every time she speaks Ojibway, every piece of art she creates — these are acts of repair that the state made necessary. Her statement that "education is key" inverts the colonial logic: the same system that used schooling to erase Indigenous identity is now being asked to teach its history of harm. Survivors like Rolanda are leading that work.',
+      impact: 'Rolanda\’s story shows how the Sixties Scoop affected more than just one moment, it shaped entire lifetimes. She was taken at just 8 months old, she had no memories of her family, culture, or language to hold onto. Reconnecting wasn’t about remembering but for her it meant starting from scratch and learning who she was all over again.',
+      lens: 'An anti oppressive lens sees Rolanda not as an exceptional individual who "overcame" her circumstances, but as evidence of what communities lose when children are taken. Every student she teaches, every time she speaks Ojibway are all acts of repair that the government made necessary. Her statement that "education is key" directly combats the colonial logic as the same system that used schooling to erase Indigenous identity is now being asked to teach its history of harm.',
     },
   },
 ];
