@@ -21,8 +21,8 @@ const testimonies = [
     ],
 
     analysis: {
-      impact: 'Christine\'s story illustrates the long-term psychological violence of the Sixties Scoop - the severing of the mother-child bond, one of the most fundamental human relationships. The colonial system treated her as a problem to be managed, not a person to be loved.',
-      lens: 'Through an anti-oppressive lens, Christine\'s journey from ward of the state to published author and educator is not a story of "success despite the odds" - it is a story of survival under conditions the state created. Her academic work on social justice is also an indictment: she now teaches the system about its own harm. Her editing of survivor anthologies directly transfers narrative power back to those the state tried to silence. This is what self-determination looks like in practice.',
+      impact: 'Christine\'s story shows the long term psychological violence of the Sixties Scoop as they ruined the mother child bond, which is one of the most fundamental human relationships. The colonial system treated her as a problem to be managed, not a human being with feelings. ',
+      lens: 'Through an anti oppressive lens, Christine\'s journey from ward of the state to published author and educator is not a story of "success despite the odds" but is a story of survival under conditions the government created. She now teaches the system about its own harm. By editing collections of survivor stories, she helps return control of those narratives to the people the government once tried to silence. This is what self-determination looks like in practice.',
     },
   },
   {
@@ -37,11 +37,11 @@ const testimonies = [
       { phase: 'Born', label: 'Winnipeg, Anishnaabe family' },
       { phase: 'Taken', label: 'Removed at age 3 with sister' },
       { phase: 'Placed', label: 'Adopted into affluent Ontario household' },
-      { phase: 'Harmed', label: 'Years of abuse — emotional, physical, spiritual' },
+      { phase: 'Harmed', label: 'Years of abuse emotional, physical, spiritual' },
     ],
     analysis: {
-      impact: 'Christine\'s account exposes one of the most devastating myths of the Sixties Scoop: that placement with a wealthier, white family was an act of "care." The state used class and race as proxies for fitness — assuming that an affluent white home was inherently better than an Indigenous one. That assumption was wrong, and children paid the price.',
-      lens: 'Anti-oppressive practice demands we name what happened here: this was a system built on anti-Indigenous racism and white paternalism. The state did not intervene because Christine\'s family was unsafe — it intervened because her family was Indigenous. Her use of Bill C-31 status language also matters: it reflects the ongoing bureaucratic dehumanization of Indigenous identity, where belonging to a Nation is reduced to a legislative category. Her testimony is not just personal — it is political.',
+      impact: 'Christine\'s story exposes one of the most devastating myths of the Sixties Scoop, that the placement with a wealthier, white family was an act of "care." The state used class and race as ways to determine fitness, assuming that a rich white home was better than an Indigenous one. That assumption was wrong, and children paid the price.',
+      lens: 'Through an anti-oppressive it shows that this was a system built on anti-Indigenous racism and white paternalism. The government did not intervene because Christine\'s family was unsafe, it intervened because her family was Indigenous. Her use of Bill C-31 status language also matters as it reflects the ongoing dehumanization of Indigenous identity, where belonging to a Nation is reduced to a legislative category.',
     },
   },
   {
@@ -59,8 +59,8 @@ const testimonies = [
       { phase: 'Reunion', label: 'Met birth mother at 23 in Winnipeg' },
     ],
     analysis: {
-      impact: 'Tauni\'s story is one of the most viscerally dehumanizing in the public record. Being advertised in a newspaper like a commodity — described by ethnicity, as a product available for adoption — is not metaphor. It is exactly what happened. The child welfare system functioned, in this instance, as a marketplace.',
-      lens: 'An anti-oppressive reading of Tauni\'s experience must center commodification: Indigenous children were treated as resources to be redistributed to white families. This reflects a colonial logic in which Indigenous bodies and lives are considered available for extraction. The internalized racism she describes — "I didn\'t want to be who I was" — is the intended outcome of cultural erasure. Identity destruction was not a side effect of the Sixties Scoop. It was the point.',
+      impact: 'Tauni\'s story is one of the most dehumanizing in the public record. She was advertised in a newspaper as an object, something to be sold. They described her by her ethnicity as if she were a product available for adoption. This is not an exaggeration, it is exactly what happened. In her case, the child welfare system did not protect her, it treated her like she was part of a marketplace.',
+      lens: 'An anti oppressive lens of shows that Indigenous children were treated as resources to be redistributed to white families. This reflects a colonial system where Indigenous people are considered available for extraction. The racism she describes "I didn\'t want to be who I was"  is the intended outcome of cultural erasure. Identity destruction was not a side effect of the Sixties Scoop it was the point.',
     },
   },
   {
