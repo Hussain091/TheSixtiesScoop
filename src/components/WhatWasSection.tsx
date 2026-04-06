@@ -1,135 +1,109 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { ExternalLink, ArrowRight } from 'lucide-react';
-
-// ── Animated counter with custom easing ──────────────────────────────────
-function AnimatedNumber({ target, duration = 2200, prefix = '', suffix = '', started }) {
-  const [display, setDisplay] = useState(0);
-  const rafRef = useRef(null);
-  const startRef = useRef(null);
-
-  useEffect(() => {
-    if (!started) return;
-    startRef.current = null;
-    const animate = (timestamp) => {
-      if (!startRef.current) startRef.current = timestamp;
-      const elapsed = timestamp - startRef.current;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setDisplay(Math.floor(eased * target));
-      if (progress < 1) rafRef.current = requestAnimationFrame(animate);
-    };
-    rafRef.current = requestAnimationFrame(animate);
-    return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current); };
-  }, [started, target, duration]);
-
-  return (
-    <span style={{ fontVariantNumeric: 'tabular-nums' }}>
-      {prefix}{display.toLocaleString()}{suffix}
-    </span>
-  );
-}
-
-// ── Typewriter ────────────────────────────────────────
-function TypewriterStat({ text, started, delay = 0 }) {
-  const [shown, setShown] = useState('');
-  const [active, setActive] = useState(false);
-
-  useEffect(() => {
-    if (!started) return;
-    const t = setTimeout(() => setActive(true), delay);
-    return () => clearTimeout(t);
-  }, [started, delay]);
-
-  useEffect(() => {
-    if (!active) return;
-    if (shown.length >= text.length) return;
-    const t = setTimeout(() => {
-      setShown(text.slice(0, shown.length + 1));
-    }, 55);
-    return () => clearTimeout(t);
-  }, [active, shown, text]);
-
-  return (
-    <span style={{ fontVariantNumeric: 'tabular-nums' }}>
-      {shown}
-      {shown.length < text.length && <span style={{ animation: 'cursorBlink 0.7s steps(1) infinite' }}>|</span>}
-    </span>
-  );
-}
 
 export default function WhatWasSection() {
-  const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.15 });
-  const [started, setStarted] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.3 });
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
 
   useEffect(() => {
-    if (isIntersecting && !started) setStarted(true);
+    if (isIntersecting) {
+      const duration = 2000;
+      const steps = 60;
+      const increment1 = 1400 / steps;
+      const increment2 = 3400 / steps;
+      let currentStep = 0;
+
+      const timer = setInterval(() => {
+        currentStep++;
+        setCount1(Math.min(Math.floor(increment1 * currentStep), 1400));
+        setCount2(Math.min(Math.floor(increment2 * currentStep), 3400));
+
+        if (currentStep >= steps) {
+          clearInterval(timer);
+        }
+      }, duration / steps);
+
+      return () => clearInterval(timer);
+    }
   }, [isIntersecting]);
 
-  const contextCards = [
-    {
-      label: 'The Legal Mechanism',
-      text: 'Section 88 of the Indian Act (1951) extended provincial laws — including child welfare — to reserves. This gave provinces authority to remove children without federal oversight or Indigenous consent.',
-    },
-    {
-      label: 'Named in 1983',
-      text: 'Patrick Johnston coined the term "Sixties Scoop" in his 1983 report Native Children and the Child Welfare System — the first time the practice was formally named and documented.',
-    },
-    {
-      label: 'Global Reach',
-      text: 'Children were not only placed across Canada — some were sent to the United States and Europe. Families had no legal recourse and were rarely told where their children had gone.',
-    },
-  ];
-
   return (
-    <section ref={ref}>
-      <h2>What Was the Sixties Scoop</h2>
+    <section
+      id="what"
+      ref={ref}
+      className={`py-32 px-6 bg-gradient-to-b from-charcoal to-charcoal/95 transition-all duration-1000 ${
+        isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto">
+        <h2 className="font-serif text-6xl md:text-7xl text-cream mb-16 text-center">
+          What Was the Sixties Scoop
+        </h2>
 
-      <p>
-        "It was common practice to 'scoop' newborns from their mothers on reserves."
-      </p>
+        <div className="grid md:grid-cols-2 gap-16 mb-20">
+          <div className="border-l-4 border-sienna pl-8">
+            <p className="font-serif text-3xl text-ochre leading-relaxed italic">
+              "It was common practice to 'scoop' newborns from their mothers on reserves."
+            </p>
+            <p className="font-sans text-cream/70 mt-4">
+               B.C. social worker, describing the practice that Patrick Johnston would name in 1983
+            </p>
+          </div>
 
-      <p>
-        In 1951, the government amended the Indian Act to give provincial governments power
-        over Indigenous child welfare. As residential schools faced mounting criticism,
-        a new mechanism emerged to pursue assimilation under a different name.
-      </p>
-
-      <p>
-        Children were taken without consent, without warning, without families being told
-        where their children went.
-      </p>
-
-      <p>
-        Between the 1950s and 1980s, over <strong>20,000 Indigenous children</strong> were removed.
-      </p>
-
-      {contextCards.map((card, i) => (
-        <div key={i}>
-          <strong>{card.label}</strong>
-          <p>{card.text}</p>
+          <div className="font-sans text-cream/90 space-y-6 leading-relaxed">
+            <p>
+              In 1951, the government had created the Indian Act to give provincial governments power over Indigenous child welfare. As residential schools were being stopped, so they found a new way to finish the goal of assimilation never stopped.
+            </p>
+            <p>
+              In simple terms when Indian Residential Schools didn't "kill the Indigenous in the child," Child Welfare agencies stepped in to finish the job.
+            </p>
+            <p>
+              They took children without consent, without warning, without families being told where their children went.
+            </p>
+            <p>
+              Between the 1950s and 1980s, over 20,000 Indigenous children were removed from their families and communities and placed into non-Indigenous homes across Canada and around the world.
+            </p>
+          </div>
         </div>
-      ))}
 
-      <div>
-        {started && <AnimatedNumber target={1400} started={started} />}
-        <p>Indigenous children in B.C. provincial care in 1964</p>
-      </div>
+        <div className="grid md:grid-cols-2 gap-12">
+          <div className="bg-gradient-to-br from-sienna/10 to-sienna/5 border border-sienna/30 rounded-lg p-10 text-center">
+            <div className="font-serif text-7xl text-ochre mb-4">
+              {isIntersecting ? count1.toLocaleString() : '30'}
+            </div>
+            <div className="font-sans text-cream/80 text-lg mb-2">
+              Indigenous children in B.C. provincial care in 1964
+            </div>
+            <div className="font-sans text-cream/60 text-sm">
+              Up from approximately 30 in 1951
+            </div>
+            <div className="font-serif text-4xl text-sienna mt-4">50x increase</div>
+            <div className="font-sans text-cream/70 text-sm mt-2">in just 13 years</div>
+          </div>
 
-      <div>
-        {started && <AnimatedNumber target={3400} started={started} />}
-        <p>Indigenous children adopted in Manitoba</p>
-      </div>
+          <div className="bg-gradient-to-br from-sienna/10 to-sienna/5 border border-sienna/30 rounded-lg p-10 text-center">
+            <div className="font-serif text-7xl text-ochre mb-4">
+              {isIntersecting ? count2.toLocaleString() : '0'}
+            </div>
+            <div className="font-sans text-cream/80 text-lg mb-2">
+              Indigenous children adopted in Manitoba
+            </div>
+            <div className="font-sans text-cream/60 text-sm">
+              Between 1971 and 1981
+            </div>
+            <div className="font-serif text-4xl text-sienna mt-4">80%</div>
+            <div className="font-sans text-cream/70 text-sm mt-2">
+              placed into non-Indigenous homes
+            </div>
+          </div>
+        </div>
 
-      <div>
-        <p>
-          Aboriginal children were{' '}
-          {started
-            ? <TypewriterStat text="4.5 times more likely" started={started} />
-            : '4.5 times more likely'}{' '}
-          to be in care.
-        </p>
+        <div className="mt-12 text-center">
+          <p className="font-sans text-xl text-cream/90 max-w-4xl mx-auto leading-relaxed">
+            Aboriginal children were <span className="text-ochre font-semibold">4.5 times more likely</span> than non-Aboriginal children to be in the care of child welfare authorities.
+          </p>
+        </div>
       </div>
     </section>
   );
