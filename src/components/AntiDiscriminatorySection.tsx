@@ -28,30 +28,30 @@ const comparisons = [
 const pillars = [
   {
     title: 'It Was Not a Mistake',
-    body: 'The Sixties Scoop was not a mistake or a misunderstanding. It was a weaponization of child welfare to continue the colonial plan of assimilating Indigenous citizens. When residential schools could no longer be defended, child welfare became the new tool for the same goal — assimilation.',
-    image: 'https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=600&q=80',
-    imageAlt: 'Empty hallway — institutional absence and silence',
+    body: 'The Sixties Scoop was not a mistake or a misunderstanding. It was a weaponization of child welfare to continue the colonial plan of assimilating Indigenous citizens.',
+    image: 'https://www.ictinc.ca/hubfs/Blog/LAC_5430109_Indigenous-and-non-children_768w.jpg',
+    imageAlt: 'Empty hallway: institutional absence and silence',
     stat: { value: '1951', label: 'Year colonial child removal was codified into law' },
   },
   {
     title: 'The Circular Trap',
-    body: 'Poverty that was caused by the Indian Act was then used as evidence of "unfit parenting" — a circular trap built into the law. The same system that removed Indigenous peoples of their land and livelihood then judged them for being poor.',
-    image: 'https://images.unsplash.com/photo-1541252260730-0412e8e2108e?w=600&q=80',
-    imageAlt: 'Chains and cycles — the trap of systemic oppression',
+    body: 'Poverty that was caused by the Indian Act was then used as evidence of "unfit parenting" which is a circular trap built into the law. The same system that removed Indigenous peoples of their land and livelihood then judged them for being poor.',
+    image: 'https://thumbs.dreamstime.com/b/detailed-d-model-classic-metal-animal-trap-complete-sturdy-chain-features-sharp-menacing-teeth-weathered-402230784.jpg?w=768',
+    imageAlt: 'Chains and cycles: The trap of systemic oppression',
     stat: { value: '78%', label: 'Of children in care today who are Indigenous' },
   },
   {
     title: 'Unchecked Power',
     body: 'Social workers were not trained in Indigenous culture, operated under racist assumptions, and were given unchecked power over Indigenous children\'s lives. They did not need evidence of abuse. They only needed their own judgment.',
-    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80',
-    imageAlt: 'Documents and bureaucracy — the machinery of state power',
+    image: 'https://b1867527.smushcdn.com/1867527/wp-content/uploads/2018/11/AAI-Media-3.jpg?lossy=1&strip=1&webp=1',
+    imageAlt: 'Documents and bureaucracy',
     stat: { value: 'Zero', label: 'Cultural training required for workers removing children' },
   },
   {
     title: 'Who Benefits?',
-    body: 'An anti-discriminatory lens asks: who benefits from this narrative? Who made the laws? Whose voices were excluded from the room when these decisions were made? The answer is always the same. Colonial power structures benefit from Indigenous dispossession.',
-    image: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&q=80',
-    imageAlt: 'Empty parliament chamber — who holds power and who is excluded',
+    body: 'An anti-discriminatory lens asks: who benefits from this narrative? Who made the laws? Whose voices were excluded from the room when these decisions were made? The answer is always the same. Colonial structures benefit from Indigenous dispossession.',
+    image: 'https://visit.parl.ca/staticfiles/Visit/assets/images/img-west-block-header.jpg',
+    imageAlt: 'Empty parliament chamber, who holds power and who is excluded',
     stat: { value: 'None', label: 'Indigenous representation in parliament when law was passed' },
   },
 ];
@@ -362,7 +362,7 @@ export default function AntiDiscriminatorySection() {
                           fontSize: '0.8rem', color: 'rgba(220,100,80,0.9)',
                           lineHeight: 1.5,
                         }}>
-                          This framing places blame on individuals while ignoring the structural conditions that produce poverty and marginalization.
+                          This framing places blame on individuals while ignoring the conditions that led to it.
                         </span>
                       </div>
                     </div>
@@ -426,7 +426,7 @@ export default function AntiDiscriminatorySection() {
                           fontSize: '0.8rem', color: 'rgba(140,200,130,0.9)',
                           lineHeight: 1.5,
                         }}>
-                          This framing names structural violence, colonial history, and the misuse of state power — locating the problem in systems, not people.
+                          This framing names structural violence, colonial history, and the misuse of state power which finds the problem in systems and not people or groups.
                         </span>
                       </div>
                     </div>
