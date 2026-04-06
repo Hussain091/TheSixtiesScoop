@@ -314,7 +314,7 @@ export default function WhatWasSection() {
               }}
             >
               <img
-                src="https://images.unsplash.com/photo-1503525148566-ef5c2b9c93bd?w=1200&q=80"
+                src="https://b1867527.smushcdn.com/1867527/wp-content/uploads/2020/04/60S-SCOOP-COVID-2-640x360-1.jpg?lossy=1&strip=1&webp=1"
                 alt="A child's hands — representing the children taken by the Sixties Scoop"
                 onLoad={() => setImageLoaded(true)}
                 style={{
