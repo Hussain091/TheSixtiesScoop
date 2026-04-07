@@ -1,181 +1,342 @@
 import { useState, useEffect, useRef } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { X, Check, ChevronDown } from 'lucide-react';
+import {
+  BookOpen, Volume2, DollarSign, MessageCircle,
+  ExternalLink, ChevronDown, ArrowRight, Globe,
+} from 'lucide-react';
 
-const comparisons = [
+/* ─────────────── DATA ─────────────── */
+const categories = [
+  { id: 'learn',    label: 'Learn',    color: 'rgba(120,170,200,0.8)' },
+  { id: 'amplify',  label: 'Amplify',  color: 'rgba(200,135,58,0.8)' },
+  { id: 'donate',   label: 'Donate',   color: 'rgba(140,180,130,0.8)' },
+  { id: 'advocate', label: 'Advocate', color: 'rgba(200,100,80,0.8)' },
+];
+
+const actions = [
   {
-    deficit: '"Indigenous families are failing their children"',
-    antiOp: '"The Indian Act created the poverty used to justify removal"',
+    cat: 'learn',
+    icon: BookOpen,
+    title: 'Learn',
+    tagline: 'Start with Indigenous-led sources. Accurate history is the foundation of solidarity.',
+    resources: [
+      { label: 'APTN News — Canada\'s national Indigenous broadcaster', url: 'https://aptnnews.ca', tag: 'TV & Online' },
+      { label: 'CBC Indigenous — dedicated Indigenous news desk', url: 'https://www.cbc.ca/news/indigenous', tag: 'News' },
+      { label: 'Windspeaker — oldest Indigenous national newspaper (est. 1983)', url: 'https://windspeaker.com', tag: 'Print & Digital' },
+      { label: '60s Scoop Mapping Platform — survivor stories across Canada', url: 'https://sixtiesscoop.geoforms.ca', tag: null },
+      { label: 'IndigiNews — Indigenous-led community journalism', url: 'https://indiginews.com', tag: 'Online' },
+    ],
+    accent: 'rgba(120,170,200,0.18)',
+    borderAccent: 'rgba(120,170,200,0.35)',
+    iconColor: 'rgba(140,190,220,0.9)',
   },
   {
-    deficit: '"Poverty and dysfunction need intervention"',
-    antiOp: '"Who defined \'dysfunction\'? Whose norms are being applied?"',
+    cat: 'amplify',
+    icon: Volume2,
+    title: 'Amplify',
+    tagline: 'What you platform matters. Algorithms reward what you engage with consistently.',
+    resources: [
+      { label: '@sixtiesscoopnetwork on Instagram — follow and share', url: 'https://www.instagram.com/sixtiesscoopnetwork', tag: 'Instagram' },
+      { label: '@aptnnews — ongoing Indigenous news coverage', url: 'https://www.instagram.com/aptnnews', tag: 'Instagram' },
+      { label: '@cbcindigenous — stories centred on Indigenous voices', url: 'https://www.instagram.com/cbcindigenous', tag: 'Instagram' },
+      { label: 'Challenge harmful narratives — in your family, your feed, your school', url: null, tag: null },
+      { label: 'Do not limit this to September 30. Reconciliation is year-round.', url: null, tag: null },
+    ],
+    accent: 'rgba(200,135,58,0.15)',
+    borderAccent: 'rgba(200,135,58,0.35)',
+    iconColor: '#c8873a',
   },
   {
-    deficit: '"Removal is in the best interest of the child"',
-    antiOp: '"Removal destroys identity, language, and community belonging"',
+    cat: 'donate',
+    icon: DollarSign,
+    title: 'Donate',
+    tagline: 'Direct financial support to survivor-led organizations makes a measurable difference.',
+    resources: [
+      { label: 'National Sixties Scoop Healing Foundation — survivor-led, registered charity', url: 'https://www.sixtiesscoophealingfoundation.ca', tag: 'Charity' },
+      { label: 'Sixties Scoop Network — grassroots survivor-founded advocacy', url: 'https://sixtiesscoopnetwork.org', tag: null },
+      { label: 'Southern Chiefs\' Organization — funds healing programs in Manitoba', url: 'https://scoinc.mb.ca', tag: null },
+      { label: 'Find your local Indigenous Friendship Centre via NAFC', url: 'https://nafc.ca/en/friendship-centres/', tag: 'Directory' },
+    ],
+    accent: 'rgba(140,180,130,0.12)',
+    borderAccent: 'rgba(140,180,130,0.3)',
+    iconColor: 'rgba(160,200,150,0.9)',
   },
   {
-    deficit: '"We are saving these children from bad situations"',
-    antiOp: '"The saviour narrative is actually covert assimilation"',
+    cat: 'advocate',
+    icon: MessageCircle,
+    title: 'Advocate',
+    tagline: 'Political pressure matters. Demand accountability on Indigenous child welfare.',
+    resources: [
+      { label: 'Contact your MP — demand full implementation of TRC Calls to Action 1–5', url: 'https://www.ourcommons.ca/Members/en', tag: null },
+      { label: 'TRC Calls to Action 1–5 — read them yourself', url: 'https://www.rcaanc-cirnac.gc.ca/eng/1524494530110/1557511412801', tag: null },
+      { label: 'Bill C-92 — An Act Respecting First Nations, Inuit and Métis Children', url: 'https://laws-lois.justice.gc.ca/eng/acts/S-20.2/index.html', tag: null },
+      { label: 'Demand the end of birth alerts across all provinces', url: null, tag: null },
+      { label: 'Support Indigenous-led child welfare at every level of government', url: null, tag: null },
+    ],
+    accent: 'rgba(200,100,80,0.12)',
+    borderAccent: 'rgba(200,100,80,0.3)',
+    iconColor: 'rgba(220,120,100,0.9)',
   },
   {
-    deficit: '"This is unfortunate but necessary"',
-    antiOp: '"This is a deliberate continuation of colonial policy"',
+    cat: 'learn',
+    icon: Globe,
+    title: 'Listen & Watch',
+    tagline: 'Centre Indigenous voices in the media you consume every day.',
+    resources: [
+      { label: 'Unreserved — CBC Radio One, hosted by Falen Johnson', url: 'https://www.cbc.ca/radio/unreserved', tag: 'Podcast' },
+      { label: 'Missing & Murdered — CBC podcast by Connie Walker on MMIWG', url: 'https://www.cbc.ca/listen/cbc-podcasts/203-missing-and-murdered', tag: 'Podcast' },
+      { label: 'Little Bird — drama from a Sixties Scoop survivor\'s perspective (Crave)', url: null, tag: 'TV' },
+      { label: 'These Are the Stories — Christine Miskonoodinkwe Smith', url: null, tag: 'Book' },
+    ],
+    accent: 'rgba(120,170,200,0.15)',
+    borderAccent: 'rgba(120,170,200,0.3)',
+    iconColor: 'rgba(140,190,220,0.9)',
+  },
+  {
+    cat: 'amplify',
+    icon: ArrowRight,
+    title: 'In Your Community',
+    tagline: 'Reconciliation happens locally. These actions take under 10 minutes.',
+    resources: [
+      { label: 'Acknowledge the territory you\'re on — find yours at native-land.ca', url: 'https://native-land.ca', tag: null },
+      { label: 'Bring Sixties Scoop education to your school or workplace', url: null, tag: null },
+      { label: 'Attend local Indigenous-led events when you are welcomed', url: null, tag: null },
+      { label: 'Support Indigenous-owned local businesses and artists in your city', url: null, tag: null },
+    ],
+    accent: 'rgba(200,135,58,0.12)',
+    borderAccent: 'rgba(200,135,58,0.28)',
+    iconColor: '#c8873a',
   },
 ];
 
-const pillars = [
-  {
-    title: 'It Was Not a Mistake',
-    body: 'The Sixties Scoop was not a mistake or a misunderstanding. It was a weaponization of child welfare to continue the colonial plan of assimilating Indigenous citizens.',
-    image: 'https://www.ictinc.ca/hubfs/Blog/LAC_5430109_Indigenous-and-non-children_768w.jpg',
-    imageAlt: 'Empty hallway: institutional absence and silence',
-    stat: { value: '1951', label: 'Year colonial child removal was codified into law' },
-  },
-  {
-    title: 'The Circular Trap',
-    body: 'Poverty that was caused by the Indian Act was then used as evidence of "unfit parenting" which is a circular trap built into the law. The same system that removed Indigenous peoples of their land and livelihood then judged them for being poor.',
-    image: 'https://thumbs.dreamstime.com/b/detailed-d-model-classic-metal-animal-trap-complete-sturdy-chain-features-sharp-menacing-teeth-weathered-402230784.jpg?w=768',
-    imageAlt: 'Chains and cycles: The trap of systemic oppression',
-    stat: { value: '78%', label: 'Of children in care today who are Indigenous' },
-  },
-  {
-    title: 'Unchecked Power',
-    body: 'Social workers were not trained in Indigenous culture, operated under racist assumptions, and were given unchecked power over Indigenous children\'s lives. They did not need evidence of abuse. They only needed their own judgment.',
-    image: 'https://b1867527.smushcdn.com/1867527/wp-content/uploads/2018/11/AAI-Media-3.jpg?lossy=1&strip=1&webp=1',
-    imageAlt: 'Documents and bureaucracy',
-    stat: { value: 'Zero', label: 'Cultural training required for workers removing children' },
-  },
-  {
-    title: 'Who Benefits?',
-    body: 'An anti-discriminatory lens asks: who benefits from this narrative? Who made the laws? Whose voices were excluded from the room when these decisions were made? The answer is always the same. Colonial structures benefit from Indigenous dispossession.',
-    image: 'https://visit.parl.ca/staticfiles/Visit/assets/images/img-west-block-header.jpg',
-    imageAlt: 'Empty parliament chamber, who holds power and who is excluded',
-    stat: { value: 'None', label: 'Indigenous representation in parliament when law was passed' },
-  },
+const trcItems = [
+  { label: 'Reduce overrepresentation in care', pct: 18 },
+  { label: 'End birth alerts nationally', pct: 42 },
+  { label: 'Indigenous-led child welfare', pct: 31 },
+  { label: 'Bill C-92 full implementation', pct: 55 },
 ];
 
-export default function AntiDiscriminatorySection() {
+/* ─────────────── COMPONENT ─────────────── */
+export default function ActionSection() {
   const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.1 });
-  const [flipped, setFlipped] = useState({});
-  const [activePillar, setActivePillar] = useState(null);
-  const [countersVisible, setCountersVisible] = useState(false);
-  const pillarsRef = useRef(null);
+  const [activeFilter, setActiveFilter] = useState('all');
+  const [openCard, setOpenCard] = useState(null);
+  const [barsVisible, setBarsVisible] = useState(false);
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const barsRef = useRef(null);
+  const particlesRef = useRef(null);
 
   useEffect(() => {
     const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) setCountersVisible(true); },
-      { threshold: 0.2 }
+      ([e]) => { if (e.isIntersecting) setBarsVisible(true); },
+      { threshold: 0.3 }
     );
-    if (pillarsRef.current) obs.observe(pillarsRef.current);
+    if (barsRef.current) obs.observe(barsRef.current);
     return () => obs.disconnect();
   }, []);
 
-  const toggleFlip = (i) => {
-    setFlipped((p) => ({ ...p, [i]: !p[i] }));
-  };
+  const filtered = activeFilter === 'all'
+    ? actions
+    : actions.filter(a => a.cat === activeFilter);
 
   return (
     <>
       <style>{`
         @keyframes fadeUpIn {
-          from { opacity: 0; transform: translateY(24px); }
+          from { opacity: 0; transform: translateY(28px); }
           to   { opacity: 1; transform: translateY(0); }
         }
         @keyframes glowPulse {
-          0%,100% { opacity: 0.3; }
-          50%      { opacity: 0.7; }
+          0%,100% { opacity: 0.25; }
+          50%      { opacity: 0.65; }
         }
-        @keyframes float {
-          0%,100% { transform: translateY(0); }
-          50%      { transform: translateY(-8px); }
-        }
-        @keyframes slideIn {
-          from { opacity: 0; transform: translateX(-20px); }
-          to   { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes expandHeight {
-          from { max-height: 0; opacity: 0; }
-          to   { max-height: 600px; opacity: 1; }
+        @keyframes glowPulse2 {
+          0%,100% { opacity: 0.15; }
+          50%      { opacity: 0.5; }
         }
         @keyframes shimmer {
           from { background-position: -200% center; }
           to   { background-position: 200% center; }
         }
-        @keyframes lineGrow {
+        @keyframes scanline {
+          0%   { transform: translateY(-100%); }
+          100% { transform: translateY(100vh); }
+        }
+        @keyframes borderPulse {
+          0%,100% { opacity: 0.2; }
+          50%      { opacity: 0.55; }
+        }
+        @keyframes float {
+          0%,100% { transform: translateY(0px) rotate(0deg); }
+          33%      { transform: translateY(-10px) rotate(1deg); }
+          66%      { transform: translateY(-5px) rotate(-0.5deg); }
+        }
+        @keyframes iconRotate {
+          from { transform: rotate(0deg); }
+          to   { transform: rotate(360deg); }
+        }
+        @keyframes barGrow {
+          from { width: 0%; }
+          to   { width: var(--pct); }
+        }
+        @keyframes ripple {
+          0%   { transform: scale(0.8); opacity: 0.6; }
+          100% { transform: scale(2.2); opacity: 0; }
+        }
+        @keyframes typeIn {
           from { width: 0; }
           to   { width: 100%; }
         }
-        @keyframes flipIn {
-          from { transform: rotateY(-90deg); opacity: 0; }
-          to   { transform: rotateY(0deg); opacity: 1; }
+        @keyframes expandDown {
+          from { max-height: 0; opacity: 0; transform: translateY(-8px); }
+          to   { max-height: 700px; opacity: 1; transform: translateY(0); }
         }
-        @keyframes borderAnim {
-          0%,100% { border-color: rgba(184,92,42,0.25); }
-          50%      { border-color: rgba(184,92,42,0.55); }
+        @keyframes particleDrift {
+          0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0.6; }
+          50%  { opacity: 1; }
+          100% { transform: translateY(-60px) translateX(20px) scale(0); opacity: 0; }
         }
-        @keyframes scalePop {
-          0%   { transform: scale(0.92); opacity: 0; }
-          60%  { transform: scale(1.02); }
-          100% { transform: scale(1); opacity: 1; }
-        }
-        @keyframes imgReveal {
-          from { clip-path: inset(0 100% 0 0); }
-          to   { clip-path: inset(0 0% 0 0); }
+        @keyframes lineSweep {
+          from { transform: scaleX(0); transform-origin: left; }
+          to   { transform: scaleX(1); transform-origin: left; }
         }
 
-        .fade-up    { animation: fadeUpIn 0.7s cubic-bezier(0.16,1,0.3,1) both; }
-        .glow-orb   { animation: glowPulse 4s ease-in-out infinite; }
-        .float-el   { animation: float 6s ease-in-out infinite; }
-        .pillar-img { animation: imgReveal 0.9s cubic-bezier(0.16,1,0.3,1) both; }
+        .action-fade-up { animation: fadeUpIn 0.75s cubic-bezier(0.16,1,0.3,1) both; }
 
-        .flip-card {
-          perspective: 1000px;
+        .action-glow-a {
+          animation: glowPulse 5s ease-in-out infinite;
+        }
+        .action-glow-b {
+          animation: glowPulse2 7s ease-in-out infinite;
+          animation-delay: 2.5s;
+        }
+
+        .filter-tab {
+          background: rgba(22,18,14,0.7);
+          border: 1px solid rgba(200,135,58,0.15);
+          color: rgba(245,240,232,0.45);
+          padding: 8px 20px;
+          border-radius: 30px;
           cursor: pointer;
-          transition: transform 0.2s ease;
-        }
-        .flip-card:hover { transform: translateY(-3px); }
-
-        .flip-inner {
-          position: relative;
-          transition: transform 0.55s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-          transform-style: preserve-3d;
-        }
-        .flip-inner.flipped { transform: rotateY(180deg); }
-
-        .flip-front, .flip-back {
-          backface-visibility: hidden;
-          -webkit-backface-visibility: hidden;
-        }
-        .flip-back {
-          position: absolute;
-          inset: 0;
-          transform: rotateY(180deg);
-        }
-
-        .pillar-card {
-          transition: all 0.3s ease;
-          cursor: pointer;
+          font-family: sans-serif;
+          font-size: 0.72rem;
+          font-weight: 600;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          transition: all 0.25s ease;
           position: relative;
           overflow: hidden;
         }
-        .pillar-card::before {
+        .filter-tab::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at center, rgba(200,135,58,0.15) 0%, transparent 70%);
+          opacity: 0;
+          transition: opacity 0.25s ease;
+        }
+        .filter-tab:hover::before { opacity: 1; }
+        .filter-tab:hover {
+          border-color: rgba(200,135,58,0.35);
+          color: rgba(245,240,232,0.75);
+        }
+        .filter-tab.active {
+          background: rgba(200,135,58,0.12);
+          border-color: rgba(200,135,58,0.5);
+          color: #c8873a;
+        }
+
+        .action-card {
+          border-radius: 12px;
+          cursor: pointer;
+          transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+          position: relative;
+          overflow: hidden;
+        }
+        .action-card::before {
           content: '';
           position: absolute;
           top: 0; left: 0; right: 0;
           height: 2px;
-          background: linear-gradient(90deg, #b85c2a, #d4963f);
           transform: scaleX(0);
           transform-origin: left;
-          transition: transform 0.35s ease;
+          transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
         }
-        .pillar-card:hover::before,
-        .pillar-card.open::before { transform: scaleX(1); }
+        .action-card:hover::before,
+        .action-card.open::before { transform: scaleX(1); }
 
-        .pillar-body {
+        .action-card:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 24px 48px rgba(0,0,0,0.35);
+        }
+
+        .card-body {
           overflow: hidden;
-          transition: max-height 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.4s ease;
+          transition: max-height 0.55s cubic-bezier(0.16,1,0.3,1),
+                      opacity 0.4s ease;
+        }
+        .card-body.open { animation: expandDown 0.55s cubic-bezier(0.16,1,0.3,1) both; }
+
+        .resource-row {
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+          padding: 9px 0;
+          border-bottom: 1px solid rgba(200,135,58,0.07);
+          transition: all 0.2s ease;
+        }
+        .resource-row:last-child { border-bottom: none; }
+        .resource-row:hover { padding-left: 6px; }
+
+        .resource-link {
+          color: rgba(245,240,232,0.72);
+          text-decoration: none;
+          font-family: sans-serif;
+          font-size: 0.875rem;
+          line-height: 1.55;
+          transition: color 0.2s ease;
+        }
+        .resource-link:hover { color: #c8873a; }
+        .resource-link.no-url {
+          cursor: default;
+        }
+        .resource-link.no-url:hover { color: rgba(245,240,232,0.72); }
+
+        .res-tag {
+          font-family: sans-serif;
+          font-size: 0.62rem;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          padding: 2px 7px;
+          border-radius: 20px;
+          flex-shrink: 0;
+          margin-top: 2px;
+        }
+
+        .trc-bar {
+          height: 5px;
+          border-radius: 3px;
+          background: rgba(242,232,213,0.08);
+          overflow: hidden;
+          position: relative;
+        }
+        .trc-bar-fill {
+          height: 100%;
+          border-radius: 3px;
+          width: 0%;
+          transition: width 1.6s cubic-bezier(0.16,1,0.3,1);
+          position: relative;
+          overflow: hidden;
+        }
+        .trc-bar-fill::after {
+          content: '';
+          position: absolute;
+          top: 0; right: 0;
+          width: 20px; height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35));
+          animation: shimmer 2s linear infinite;
+          background-size: 200% auto;
         }
 
         .quote-shimmer {
@@ -187,27 +348,49 @@ export default function AntiDiscriminatorySection() {
           animation: shimmer 5s linear infinite;
         }
 
-        .vs-divider {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        .scanline {
+          position: absolute;
+          left: 0; right: 0;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(200,135,58,0.12), transparent);
+          animation: scanline 8s linear infinite;
+          pointer-events: none;
         }
 
-        .hint-text {
-          font-family: sans-serif;
-          font-size: 0.65rem;
-          letter-spacing: 0.15em;
-          text-transform: uppercase;
-          color: rgba(245,240,232,0.25);
+        .particle {
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(200,135,58,0.6);
+          pointer-events: none;
+          animation: particleDrift linear infinite;
+        }
+
+        .hover-ripple {
+          position: absolute;
+          border-radius: 50%;
+          border: 1px solid rgba(200,135,58,0.4);
+          animation: ripple 1.2s ease-out forwards;
+          pointer-events: none;
+        }
+
+        .icon-wrap {
+          transition: transform 0.3s ease;
+        }
+        .action-card:hover .icon-wrap {
+          transform: rotate(8deg) scale(1.1);
+        }
+
+        .line-sweep {
+          animation: lineSweep 0.8s cubic-bezier(0.16,1,0.3,1) both;
         }
       `}</style>
 
       <section
-        id="anti-discriminatory"
+        id="action"
         ref={ref}
         style={{
           padding: '8rem 1.5rem',
-          background: 'linear-gradient(180deg, #1e1814 0%, #1a1612 50%, #1c1510 100%)',
+          background: 'linear-gradient(180deg, #1c1510 0%, #1a1208 50%, #1e160a 100%)',
           position: 'relative',
           overflow: 'hidden',
         }}
@@ -215,44 +398,65 @@ export default function AntiDiscriminatorySection() {
           isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        {/* Background */}
+        {/* ── BACKGROUND EFFECTS ── */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
-          backgroundImage: 'radial-gradient(circle, rgba(200,135,58,0.04) 1px, transparent 1px)',
-          backgroundSize: '30px 30px',
+          backgroundImage: 'radial-gradient(circle, rgba(200,135,58,0.035) 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
         }} />
-        <div className="glow-orb" style={{
-          position: 'absolute', top: '15%', left: '-15%',
-          width: '55vw', height: '55vw',
-          borderRadius: '50%',
-          background: 'radial-gradient(ellipse, rgba(160,82,45,0.09) 0%, transparent 70%)',
+
+        <div className="scanline" />
+
+        {/* Particles */}
+        {[...Array(8)].map((_, i) => (
+          <div key={i} className="particle" style={{
+            width: i % 3 === 0 ? 3 : 2,
+            height: i % 3 === 0 ? 3 : 2,
+            left: `${10 + i * 11}%`,
+            bottom: `${15 + (i * 7) % 40}%`,
+            animationDuration: `${4 + (i * 1.3) % 5}s`,
+            animationDelay: `${(i * 0.7) % 4}s`,
+            opacity: 0.4 + (i * 0.05),
+          }} />
+        ))}
+
+        {/* Glow orbs */}
+        <div className="action-glow-a" style={{
+          position: 'absolute', top: '10%', left: '-20%',
+          width: '60vw', height: '60vw', borderRadius: '50%',
+          background: 'radial-gradient(ellipse, rgba(160,82,45,0.1) 0%, transparent 70%)',
           pointerEvents: 'none',
         }} />
-        <div className="glow-orb" style={{
-          position: 'absolute', bottom: '10%', right: '-15%',
-          width: '45vw', height: '45vw',
-          borderRadius: '50%',
-          background: 'radial-gradient(ellipse, rgba(200,135,58,0.06) 0%, transparent 70%)',
+        <div className="action-glow-b" style={{
+          position: 'absolute', bottom: '5%', right: '-15%',
+          width: '50vw', height: '50vw', borderRadius: '50%',
+          background: 'radial-gradient(ellipse, rgba(200,135,58,0.07) 0%, transparent 70%)',
           pointerEvents: 'none',
-          animationDelay: '2s',
+        }} />
+        <div style={{
+          position: 'absolute', top: '50%', left: '50%',
+          transform: 'translate(-50%,-50%)',
+          width: '80vw', height: '80vw', borderRadius: '50%',
+          background: 'radial-gradient(ellipse, rgba(139,69,19,0.04) 0%, transparent 65%)',
+          pointerEvents: 'none',
         }} />
 
         <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           {/* ── HEADER ── */}
-          <div className="fade-up" style={{ textAlign: 'center', marginBottom: '5rem' }}>
+          <div className="action-fade-up" style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <div style={{
-              display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: '1.25rem',
+              display: 'inline-flex', alignItems: 'center', gap: 12, marginBottom: '1.5rem',
             }}>
-              <div style={{ width: 36, height: 1, background: 'rgba(200,135,58,0.5)' }} />
+              <div style={{ width: 40, height: 1, background: 'linear-gradient(90deg, transparent, rgba(200,135,58,0.6))' }} />
               <span style={{
                 fontFamily: 'sans-serif', fontSize: '0.65rem',
                 letterSpacing: '0.22em', textTransform: 'uppercase',
-                color: '#c8873a', fontWeight: 600, opacity: 0.8,
+                color: '#c8873a', fontWeight: 700, opacity: 0.85,
               }}>
-                Anti-Oppressive Framework
+                How to Move Forward
               </span>
-              <div style={{ width: 36, height: 1, background: 'rgba(200,135,58,0.5)' }} />
+              <div style={{ width: 40, height: 1, background: 'linear-gradient(90deg, rgba(200,135,58,0.6), transparent)' }} />
             </div>
 
             <h2 style={{
@@ -263,378 +467,289 @@ export default function AntiDiscriminatorySection() {
               lineHeight: 1.05,
               marginBottom: '1.25rem',
             }}>
-              Seeing It Clearly
+              What You Can Do
             </h2>
 
             <div style={{
               width: 60, height: 2,
               background: 'linear-gradient(90deg, transparent, #c8873a, transparent)',
               margin: '0 auto 1.5rem',
-            }} />
+            }} className="line-sweep" />
 
             <p style={{
               fontFamily: 'sans-serif', fontSize: '1.05rem',
-              color: 'rgba(245,240,232,0.58)',
-              maxWidth: 540, margin: '0 auto',
-              lineHeight: 1.7,
+              color: 'rgba(245,240,232,0.55)',
+              maxWidth: 560, margin: '0 auto',
+              lineHeight: 1.75,
             }}>
-              An anti-oppressive lens asks us to see systems, not just individuals.
-              To see power, not just problems.
+              Knowledge without action is incomplete. Here is how you can show up — for survivors, for truth, and for lasting reconciliation.
             </p>
           </div>
 
-          {/* ── FLIP CARDS COMPARISON ── */}
-          <div className="fade-up" style={{ marginBottom: '6rem', animationDelay: '0.15s' }}>
-            <div style={{
-              display: 'grid', gridTemplateColumns: '1fr auto 1fr',
-              gap: '0.75rem', alignItems: 'center',
-              marginBottom: '1.25rem',
-            }}>
-              <div style={{
-                fontFamily: 'sans-serif', fontSize: '0.65rem',
-                letterSpacing: '0.2em', textTransform: 'uppercase',
-                color: 'rgba(220,80,60,0.7)', fontWeight: 700,
-                textAlign: 'center',
-              }}>
-                Deficit Thinking
-              </div>
-              <div />
-              <div style={{
-                fontFamily: 'sans-serif', fontSize: '0.65rem',
-                letterSpacing: '0.2em', textTransform: 'uppercase',
-                color: 'rgba(140,180,130,0.8)', fontWeight: 700,
-                textAlign: 'center',
-              }}>
-                Anti-Oppressive Thinking
-              </div>
-            </div>
+          {/* ── FILTER TABS ── */}
+          <div className="action-fade-up" style={{
+            display: 'flex', gap: 8, justifyContent: 'center', flexWrap: 'wrap',
+            marginBottom: '3rem', animationDelay: '0.15s',
+          }}>
+            <button className={`filter-tab ${activeFilter === 'all' ? 'active' : ''}`}
+              onClick={() => setActiveFilter('all')}>All</button>
+            {categories.map(c => (
+              <button key={c.id}
+                className={`filter-tab ${activeFilter === c.id ? 'active' : ''}`}
+                onClick={() => setActiveFilter(c.id)}
+                style={activeFilter === c.id ? { color: c.color, borderColor: c.color } : {}}
+              >
+                {c.label}
+              </button>
+            ))}
+          </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              {comparisons.map((pair, i) => (
+          {/* ── ACTION CARDS ── */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+            gap: '1rem',
+            marginBottom: '5rem',
+          }}>
+            {filtered.map((item, i) => {
+              const Icon = item.icon;
+              const isOpen = openCard === `${item.cat}-${item.title}`;
+              const key = `${item.cat}-${item.title}`;
+
+              return (
                 <div
-                  key={i}
+                  key={key}
+                  className={`action-card ${isOpen ? 'open' : ''}`}
+                  onClick={() => setOpenCard(isOpen ? null : key)}
+                  onMouseEnter={() => setHoveredCard(key)}
+                  onMouseLeave={() => setHoveredCard(null)}
                   style={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr 40px 1fr',
-                    gap: '0.75rem',
-                    alignItems: 'stretch',
-                    animation: `fadeUpIn 0.5s ease ${i * 80}ms both`,
+                    background: isOpen
+                      ? `rgba(26,20,12,0.95)`
+                      : 'rgba(22,16,10,0.7)',
+                    border: `1px solid ${isOpen ? item.borderAccent : 'rgba(200,135,58,0.12)'}`,
+                    boxShadow: isOpen ? `0 0 0 1px ${item.borderAccent}, 0 24px 48px rgba(0,0,0,0.4), inset 0 1px 0 rgba(200,135,58,0.08)` : 'none',
+                    animation: `fadeUpIn 0.6s ease ${i * 90}ms both`,
+                    '--card-accent': item.borderAccent,
                   }}
                 >
-                  {/* Deficit side */}
-                  <div
-                    className="flip-card"
-                    onClick={() => toggleFlip(`d${i}`)}
-                    style={{ minHeight: 72 }}
-                  >
-                    <div className={`flip-inner ${flipped[`d${i}`] ? 'flipped' : ''}`} style={{ minHeight: 72 }}>
-                      <div
-                        className="flip-front"
-                        style={{
-                          background: 'rgba(180,40,30,0.08)',
-                          border: '1px solid rgba(200,60,50,0.25)',
-                          borderRadius: 8,
-                          padding: '0.85rem 1rem',
-                          display: 'flex', alignItems: 'center', gap: 10,
-                          minHeight: 72,
-                        }}
-                      >
-                        <X size={14} color="rgba(220,80,60,0.7)" style={{ flexShrink: 0 }} />
-                        <span style={{
-                          fontFamily: 'sans-serif', fontSize: '0.88rem',
-                          color: 'rgba(245,240,232,0.72)', lineHeight: 1.5,
-                        }}>
-                          {pair.deficit}
-                        </span>
+                  {/* card top accent bar */}
+                  <div style={{
+                    position: 'absolute', top: 0, left: 0, right: 0, height: 2,
+                    background: `linear-gradient(90deg, transparent, ${item.iconColor}, transparent)`,
+                    transform: isOpen ? 'scaleX(1)' : 'scaleX(0)',
+                    transformOrigin: 'left',
+                    transition: 'transform 0.4s ease',
+                    borderRadius: '12px 12px 0 0',
+                  }} />
+
+                  {/* card header */}
+                  <div style={{
+                    display: 'flex', alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '1.4rem 1.5rem',
+                    gap: '1rem',
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                      <div className="icon-wrap" style={{
+                        width: 42, height: 42, borderRadius: 10, flexShrink: 0,
+                        background: isOpen ? item.accent : 'rgba(200,135,58,0.06)',
+                        border: `1px solid ${isOpen ? item.borderAccent : 'rgba(200,135,58,0.12)'}`,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        transition: 'all 0.3s ease',
+                        position: 'relative',
+                      }}>
+                        {/* ripple on hover */}
+                        {hoveredCard === key && !isOpen && (
+                          <div style={{
+                            position: 'absolute', inset: 0,
+                            borderRadius: 10,
+                            border: `1px solid ${item.iconColor}`,
+                            animation: 'ripple 0.9s ease-out forwards',
+                          }} />
+                        )}
+                        <Icon size={18} color={item.iconColor} />
                       </div>
-                      <div
-                        className="flip-back"
-                        style={{
-                          background: 'rgba(180,40,30,0.15)',
-                          border: '1px solid rgba(200,60,50,0.4)',
-                          borderRadius: 8,
-                          padding: '0.85rem 1rem',
-                          display: 'flex', alignItems: 'center',
-                          minHeight: 72,
-                        }}
-                      >
-                        <span style={{
-                          fontFamily: 'Georgia, serif', fontStyle: 'italic',
-                          fontSize: '0.8rem', color: 'rgba(220,100,80,0.9)',
-                          lineHeight: 1.5,
+                      <div>
+                        <h3 style={{
+                          fontFamily: 'Georgia, serif',
+                          fontSize: '1.2rem',
+                          color: isOpen ? '#f5f0e8' : 'rgba(245,240,232,0.75)',
+                          margin: 0, marginBottom: 2,
+                          transition: 'color 0.3s ease',
                         }}>
-                          This framing places blame on individuals while ignoring the conditions that led to it.
-                        </span>
+                          {item.title}
+                        </h3>
+                        <p style={{
+                          fontFamily: 'sans-serif',
+                          fontSize: '0.72rem',
+                          color: 'rgba(245,240,232,0.3)',
+                          margin: 0,
+                          lineHeight: 1.4,
+                          maxWidth: 180,
+                        }}>
+                          {item.tagline}
+                        </p>
                       </div>
                     </div>
+                    <ChevronDown
+                      size={16}
+                      color={isOpen ? '#c8873a' : 'rgba(200,135,58,0.35)'}
+                      style={{
+                        flexShrink: 0,
+                        transition: 'transform 0.35s ease',
+                        transform: isOpen ? 'rotate(180deg)' : 'rotate(0)',
+                      }}
+                    />
                   </div>
 
-                  {/* VS divider */}
-                  <div className="vs-divider">
+                  {/* card body */}
+                  <div
+                    className={`card-body ${isOpen ? 'open' : ''}`}
+                    style={{
+                      maxHeight: isOpen ? 700 : 0,
+                      opacity: isOpen ? 1 : 0,
+                    }}
+                  >
                     <div style={{
-                      width: 28, height: 28, borderRadius: '50%',
-                      background: 'rgba(200,135,58,0.08)',
-                      border: '1px solid rgba(200,135,58,0.2)',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      padding: '0 1.5rem 1.5rem',
+                      borderTop: `1px solid ${item.accent}`,
+                      paddingTop: '1.25rem',
                     }}>
-                      <span style={{
-                        fontFamily: 'sans-serif', fontSize: '0.55rem',
-                        fontWeight: 800, color: 'rgba(200,135,58,0.5)',
-                        letterSpacing: '-0.02em',
-                      }}>VS</span>
+                      {item.resources.map((res, ri) => (
+                        <div key={ri} className="resource-row">
+                          <ArrowRight
+                            size={12}
+                            color={item.iconColor}
+                            style={{ flexShrink: 0, marginTop: 4 }}
+                          />
+                          <div style={{ flex: 1, display: 'flex', alignItems: 'flex-start', gap: 8, flexWrap: 'wrap' }}>
+                            {res.url ? (
+                              <a
+                                href={res.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="resource-link"
+                                onClick={e => e.stopPropagation()}
+                              >
+                                {res.label}
+                                <ExternalLink size={10} style={{ display: 'inline', marginLeft: 4, opacity: 0.5, verticalAlign: 'middle' }} />
+                              </a>
+                            ) : (
+                              <span className="resource-link no-url">{res.label}</span>
+                            )}
+                            {res.tag && (
+                              <span className="res-tag" style={{
+                                background: item.accent,
+                                color: item.iconColor,
+                                border: `1px solid ${item.borderAccent}`,
+                              }}>
+                                {res.tag}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
+                </div>
+              );
+            })}
+          </div>
 
-                  {/* Anti-oppressive side */}
-                  <div
-                    className="flip-card"
-                    onClick={() => toggleFlip(`a${i}`)}
-                    style={{ minHeight: 72 }}
-                  >
-                    <div className={`flip-inner ${flipped[`a${i}`] ? 'flipped' : ''}`} style={{ minHeight: 72 }}>
-                      <div
-                        className="flip-front"
-                        style={{
-                          background: 'rgba(100,150,100,0.08)',
-                          border: '1px solid rgba(120,170,120,0.25)',
-                          borderRadius: 8,
-                          padding: '0.85rem 1rem',
-                          display: 'flex', alignItems: 'center', gap: 10,
-                          minHeight: 72,
-                        }}
-                      >
-                        <Check size={14} color="rgba(140,180,130,0.8)" style={{ flexShrink: 0 }} />
-                        <span style={{
-                          fontFamily: 'sans-serif', fontSize: '0.88rem',
-                          color: 'rgba(245,240,232,0.82)', lineHeight: 1.5,
-                        }}>
-                          {pair.antiOp}
-                        </span>
-                      </div>
-                      <div
-                        className="flip-back"
-                        style={{
-                          background: 'rgba(100,150,100,0.15)',
-                          border: '1px solid rgba(120,170,120,0.4)',
-                          borderRadius: 8,
-                          padding: '0.85rem 1rem',
-                          display: 'flex', alignItems: 'center',
-                          minHeight: 72,
-                        }}
-                      >
-                        <span style={{
-                          fontFamily: 'Georgia, serif', fontStyle: 'italic',
-                          fontSize: '0.8rem', color: 'rgba(140,200,130,0.9)',
-                          lineHeight: 1.5,
-                        }}>
-                          This framing names structural violence, colonial history, and the misuse of state power which finds the problem in systems and not people or groups.
-                        </span>
-                      </div>
-                    </div>
+          {/* ── TRC PROGRESS ── */}
+          <div
+            ref={barsRef}
+            className="action-fade-up"
+            style={{
+              marginBottom: '5rem',
+              background: 'rgba(16,12,8,0.7)',
+              border: '1px solid rgba(200,135,58,0.15)',
+              borderRadius: 14,
+              padding: '2rem 2.5rem',
+              position: 'relative',
+              overflow: 'hidden',
+              animationDelay: '0.3s',
+            }}
+          >
+            {/* top bar shimmer */}
+            <div style={{
+              position: 'absolute', top: 0, left: 0, right: 0, height: 1,
+              background: 'linear-gradient(90deg, transparent, rgba(200,135,58,0.4), transparent)',
+            }} />
+
+            <div style={{
+              fontFamily: 'sans-serif', fontSize: '0.65rem',
+              letterSpacing: '0.22em', textTransform: 'uppercase',
+              color: 'rgba(200,135,58,0.6)', fontWeight: 700,
+              textAlign: 'center', marginBottom: '2rem',
+            }}>
+              TRC Calls to Action 1–5 — Progress as of 2024
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem' }}>
+              {trcItems.map((item, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+                  <div style={{
+                    fontFamily: 'sans-serif', fontSize: '0.78rem',
+                    color: 'rgba(245,240,232,0.45)',
+                    minWidth: 175, flexShrink: 0,
+                    lineHeight: 1.4,
+                  }}>
+                    {item.label}
+                  </div>
+                  <div className="trc-bar" style={{ flex: 1 }}>
+                    <div
+                      className="trc-bar-fill"
+                      style={{
+                        width: barsVisible ? `${item.pct}%` : '0%',
+                        background: item.pct > 45
+                          ? 'linear-gradient(90deg, #8b5a20, #c8873a)'
+                          : 'linear-gradient(90deg, #6b3a14, #a05c28)',
+                        transitionDelay: `${i * 0.15}s`,
+                      }}
+                    />
+                  </div>
+                  <div style={{
+                    fontFamily: 'Georgia, serif',
+                    fontSize: '0.9rem',
+                    color: item.pct > 45 ? '#c8873a' : 'rgba(200,135,58,0.6)',
+                    minWidth: 36,
+                    textAlign: 'right',
+                    fontWeight: 600,
+                  }}>
+                    {item.pct}%
                   </div>
                 </div>
               ))}
             </div>
 
-            <p className="hint-text" style={{ textAlign: 'center', marginTop: '1rem' }}>
-              Click any card to reveal deeper context
-            </p>
-          </div>
-
-          {/* ── FOUR PILLARS ── */}
-          <div ref={pillarsRef} style={{ marginBottom: '5rem' }}>
-            <div style={{
-              textAlign: 'center', marginBottom: '2.5rem',
+            <p style={{
+              fontFamily: 'sans-serif', fontSize: '0.68rem',
+              color: 'rgba(242,232,213,0.2)',
+              textAlign: 'center', marginTop: '1.5rem', lineHeight: 1.5,
             }}>
-              <span style={{
-                fontFamily: 'sans-serif', fontSize: '0.65rem',
-                letterSpacing: '0.22em', textTransform: 'uppercase',
-                color: 'rgba(200,135,58,0.6)', fontWeight: 600,
-              }}>
-                Four Critical Frames
-              </span>
-            </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {pillars.map((pillar, i) => {
-                const isOpen = activePillar === i;
-                return (
-                  <div
-                    key={i}
-                    className={`pillar-card ${isOpen ? 'open' : ''}`}
-                    onClick={() => setActivePillar(isOpen ? null : i)}
-                    style={{
-                      background: isOpen
-                        ? 'rgba(26,22,18,0.9)'
-                        : 'rgba(22,18,14,0.6)',
-                      border: `1px solid ${isOpen ? 'rgba(200,135,58,0.3)' : 'rgba(200,135,58,0.12)'}`,
-                      borderRadius: 12,
-                      overflow: 'hidden',
-                      backdropFilter: 'blur(8px)',
-                      transition: 'all 0.3s ease',
-                      boxShadow: isOpen ? '0 20px 40px rgba(0,0,0,0.3)' : 'none',
-                      animation: `fadeUpIn 0.6s ease ${i * 100}ms both`,
-                    }}
-                  >
-                    {/* Pillar header */}
-                    <div style={{
-                      display: 'flex', alignItems: 'center',
-                      justifyContent: 'space-between',
-                      padding: '1.25rem 1.5rem',
-                      gap: '1rem',
-                    }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                        <div style={{
-                          width: 36, height: 36, flexShrink: 0,
-                          borderRadius: '50%',
-                          background: isOpen
-                            ? 'linear-gradient(135deg, rgba(184,92,42,0.4), rgba(212,150,63,0.2))'
-                            : 'rgba(200,135,58,0.08)',
-                          border: `1px solid ${isOpen ? 'rgba(200,135,58,0.4)' : 'rgba(200,135,58,0.15)'}`,
-                          display: 'flex', alignItems: 'center', justifyContent: 'center',
-                          transition: 'all 0.3s ease',
-                        }}>
-                          <span style={{
-                            fontFamily: 'Georgia, serif',
-                            fontSize: '0.9rem', fontWeight: 700,
-                            color: isOpen ? '#c8873a' : 'rgba(200,135,58,0.5)',
-                            transition: 'color 0.3s ease',
-                          }}>
-                            {i + 1}
-                          </span>
-                        </div>
-                        <h3 style={{
-                          fontFamily: 'Georgia, serif',
-                          fontSize: 'clamp(1.1rem, 2.5vw, 1.6rem)',
-                          color: isOpen ? '#f5f0e8' : 'rgba(245,240,232,0.7)',
-                          margin: 0,
-                          transition: 'color 0.3s ease',
-                        }}>
-                          {pillar.title}
-                        </h3>
-                      </div>
-                      <ChevronDown
-                        size={18}
-                        color={isOpen ? '#c8873a' : 'rgba(200,135,58,0.4)'}
-                        style={{
-                          flexShrink: 0,
-                          transition: 'transform 0.35s ease, color 0.3s ease',
-                          transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                        }}
-                      />
-                    </div>
-
-                    {/* Pillar expanded content */}
-                    <div
-                      className="pillar-body"
-                      style={{
-                        maxHeight: isOpen ? 600 : 0,
-                        opacity: isOpen ? 1 : 0,
-                      }}
-                    >
-                      <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-                        gap: '1.5rem',
-                        padding: '0 1.5rem 1.5rem',
-                        borderTop: '1px solid rgba(200,135,58,0.1)',
-                        paddingTop: '1.5rem',
-                      }}>
-                        {/* Text + stat */}
-                        <div>
-                          <p style={{
-                            fontFamily: 'sans-serif',
-                            fontSize: '0.93rem',
-                            color: 'rgba(245,240,232,0.75)',
-                            lineHeight: 1.8,
-                            marginBottom: '1.5rem',
-                          }}>
-                            {pillar.body}
-                          </p>
-
-                          {/* Inline stat */}
-                          {countersVisible && (
-                            <div style={{
-                              display: 'inline-flex', alignItems: 'center', gap: 12,
-                              padding: '0.6rem 1rem',
-                              background: 'rgba(200,135,58,0.07)',
-                              border: '1px solid rgba(200,135,58,0.2)',
-                              borderRadius: 8,
-                              animation: 'scalePop 0.4s ease both',
-                            }}>
-                              <span style={{
-                                fontFamily: 'Georgia, serif',
-                                fontSize: '1.5rem',
-                                color: '#c8873a',
-                                lineHeight: 1,
-                              }}>
-                                {pillar.stat.value}
-                              </span>
-                              <span style={{
-                                fontFamily: 'sans-serif',
-                                fontSize: '0.72rem',
-                                color: 'rgba(245,240,232,0.5)',
-                                lineHeight: 1.4,
-                                maxWidth: 180,
-                              }}>
-                                {pillar.stat.label}
-                              </span>
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Image */}
-                        <div
-                          className="pillar-img"
-                          style={{
-                            borderRadius: 8,
-                            overflow: 'hidden',
-                            position: 'relative',
-                            maxHeight: 220,
-                            border: '1px solid rgba(200,135,58,0.15)',
-                            boxShadow: '0 16px 40px rgba(0,0,0,0.4)',
-                          }}
-                        >
-                          <img
-                            src={pillar.image}
-                            alt={pillar.imageAlt}
-                            style={{
-                              width: '100%', height: '100%',
-                              objectFit: 'cover', display: 'block',
-                              filter: 'sepia(30%) contrast(1.05) brightness(0.75)',
-                            }}
-                          />
-                          <div style={{
-                            position: 'absolute', inset: 0,
-                            background: 'linear-gradient(135deg, rgba(26,22,18,0.5) 0%, transparent 60%)',
-                          }} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+              Estimates based on advocacy organization reports and RCAANC progress audits. Much work remains.
+            </p>
           </div>
 
           {/* ── CLOSING STATEMENT ── */}
           <div style={{
             position: 'relative',
-            background: 'rgba(16,12,10,0.85)',
+            background: 'rgba(14,10,6,0.9)',
             border: '1px solid rgba(200,135,58,0.2)',
             borderRadius: 16,
             padding: 'clamp(2rem, 5vw, 4rem)',
             textAlign: 'center',
             overflow: 'hidden',
-            backdropFilter: 'blur(12px)',
           }}>
-            {/* Top shimmer line */}
+            {/* shimmer top border */}
             <div style={{
               position: 'absolute', top: 0, left: 0, right: 0, height: 2,
               background: 'linear-gradient(90deg, transparent, #c8873a, #d4963f, #c8873a, transparent)',
             }} />
 
-            {/* Faint background text */}
+            {/* faint background text */}
             <div style={{
               position: 'absolute', inset: 0,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -642,13 +757,12 @@ export default function AntiDiscriminatorySection() {
             }}>
               <span style={{
                 fontFamily: 'Georgia, serif',
-                fontSize: 'clamp(5rem, 12vw, 12rem)',
-                color: 'rgba(200,135,58,0.03)',
-                fontWeight: 700,
-                whiteSpace: 'nowrap',
-                userSelect: 'none',
+                fontSize: 'clamp(4rem, 11vw, 11rem)',
+                color: 'rgba(200,135,58,0.025)',
+                fontWeight: 700, whiteSpace: 'nowrap', userSelect: 'none',
+                letterSpacing: '-0.02em',
               }}>
-                COLONIALISM
+                RECONCILIATION
               </span>
             </div>
 
@@ -659,60 +773,61 @@ export default function AntiDiscriminatorySection() {
                 margin: '0 auto 2rem',
               }} />
 
-              <p
-                className="quote-shimmer"
-                style={{
-                  fontFamily: 'Georgia, serif',
-                  fontSize: 'clamp(1.3rem, 3vw, 2rem)',
-                  lineHeight: 1.55,
-                  maxWidth: 780,
-                  margin: '0 auto 2rem',
-                  fontStyle: 'italic',
-                }}
-              >
-                "To see this clearly is to understand that the Sixties Scoop was not child welfare. It was colonialism by another name."
+              <p className="quote-shimmer" style={{
+                fontFamily: 'Georgia, serif',
+                fontSize: 'clamp(1.3rem, 2.8vw, 2rem)',
+                lineHeight: 1.6,
+                maxWidth: 780, margin: '0 auto 1.5rem',
+                fontStyle: 'italic',
+              }}>
+                "This is not someone else's history. This is our present. And we all have a responsibility to do better."
               </p>
 
-              {/* Two supporting lines */}
+              <p style={{
+                fontFamily: 'sans-serif', fontSize: '0.9rem',
+                color: 'rgba(245,240,232,0.45)',
+                maxWidth: 560, margin: '0 auto 2.5rem',
+                lineHeight: 1.75,
+              }}>
+                Reconciliation is not a moment — it is a daily practice. The Sixties Scoop did not end in the past. Its effects are alive in families and communities right now.
+              </p>
+
+              {/* Timeline strip */}
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
                 gap: '1px',
-                background: 'rgba(200,135,58,0.1)',
-                borderRadius: 8,
+                background: 'rgba(200,135,58,0.08)',
+                borderRadius: 10,
                 overflow: 'hidden',
-                marginTop: '2.5rem',
-                border: '1px solid rgba(200,135,58,0.15)',
+                border: '1px solid rgba(200,135,58,0.12)',
               }}>
                 {[
+                  { label: 'Indian Act', note: '1876 — the legal foundation of removal' },
                   { label: 'Residential Schools', note: '1876 – 1996' },
                   { label: 'Sixties Scoop', note: '1951 – 1984' },
                   { label: 'Overrepresentation Today', note: 'The same logic, ongoing' },
                 ].map((item, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      padding: '1rem 1.25rem',
-                      background: 'rgba(26,22,18,0.7)',
-                      textAlign: 'center',
-                      transition: 'background 0.2s ease',
-                    }}
-                    onMouseEnter={e => { e.currentTarget.style.background = 'rgba(200,135,58,0.08)'; }}
-                    onMouseLeave={e => { e.currentTarget.style.background = 'rgba(26,22,18,0.7)'; }}
+                  <div key={i} style={{
+                    padding: '1.1rem 1.25rem',
+                    background: 'rgba(24,18,10,0.75)',
+                    textAlign: 'center',
+                    transition: 'background 0.2s ease',
+                    cursor: 'default',
+                  }}
+                    onMouseEnter={e => { e.currentTarget.style.background = 'rgba(200,135,58,0.07)'; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = 'rgba(24,18,10,0.75)'; }}
                   >
                     <div style={{
-                      fontFamily: 'Georgia, serif',
-                      fontSize: '0.95rem',
-                      color: '#f5f0e8',
-                      marginBottom: '0.2rem',
+                      fontFamily: 'Georgia, serif', fontSize: '0.95rem',
+                      color: '#f5f0e8', marginBottom: '0.3rem',
                     }}>
                       {item.label}
                     </div>
                     <div style={{
-                      fontFamily: 'sans-serif',
-                      fontSize: '0.72rem',
-                      color: 'rgba(200,135,58,0.6)',
-                      letterSpacing: '0.05em',
+                      fontFamily: 'sans-serif', fontSize: '0.68rem',
+                      color: 'rgba(200,135,58,0.55)', letterSpacing: '0.04em',
+                      lineHeight: 1.4,
                     }}>
                       {item.note}
                     </div>
