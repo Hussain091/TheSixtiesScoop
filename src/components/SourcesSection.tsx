@@ -114,7 +114,7 @@ const sources = [
     title: 'Truth and Reconciliation Commission of Canada: Calls to Action.',
     publication: 'Truth and Reconciliation Commission of Canada',
     date: '2015',
-    url: null,
+    url: 'https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/indigenous-people/aboriginal-peoples-documents/calls_to_action_english2.pdf',
     type: 'book',
   },
   {
