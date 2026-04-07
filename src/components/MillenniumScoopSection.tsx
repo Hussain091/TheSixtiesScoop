@@ -368,14 +368,14 @@ export default function MillenniumScoopSection() {
                       color: 'rgba(245,240,232,0.78)',
                       lineHeight: 1.85, margin: '0 0 1rem',
                     }}>
-                      The Millennium Scoop is the name people started using to describe what happened after the Sixties Scoop "officially" ended. The government said the policy of sixties scoop was over once you dig deeper the removals were not.
+                      After the Sixties Scoop officially ended, child welfare systems kept pulling Indigenous children from their families. This then earned a new term the Millennium Scoop. 
                     </p>
                     <p style={{
                       fontFamily: 'sans-serif', fontSize: '0.93rem',
                       color: 'rgba(245,240,232,0.78)',
                       lineHeight: 1.85, margin: 0,
                     }}>
-                      Through the 1990s, 2000s, and 2010s, Indigenous children kept being taken from their families at rates that were not just high, but were getting worse. The name "Millennium Scoop" came from the fact that this was not ancient history. It is happening right now.
+                      All throughout the 1990s, 2000s, and 2010s, Indigenous children were kept being taken from their families at high rates. The name "Millennium Scoop" came from the fact that this was not ancient history. It is happening right now.
                     </p>
                   </div>
                   <div>
@@ -384,14 +384,14 @@ export default function MillenniumScoopSection() {
                       color: 'rgba(245,240,232,0.78)',
                       lineHeight: 1.85, margin: '0 0 1rem',
                     }}>
-                      The laws that made the Sixties Scoop possible were never properly cleaned up. Social workers still have power to remove children based on things like poverty, unstable housing, or what they personally judged as neglect. But those conditions did not appear out of nowhere. They were created by generations of colonial policy.
+                      The laws that made the Sixties Scoop possible were never fully ended. Social workers still have power to remove children based on things like poverty, unstable housing, or what they personally thought of as neglect. These conditions did not appear out of nowhere. They were created by generations of colonial policy.
                     </p>
                     <p style={{
                       fontFamily: 'sans-serif', fontSize: '0.93rem',
                       color: 'rgba(245,240,232,0.78)',
                       lineHeight: 1.85, margin: 0,
                     }}>
-                      In short: the system blamed Indigenous families for problems the system itself created. Then it used those problems to take their kids. All over again.
+                      To summarize, the system blamed Indigenous families for problems that the system itself created. Then they used those problems to take their kids. All over again.
                     </p>
                   </div>
                 </div>
@@ -847,10 +847,10 @@ export default function MillenniumScoopSection() {
                     color: 'rgba(245,240,232,0.75)',
                     lineHeight: 1.8, margin: '0 0 0.85rem',
                   }}>
-                    Birth alerts meant that when an Indigenous woman went to the hospital to deliver their baby,
-                    the hospital would call child protective services. Before she even got home,
-                    her newborn could be taken. She did not have to do anything wrong. Just being Indigenous
-                    was enough reason.
+                    Birth alerts meant that whenever an Indigenous woman arrived at the hospital to give birth,
+                    the hospital would contact child welfare services. Even before she reached home,
+                    her baby could be removed from her. She did not have to do anything illegal.
+                    It was simply enough to be Indigenous.
                   </p>
 
                   <p style={{
@@ -858,9 +858,9 @@ export default function MillenniumScoopSection() {
                     color: 'rgba(245,240,232,0.75)',
                     lineHeight: 1.8, margin: '0 0 0.85rem',
                   }}>
-                    This was legal in most provinces until very recently. B.C. banned birth alerts
+                    This was legal in most provinces until recently when people started to realize how wrong this process was. B.C. banned birth alerts
                     in 2019. Alberta in 2021. Some provinces only stopped because people fought hard
-                    to end it. The scooping of newborns never actually stopped but just moved.
+                    to end it.
                   </p>
 
                   <div style={{
