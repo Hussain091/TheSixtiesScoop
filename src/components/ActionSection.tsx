@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import {
   BookOpen, Volume2, DollarSign, MessageCircle,
-  ExternalLink, ChevronDown, ArrowRight, Globe,
+  ExternalLink, ChevronDown, ArrowRight, Globe, XCircle,
 } from 'lucide-react';
  
 /* ─────────────── DATA ─────────────── */
@@ -19,6 +19,7 @@ const actions = [
     icon: BookOpen,
     title: 'Learn',
     tagline: 'Start with Indigenous-led sources. Accurate history is the foundation of solidarity.',
+    impact: 'When you choose Indigenous-led news and education over mainstream narratives, you actively shift where information power sits. APTN, CBC Indigenous, and Windspeaker are funded partly through audience engagement — every click, share, and subscription tells platforms and advertisers that Indigenous journalism has an audience worth investing in. More importantly, learning accurate history makes you harder to mislead. You become someone who can correct harmful narratives in conversations, in classrooms, and in workplaces — which is where most of the damage of colonial myths actually happens.',
     resources: [
       { label: 'APTN News — Canada\'s national Indigenous broadcaster', url: 'https://aptnnews.ca', tag: 'TV & Online' },
       { label: 'CBC Indigenous — dedicated Indigenous news desk', url: 'https://www.cbc.ca/news/indigenous', tag: 'News' },
@@ -35,6 +36,7 @@ const actions = [
     icon: Volume2,
     title: 'Amplify',
     tagline: 'What you platform matters. Algorithms reward what you engage with consistently.',
+    impact: 'Social media algorithms are built on engagement. When you consistently like, comment, share, and save posts from Indigenous creators and organizations, you signal to the algorithm that this content has an audience — so it gets shown to more people who do not already follow those accounts. This is how issues move from activist circles into mainstream conversation. The 60s Scoop Network reaching a non-Indigenous teenager who had never heard of the Scoop — because someone in their network shared a post — is exactly how awareness becomes pressure for policy change. Amplification is not passive. It is a distribution decision with real consequences.',
     resources: [
       { label: '@sixtiesscoopnetwork on Instagram — follow and share', url: 'https://www.instagram.com/sixtiesscoopnetwork', tag: 'Instagram' },
       { label: '@aptnnews — ongoing Indigenous news coverage', url: 'https://www.instagram.com/aptnnews', tag: 'Instagram' },
@@ -51,6 +53,7 @@ const actions = [
     icon: DollarSign,
     title: 'Donate',
     tagline: 'Direct financial support to survivor-led organizations makes a measurable difference.',
+    impact: 'The National Sixties Scoop Healing Foundation is fully independent of the federal government — that independence only exists because of private and community funding. When you donate, you are not giving money to a government program that may change with the next election. You are sustaining an organization run by survivors, for survivors, that cannot be shut down by a policy reversal. At a practical level, funding supports cultural reconnection programs, family reunification efforts, language reclamation workshops, and mental health services that are built around Indigenous healing practices — not the colonial models that caused the harm in the first place. Even small recurring donations give organizations the financial stability to plan long-term programs rather than chasing one-time grants.',
     resources: [
       { label: 'National Sixties Scoop Healing Foundation — survivor-led, registered charity', url: 'https://www.sixtiesscoophealingfoundation.ca', tag: 'Charity' },
       { label: 'Sixties Scoop Network — grassroots survivor-founded advocacy', url: 'https://sixtiesscoopnetwork.org', tag: null },
@@ -66,6 +69,7 @@ const actions = [
     icon: MessageCircle,
     title: 'Advocate',
     tagline: 'Political pressure matters. Demand accountability on Indigenous child welfare.',
+    impact: 'Politicians respond to constituent contact. When an MP receives emails, letters, or calls from people in their riding demanding full implementation of TRC Calls to Action 1 through 5, it changes their political calculus — especially in ridings where elections are close. Bill C-92 gave Indigenous communities legal authority over their own child welfare, but implementation requires ongoing funding and political will that does not appear without pressure. Demanding the end of birth alerts — which flagged Indigenous mothers before their babies were even born — is not symbolic. Several provinces only banned the practice in the last few years, directly because of sustained public advocacy. You are not sending a message into the void. You are part of the accumulated political pressure that moves governments.',
     resources: [
       { label: 'Contact your MP — demand full implementation of TRC Calls to Action 1–5', url: 'https://www.ourcommons.ca/Members/en', tag: null },
       { label: 'TRC Calls to Action 1–5 — read them yourself', url: 'https://www.rcaanc-cirnac.gc.ca/eng/1524494530110/1557511412801', tag: null },
@@ -82,6 +86,7 @@ const actions = [
     icon: Globe,
     title: 'Listen & Watch',
     tagline: 'Centre Indigenous voices in the media you consume every day.',
+    impact: 'The media you consume shapes what you understand as normal, whose pain you empathize with, and whose stories you believe. Most Canadians receive almost no Indigenous-created media in their daily lives — which means their picture of Indigenous Peoples is assembled almost entirely from non-Indigenous sources, which are often incomplete, deficit-focused, or outright inaccurate. Choosing to watch Little Bird, listen to Unreserved, or read These Are the Stories changes that picture. It also sends streaming and broadcasting data that influences what platforms commission next. When Indigenous-created content performs well, platforms fund more of it — directly expanding the space for Indigenous storytelling.',
     resources: [
       { label: 'Unreserved — CBC Radio One, hosted by Falen Johnson', url: 'https://www.cbc.ca/radio/unreserved', tag: 'Podcast' },
       { label: 'Missing & Murdered — CBC podcast by Connie Walker on MMIWG', url: 'https://www.cbc.ca/listen/cbc-podcasts/203-missing-and-murdered', tag: 'Podcast' },
@@ -97,6 +102,7 @@ const actions = [
     icon: ArrowRight,
     title: 'In Your Community',
     tagline: 'Reconciliation happens locally. These actions take under 10 minutes.',
+    impact: 'Most of the conditions that make the Sixties Scoop — and its continuation today — possible are maintained at the local level: in school boards that do not teach this history, in workplaces that do not have Indigenous inclusion policies, in communities where Indigenous businesses go unsupported. Acknowledging the territory you are on is not just symbolic — it is a public statement that this land has a history and that you recognize it, which opens conversations that would otherwise never happen. Supporting Indigenous-owned businesses keeps money circulating in Indigenous communities, which builds the economic base that gives communities resources to resist government overreach. Every local action is a brick in a larger structure.',
     resources: [
       { label: 'Acknowledge the territory you\'re on — find yours at native-land.ca', url: 'https://native-land.ca', tag: null },
       { label: 'Bring Sixties Scoop education to your school or workplace', url: null, tag: null },
@@ -116,6 +122,33 @@ const trcItems = [
   { label: 'Bill C-92 full implementation', pct: 55 },
 ];
  
+const doNots = [
+  {
+    title: 'Do not perform allyship only on September 30',
+    body: 'Orange Shirt Day is one day. The Sixties Scoop happened every day for over 30 years and its effects continue every day now. Wearing an orange shirt once a year and then going silent is not reconciliation — it is optics. Sustained, consistent engagement is the only thing that actually produces change.',
+  },
+  {
+    title: 'Do not speak over survivors',
+    body: 'If you are sharing information about the Sixties Scoop, the source should be a survivor or an Indigenous-led organization — not your own summary of what you think happened. Amplify existing Indigenous voices rather than positioning yourself as the educator. There is a difference between sharing Christine Smith\'s words and paraphrasing them as your own.',
+  },
+  {
+    title: 'Do not treat this as someone else\'s problem',
+    body: 'The Sixties Scoop was funded by Canadian tax dollars. It was carried out by Canadian government agencies and social workers. The systems that continue to overrepresent Indigenous children in care today are maintained by Canadian law and Canadian funding decisions. Every Canadian is a stakeholder in whether this changes.',
+  },
+  {
+    title: 'Do not demand that survivors educate you',
+    body: 'It is not the responsibility of Sixties Scoop survivors to explain their trauma to you so you can feel informed. The resources to learn from exist — this website, the 60s Scoop Network, APTN, the Canadian Encyclopedia. Use them. Do not approach survivors or Indigenous people in your life expecting them to perform their pain for your education.',
+  },
+  {
+    title: 'Do not conflate acknowledgement with action',
+    body: 'Land acknowledgements, apologies, and social media posts have value when they are part of a larger pattern of action. When they are the only action, they become a way of feeling good about inaction. The TRC\'s first five Calls to Action on child welfare have made minimal progress since 2015. Acknowledgement without follow-through is a closed loop that changes nothing.',
+  },
+  {
+    title: 'Do not donate to non-Indigenous organizations speaking for Indigenous communities',
+    body: 'When donating, prioritize organizations that are Indigenous-led and survivor-governed — like the National Sixties Scoop Healing Foundation. Non-Indigenous organizations that claim to advocate for Indigenous communities without meaningful Indigenous leadership often redirect funding, misrepresent priorities, and undermine the self-determination that Indigenous communities are actively building.',
+  },
+];
+ 
 /* ─────────────── COMPONENT ─────────────── */
 export default function ActionSection() {
   const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.1 });
@@ -124,7 +157,6 @@ export default function ActionSection() {
   const [barsVisible, setBarsVisible] = useState(false);
   const [hoveredCard, setHoveredCard] = useState(null);
   const barsRef = useRef(null);
-  const particlesRef = useRef(null);
  
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -189,7 +221,7 @@ export default function ActionSection() {
         }
         @keyframes expandDown {
           from { max-height: 0; opacity: 0; transform: translateY(-8px); }
-          to   { max-height: 700px; opacity: 1; transform: translateY(0); }
+          to   { max-height: 1200px; opacity: 1; transform: translateY(0); }
         }
         @keyframes particleDrift {
           0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0.6; }
@@ -383,6 +415,70 @@ export default function ActionSection() {
         .line-sweep {
           animation: lineSweep 0.8s cubic-bezier(0.16,1,0.3,1) both;
         }
+ 
+        .impact-box {
+          background: rgba(200,135,58,0.05);
+          border: 1px solid rgba(200,135,58,0.12);
+          border-left: 2px solid rgba(200,135,58,0.45);
+          border-radius: 6px;
+          padding: 12px 14px;
+          margin-bottom: 14px;
+        }
+        .impact-label {
+          font-family: sans-serif;
+          font-size: 0.6rem;
+          font-weight: 700;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: rgba(200,135,58,0.6);
+          margin-bottom: 6px;
+        }
+        .impact-text {
+          font-family: sans-serif;
+          font-size: 0.82rem;
+          color: rgba(245,240,232,0.5);
+          line-height: 1.7;
+        }
+ 
+        .donot-card {
+          background: rgba(16,10,6,0.75);
+          border: 1px solid rgba(200,80,60,0.15);
+          border-radius: 10px;
+          padding: 1.25rem 1.4rem;
+          transition: all 0.25s ease;
+          position: relative;
+          overflow: hidden;
+        }
+        .donot-card::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0;
+          width: 2px; height: 100%;
+          background: linear-gradient(to bottom, transparent, rgba(200,80,60,0.5), transparent);
+          opacity: 0;
+          transition: opacity 0.25s ease;
+        }
+        .donot-card:hover {
+          border-color: rgba(200,80,60,0.3);
+          background: rgba(22,12,8,0.85);
+        }
+        .donot-card:hover::before { opacity: 1; }
+        .donot-title {
+          font-family: Georgia, serif;
+          font-size: 0.95rem;
+          color: rgba(245,240,232,0.82);
+          margin-bottom: 7px;
+          display: flex;
+          align-items: flex-start;
+          gap: 9px;
+        }
+        .donot-body {
+          font-family: sans-serif;
+          font-size: 0.8rem;
+          color: rgba(245,240,232,0.38);
+          line-height: 1.72;
+          padding-left: 26px;
+        }
       `}</style>
  
       <section
@@ -530,7 +626,6 @@ export default function ActionSection() {
                     border: `1px solid ${isOpen ? item.borderAccent : 'rgba(200,135,58,0.12)'}`,
                     boxShadow: isOpen ? `0 0 0 1px ${item.borderAccent}, 0 24px 48px rgba(0,0,0,0.4), inset 0 1px 0 rgba(200,135,58,0.08)` : 'none',
                     animation: `fadeUpIn 0.6s ease ${i * 90}ms both`,
-                    '--card-accent': item.borderAccent,
                   }}
                 >
                   {/* card top accent bar */}
@@ -559,7 +654,6 @@ export default function ActionSection() {
                         transition: 'all 0.3s ease',
                         position: 'relative',
                       }}>
-                        {/* ripple on hover */}
                         {hoveredCard === key && !isOpen && (
                           <div style={{
                             position: 'absolute', inset: 0,
@@ -607,7 +701,7 @@ export default function ActionSection() {
                   <div
                     className={`card-body ${isOpen ? 'open' : ''}`}
                     style={{
-                      maxHeight: isOpen ? 700 : 0,
+                      maxHeight: isOpen ? 1200 : 0,
                       opacity: isOpen ? 1 : 0,
                     }}
                   >
@@ -616,6 +710,21 @@ export default function ActionSection() {
                       borderTop: `1px solid ${item.accent}`,
                       paddingTop: '1.25rem',
                     }}>
+                      {/* ── IMPACT EXPLANATION ── */}
+                      <div className="impact-box">
+                        <div className="impact-label">Why This Actually Matters</div>
+                        <p className="impact-text">{item.impact}</p>
+                      </div>
+ 
+                      {/* ── RESOURCES ── */}
+                      <div style={{
+                        fontFamily: 'sans-serif', fontSize: '0.6rem',
+                        fontWeight: 700, letterSpacing: '0.16em',
+                        textTransform: 'uppercase',
+                        color: 'rgba(200,135,58,0.4)',
+                        marginBottom: 8,
+                      }}>Resources</div>
+ 
                       {item.resources.map((res, ri) => (
                         <div key={ri} className="resource-row">
                           <ArrowRight
@@ -672,7 +781,6 @@ export default function ActionSection() {
               animationDelay: '0.3s',
             }}
           >
-            {/* top bar shimmer */}
             <div style={{
               position: 'absolute', top: 0, left: 0, right: 0, height: 1,
               background: 'linear-gradient(90deg, transparent, rgba(200,135,58,0.4), transparent)',
@@ -733,6 +841,72 @@ export default function ActionSection() {
             </p>
           </div>
  
+          {/* ══ WHAT NOT TO DO ══ */}
+          <div className="action-fade-up" style={{
+            marginBottom: '5rem',
+            animationDelay: '0.2s',
+          }}>
+            <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+              <div style={{
+                display: 'inline-flex', alignItems: 'center', gap: 12, marginBottom: '1.2rem',
+              }}>
+                <div style={{ width: 32, height: 1, background: 'linear-gradient(90deg, transparent, rgba(200,80,60,0.5))' }} />
+                <span style={{
+                  fontFamily: 'sans-serif', fontSize: '0.65rem',
+                  letterSpacing: '0.22em', textTransform: 'uppercase',
+                  color: 'rgba(200,80,60,0.7)', fontWeight: 700,
+                }}>
+                  Common Pitfalls
+                </span>
+                <div style={{ width: 32, height: 1, background: 'linear-gradient(90deg, rgba(200,80,60,0.5), transparent)' }} />
+              </div>
+ 
+              <h2 style={{
+                fontFamily: 'Georgia, serif',
+                fontSize: 'clamp(2rem, 4.5vw, 3.5rem)',
+                color: '#f5f0e8',
+                letterSpacing: '-0.02em',
+                lineHeight: 1.08,
+                marginBottom: '1rem',
+              }}>
+                What Not to Do
+              </h2>
+ 
+              <p style={{
+                fontFamily: 'sans-serif', fontSize: '0.95rem',
+                color: 'rgba(245,240,232,0.4)',
+                maxWidth: 520, margin: '0 auto',
+                lineHeight: 1.75,
+              }}>
+                Good intentions are not enough on their own. These are the patterns that feel like allyship but end up causing harm or simply changing nothing.
+              </p>
+            </div>
+ 
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(310px, 1fr))',
+              gap: '0.75rem',
+            }}>
+              {doNots.map((item, i) => (
+                <div
+                  key={i}
+                  className="donot-card"
+                  style={{ animationDelay: `${i * 80}ms` }}
+                >
+                  <div className="donot-title">
+                    <XCircle
+                      size={15}
+                      color="rgba(200,80,60,0.65)"
+                      style={{ flexShrink: 0, marginTop: 2 }}
+                    />
+                    {item.title}
+                  </div>
+                  <p className="donot-body">{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+ 
           {/* ── CLOSING STATEMENT ── */}
           <div style={{
             position: 'relative',
@@ -743,13 +917,11 @@ export default function ActionSection() {
             textAlign: 'center',
             overflow: 'hidden',
           }}>
-            {/* shimmer top border */}
             <div style={{
               position: 'absolute', top: 0, left: 0, right: 0, height: 2,
               background: 'linear-gradient(90deg, transparent, #c8873a, #d4963f, #c8873a, transparent)',
             }} />
  
-            {/* faint background text */}
             <div style={{
               position: 'absolute', inset: 0,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -792,7 +964,6 @@ export default function ActionSection() {
                 Reconciliation is not a moment — it is a daily practice. The Sixties Scoop did not end in the past. Its effects are alive in families and communities right now.
               </p>
  
-              {/* Timeline strip */}
               <div style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
