@@ -249,7 +249,7 @@ export default function ImpactSection() {
               lineHeight: 1.05,
               marginBottom: '1.25rem',
             }}>
-              What Was Taken
+              What Was Taken (Barriers)
             </h2>
 
             <div style={{
