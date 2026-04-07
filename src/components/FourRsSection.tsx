@@ -55,15 +55,15 @@ const fourRs = [
       },
       {
         title: 'Teaching the Next Generation',
-        text: 'Rolanda Murphy McPhee is now a teacher and army reservist who shares her story with young people. She turned her pain into a method of teaching — ensuring the next generation knows what happened.',
+        text: 'Rolanda Murphy McPhee is now a teacher and army reservist who shares her story with young people. She turned her pain into a method of teaching making sure the next generation knows what happened.',
       },
       {
         title: 'Reframing the Narrative',
-        text: 'David Mortimer writes: "I survived Canada\'s child welfare system and its failed Sixties Scoop policy" — framing survival as strength, not victimhood.',
-      },
+        text: 'David Mortimer writes: "I survived Canada\'s child welfare system and its failed Sixties Scoop policy" this frames survival as strength, not victimhood.',
+      
       {
         title: 'Cultural Reconnection as Healing',
-        text: 'Many survivors describe reconnection with culture as literally life-saving. Resilience is not just enduring trauma — it is choosing to live fully despite it, and working to overcome it.',
+        text: 'Many survivors describe reconnection with culture as literally life-saving. Resilience is not just enduring trauma but it is choosing to live fully despite it, and working to overcome it.',
       },
     ],
   },
@@ -83,11 +83,11 @@ const fourRs = [
     content: [
       {
         title: 'Coming Home',
-        text: 'Survivors returning back to their communities, learning languages, reconnecting with Elders and ceremonies — reclaiming everything that was stolen.',
+        text: 'Survivors returning back to their communities, learning languages, reconnecting with Elders and ceremonies basically reclaiming everything that was stolen.',
       },
       {
         title: 'Bill C-92',
-        text: 'The 2019 Act Respecting First Nations, Inuit, and Métis Children, Youth, and Families gives Indigenous communities legal control over their own child welfare for the first time — a direct reclamation of sovereignty.',
+        text: 'The 2019 Act Respecting First Nations, Inuit, and Métis Children, Youth, and Families gives Indigenous communities legal control over their own child welfare for the first time.',
       },
       {
         title: 'Reclaiming Names and Status',
@@ -95,11 +95,11 @@ const fourRs = [
       },
       {
         title: 'Survivor-Led Healing',
-        text: 'The National Sixties Scoop Healing Foundation supports cultural reclamation and family reunion — building structures that serve the community on the community\'s own terms.',
+        text: 'The National Sixties Scoop Healing Foundation supports cultural reclamation and family reunion, building structures that serve the community on the community\'s own terms.',
       },
       {
         title: 'Mapping the Diaspora',
-        text: 'The "In Our Own Words: Mapping the Sixties Scoop Diaspora" project by the 60s Scoop Network lets survivors map their displacement and reclaim their own story — helping visualize 22,500+ children\'s journeys.',
+        text: 'The "In Our Own Words: Mapping the Sixties Scoop Diaspora" project by the 60s Scoop Network lets survivors map their displacement and reclaim their own story. This helps visualize 22,500+ children\'s journeys.',
       },
     ],
   },
@@ -119,23 +119,23 @@ const fourRs = [
     content: [
       {
         title: 'Land-Based Healing',
-        text: 'Indigenous-led healing programs like "Healing on the Land with Horses" in Saskatchewan connect survivors to land and culture. Healing happens in relationship to the land.',
+        text: 'Indigenous led healing programs like "Healing on the Land with Horses" in Saskatchewan connect survivors to land and culture. Healing happens in relationship to the land.',
       },
       {
         title: 'Telling Our Own Stories',
-        text: 'Jennifer Podemski (Anishnabe/Ashkenazi), award-winning showrunner, created the TV series Little Bird about a Sixties Scoop survivor — telling the story from an Indigenous perspective to a national audience.',
+        text: 'Jennifer Podemski (Anishnabe/Ashkenazi), award-winning showrunner, created the TV series Little Bird about a Sixties Scoop survivor. The show told the story from an Indigenous perspective to a national audience.',
       },
       {
         title: 'Survivor-Led Institutions',
-        text: 'The Sixties Scoop Healing Foundation (2020) is survivor-led, Inuit/First Nations/Métis/status/non-status inclusive, and fully independent — building institutions that serve the community.',
+        text: 'The Sixties Scoop Healing Foundation (2020) is survivor-led, Inuit/First Nations/Métis/status/non-status inclusive, and fully independent building institutions that serve the community.',
       },
       {
         title: 'Anthology as Resistance',
-        text: 'Survivors like Christine Smith editing anthologies like Silence to Strength (2022) so that the community can tell its own story — knowledge production from the Indigenous perspective.',
+        text: 'Survivors like Christine Smith editing anthologies like Silence to Strength (2022) so that the community can tell its own story.',
       },
       {
         title: 'Language Revitalization',
-        text: 'Language revitalization programs — Rolanda learning Ojibway, schools teaching Indigenous languages, survivors reconnecting with oral traditions. Resurgence is not going back; it is carrying forward and regaining what was lost.',
+        text: 'Language revitalization programs like Rolanda learning Ojibway, schools teaching Indigenous languages, survivors reconnecting with oral traditions. Resurgence is not going back but it is carrying forward and regaining what was lost.',
       },
     ],
   },
