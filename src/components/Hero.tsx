@@ -264,10 +264,10 @@ export default function Hero() {
                   margin: '0 auto 1.5rem',
                 }}
               >
-                The Sixties Scoop and the Children Canada Took 
-                <br>
-                By: Hussain Khokhawala 
-              </p>
+              
+        The Sixties Scoop and the Children Canada Took <br />
+        By: Hussain Khokhawala
+        </p>
 
               {/* Description */}
               <p
