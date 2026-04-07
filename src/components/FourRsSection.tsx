@@ -10,7 +10,7 @@ const fourRs = [
     image: {
       src: 'https://afgj.org/wp-content/uploads/2022/11/SIERRA-AP_17069643612157-WB.jpeg',
       alt: 'Raised fist — symbol of resistance and community solidarity',
-      caption: 'Standing together — the power of collective resistance',
+      caption: 'Standing together',
     },
     definition: {
       short: 'It means to protect what is sacred.',
@@ -19,7 +19,7 @@ const fourRs = [
     content: [
       {
         title: 'Community Blockades',
-        text: 'In 1990 the Wabaseemoong community physically blocked the Children\'s Aid Society from entering their reserve and prevented the removal of more children. This was a direct action to protect their children.',
+        text: 'In 1990 the Wabaseemoong community physically blocked the Children\'s Aid Society from entering their reserve and prevented the removal of more children. This was a direct action to protect their children showing resistance agaisnt the scoop.',
       },
       {
         title: 'Legal Action',
@@ -27,7 +27,7 @@ const fourRs = [
       },
       {
         title: 'Survivor Networks',
-        text: 'The 60s Scoop Network was founded by survivors to demand justice, recognition, and compensation. Colleen Hele Cardinal, Director stated: "The trafficking of Indigenous children through the child welfare policies known as the 60s Scoop caused tremendous harm, yet Canada has swept us under the rug without acknowledgement or apology."',
+        text: 'The 60s Scoop Network was founded by survivors to demand justice, recognition, and compensation. Colleen Hele Cardinalstated: "The trafficking of Indigenous children through the child welfare policies known as the 60s Scoop caused tremendous harm, yet Canada has swept us under the rug without acknowledgement or apology."',
       },
       {
         title: 'Justice Won',
