@@ -46,22 +46,22 @@ const testimonies = [
     },
   },
   {
-    name: 'David Mortimer',
+    name: 'Katherine Strongwind',
     nation: 'Winnipeg',
     year: '2026',
-    initials: 'DM',
-    tags: ['Hidden Truth', 'DNA', 'Reconciliation'],
+    initials: 'KS',
+    tags: ['Hidden Truth', 'Adoption', 'Family Search'],
     story:
-      'Did not know he was adopted or that he was a Sixties Scoop survivor until his sister made a DNA connection through his son. He was taken in 1969. His birth mother Linda had searched for him for over 50 years, having been told he died at birth. He writes: "Everything I had believed to be true in my life was now in question — my name, my family, my heritage. Processing this information was amongst the hardest things I have ever endured." He says reconciliation "is hard and it is personal. It requires vulnerability to accept truths that are difficult to understand and even harder to process."',
+      '"I always knew I was adopted, I always knew I was Indigenous, but I didn’t know what my connection to the community was" "“It was difficult to navigate that connection to community and try to reunify with siblings without some kind of intervention”',
     timeline: [
-      { phase: 'Taken', label: 'Removed in 1969, mother told he died' },
-      { phase: 'Hidden', label: 'Lived unaware of adoption for decades' },
-      { phase: 'Discovered', label: 'DNA test revealed truth through his son' },
-      { phase: 'Processing', label: 'Rebuilding identity, engaging reconciliation' },
+      { phase: 'Taken', label: 'Removed as a child and placed into adoption through the Sixties Scoop' },
+      { phase: 'Hidden', label: 'Grew up knowing she was adopted but without full knowledge of her biological family or connection' },
+      { phase: 'Discovered', label: 'Requested birth records and began uncovering her biological family and identity' },
+      { phase: 'Processing', label: 'Reconnecting with family, reclaiming identity, and navigating cultural reconnection and healing' },
     ],
     analysis: {
-      impact: 'David\’s story shows just how cruel and personal the Sixties Scoop was. His birth mother was told he had died, while he grew up knowing nothing about her. For over fifty years, both of them lived without the truth. This wasn’t just a mistake in the system but a choice that tore families apart and kept them that way.',
-      lens: 'Through an anti-oppressive lens it shows more than just one person’s pain but a system built on lies. Indigenous mothers were blocked from finding their children, and adoptees were given identities that hid the truth. When David says reconciliation “requires vulnerability,” it really makes you think, vulnerable to what? His experience shows what people are forced to carry when institutions refuse to take responsibility.',
+      impact: 'Katherine\’s story shows how the Sixties Scoop disrupted families and severed cultural and biological connections. She was taken as an infant and spent most of her life without knowledge of her birth family or community. Her decades long search for her roots shows how the effects of these policies extend far beyond childhood and shape your identity, belonging, and family relationships into adulthood.',
+      lens: 'Through an anti-oppressive lens her story reveals the systemic barriers Indigenous people face when trying to access information about their own identities and families. The difficulty she had obtaining records and the journey to reconnect shows how these policies of removal still harm survivors long after adoption. Her story demonstrates that reconciliation involves confronting these systemic obstacles.',
     },
   },
   {
