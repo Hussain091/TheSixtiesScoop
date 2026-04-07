@@ -6,7 +6,8 @@ export default function Navigation() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const progress = (scrollTop / docHeight) * 100;
       setScrollProgress(progress);
     };
@@ -17,8 +18,17 @@ export default function Navigation() {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
+
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const offset = 100; // adjust for navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
     }
   };
 
@@ -45,44 +55,51 @@ export default function Navigation() {
             >
               What
             </button>
+
             <button
               onClick={() => scrollToSection('why')}
               className="text-cream/80 hover:text-cream transition-colors"
             >
               Why
             </button>
+
             <button
               onClick={() => scrollToSection('impact')}
               className="text-cream/80 hover:text-cream transition-colors"
             >
               Impact
             </button>
+
             <button
               onClick={() => scrollToSection('testimonies')}
               className="text-cream/80 hover:text-cream transition-colors"
             >
               Testimonies
             </button>
+
             <button
               onClick={() => scrollToSection('resistance')}
               className="text-cream/80 hover:text-cream transition-colors"
             >
               The Four Rs
             </button>
+
             <button
               onClick={() => scrollToSection('today')}
               className="text-cream/80 hover:text-cream transition-colors"
             >
               Today
             </button>
-            <button
-              onClick={() => scrollToSection('action')}
-              className="text-cream/80 hover:text-cream transition-colors"
-            >
-              Anti-Discriminatory Lens 
-            </button>
+
             <button
               onClick={() => scrollToSection('anti-discriminatory')}
+              className="text-cream/80 hover:text-cream transition-colors"
+            >
+              Anti-Discriminatory Lens
+            </button>
+
+            <button
+              onClick={() => scrollToSection('action')}
               className="text-cream/80 hover:text-cream transition-colors"
             >
               Take Action
