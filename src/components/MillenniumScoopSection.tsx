@@ -83,7 +83,7 @@ function Bar({ label, pct, color, subLabel, started, delay = 0 }) {
 const millenniumFacts = [
   {
     label: 'Same Goal, New Name',
-    body: 'The Millennium Scoop is not an official government term. It is what advocates, survivors, and researchers started calling it because the pattern was so obvious. The government never said "we are doing the Sixties Scoop again." But the numbers told the truth.',
+    body: 'The Millennium Scoop is not an official government term. It is what advocates, survivors, and researchers started calling it because the pattern was so obvious. The government never said "we are doing the Sixties Scoop again.".',
   },
   {
     label: 'Why Did It Keep Happening?',
@@ -91,7 +91,7 @@ const millenniumFacts = [
   },
   {
     label: 'Poverty Was Used as Proof',
-    body: 'If a family did not have stable housing, enough food, or consistent income, child welfare could decide the home was "unsafe." But Indigenous communities had been stripped of land, resources, and economic opportunity for generations. Judging families by standards they were never given a fair chance to meet is not child protection. It is a system designed to keep failing the same people.',
+    body: 'If a family did not have stable housing, enough food, or consistent income, child welfare could decide the home was "unsafe." But Indigenous communities had been stripped of land, resources, and economic opportunity for generations. So they were judging families by standards they were never given a fair chance to meet is not child protection.',
   },
   {
     label: 'The Numbers Grew, Not Shrank',
@@ -99,11 +99,11 @@ const millenniumFacts = [
   },
   {
     label: 'The International Response',
-    body: 'In 2016, the Canadian Human Rights Tribunal ruled that the federal government was racially discriminating against First Nations children and families by underfunding child welfare services on reserves. They were spending far less per child on reserve than off reserve. Less money meant fewer support services, which meant more removals. The tribunal ordered the government to fix it. They were found non-compliant multiple times.',
+    body: 'In 2016, the Canadian Human Rights Tribunal ruled that the federal government was racially discriminating against First Nations children and families by underfunding child welfare services on reserves. They were spending far less per child on reserve than off reserve. Less money meant fewer support services, which meant more removals. The tribunal ordered the government to fix it but were of course non-compliant multiple times.',
   },
   {
     label: 'Bill C-92 and What Changed',
-    body: 'In 2019, Canada passed Bill C-92, which gave Indigenous communities the legal right to govern their own child welfare. For the first time, a First Nation could create its own child welfare laws and have them recognized federally. This was a major shift. But passing a law and actually changing what happens on the ground are two very different things. The work is not finished.',
+    body: 'In 2019, Canada passed Bill C-92, which gave Indigenous communities the legal right to govern their own child welfare. For the first time, a First Nation could create its own child welfare laws and have them recognized federally. This was a major shift. But passing a law and actually changing what happens are two very different things.',
   },
 ];
 
@@ -368,14 +368,14 @@ export default function MillenniumScoopSection() {
                       color: 'rgba(245,240,232,0.78)',
                       lineHeight: 1.85, margin: '0 0 1rem',
                     }}>
-                      The Millennium Scoop is the name people started using to describe what happened after the Sixties Scoop "officially" ended. The government said the policy was over. The removals were not.
+                      The Millennium Scoop is the name people started using to describe what happened after the Sixties Scoop "officially" ended. The government said the policy of sixties scoop was over once you dig deeper the removals were not.
                     </p>
                     <p style={{
                       fontFamily: 'sans-serif', fontSize: '0.93rem',
                       color: 'rgba(245,240,232,0.78)',
                       lineHeight: 1.85, margin: 0,
                     }}>
-                      Through the 1990s, 2000s, and 2010s, Indigenous children kept being taken from their families at rates that were not just high, they were getting worse. The name "Millennium Scoop" came from the fact that this was not ancient history. It was happening as people were buying iPhones and watching YouTube.
+                      Through the 1990s, 2000s, and 2010s, Indigenous children kept being taken from their families at rates that were not just high, but were getting worse. The name "Millennium Scoop" came from the fact that this was not ancient history. It is happening right now.
                     </p>
                   </div>
                   <div>
@@ -384,14 +384,14 @@ export default function MillenniumScoopSection() {
                       color: 'rgba(245,240,232,0.78)',
                       lineHeight: 1.85, margin: '0 0 1rem',
                     }}>
-                      The laws that made the Sixties Scoop possible were never properly cleaned up. Social workers still had enormous power to remove children based on things like poverty, unstable housing, or what they personally judged as neglect. But those conditions did not appear out of nowhere. They were created by generations of colonial policy.
+                      The laws that made the Sixties Scoop possible were never properly cleaned up. Social workers still have power to remove children based on things like poverty, unstable housing, or what they personally judged as neglect. But those conditions did not appear out of nowhere. They were created by generations of colonial policy.
                     </p>
                     <p style={{
                       fontFamily: 'sans-serif', fontSize: '0.93rem',
                       color: 'rgba(245,240,232,0.78)',
                       lineHeight: 1.85, margin: 0,
                     }}>
-                      In short: the system blamed Indigenous families for problems the system itself created. Then it used those problems to take their kids. Again.
+                      In short: the system blamed Indigenous families for problems the system itself created. Then it used those problems to take their kids. All over again.
                     </p>
                   </div>
                 </div>
@@ -847,8 +847,8 @@ export default function MillenniumScoopSection() {
                     color: 'rgba(245,240,232,0.75)',
                     lineHeight: 1.8, margin: '0 0 0.85rem',
                   }}>
-                    Birth alerts meant that when an Indigenous woman went to the hospital to have her baby,
-                    the hospital would secretly call child protective services. Before she even got home,
+                    Birth alerts meant that when an Indigenous woman went to the hospital to deliver their baby,
+                    the hospital would call child protective services. Before she even got home,
                     her newborn could be taken. She did not have to do anything wrong. Just being Indigenous
                     was enough reason.
                   </p>
@@ -860,8 +860,7 @@ export default function MillenniumScoopSection() {
                   }}>
                     This was legal in most provinces until very recently. B.C. banned birth alerts
                     in 2019. Alberta in 2021. Some provinces only stopped because people fought hard
-                    to end it. The scooping of newborns never actually stopped. It just moved
-                    into the hospital.
+                    to end it. The scooping of newborns never actually stopped but just moved.
                   </p>
 
                   <div style={{
@@ -885,9 +884,8 @@ export default function MillenniumScoopSection() {
                       color: 'rgba(245,240,232,0.5)',
                       lineHeight: 1.65, margin: 0,
                     }}>
-                      A mother who just gave birth should be celebrating. Instead, she was being watched.
-                      The system assumed she would fail before she even had a chance to try.
-                      That is not protection. That is prejudice written into policy.
+                      A mother who just gave birth should be celebrating. Instead, she was being watched
+                      That is not protection. That is prejudice.
                     </p>
                   </div>
                 </div>
