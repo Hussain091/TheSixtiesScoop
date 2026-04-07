@@ -203,6 +203,7 @@ export default function AntiDiscriminatorySection() {
       `}</style>
 
       <section
+        id="anti-discriminatory"
         ref={ref}
         style={{
           padding: '8rem 1.5rem',
