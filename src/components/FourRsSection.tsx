@@ -60,7 +60,7 @@ const fourRs = [
       {
         title: 'Reframing the Narrative',
         text: 'David Mortimer writes: "I survived Canada\'s child welfare system and its failed Sixties Scoop policy" this frames survival as strength, not victimhood.',
-      
+      },
       {
         title: 'Cultural Reconnection as Healing',
         text: 'Many survivors describe reconnection with culture as literally life-saving. Resilience is not just enduring trauma but it is choosing to live fully despite it, and working to overcome it.',
