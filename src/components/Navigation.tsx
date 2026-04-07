@@ -82,7 +82,7 @@ export default function Navigation() {
               Anti-Discriminatory Lens 
             </button>
             <button
-              onClick={() => scrollToSection('AntiDiscriminatorySection')}
+              onClick={() => scrollToSection('anti-discriminatory')}
               className="text-cream/80 hover:text-cream transition-colors"
             >
               Take Action
