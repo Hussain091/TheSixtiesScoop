@@ -25,25 +25,7 @@ const testimonies = [
       lens: 'Through an anti oppressive lens, Christine\'s journey from ward of the state to published author and educator is not a story of "success despite the odds" but is a story of survival under conditions the government created. She now teaches the system about its own harm. By editing collections of survivor stories, she helps return control of those narratives to the people the government once tried to silence. This is what self-determination looks like in practice.',
     },
   },
-  {
-    name: 'Christine',
-    nation: 'Anishnaabe, Winnipeg',
-    year: '2020',
-    initials: 'CH',
-    tags: ['Adoption', 'Abuse', 'Identity'],
-    story:
-      '"I am a Sixties Scoop survivor, a Bill C-31 status Anishnaabe woman and a daughter of a Saulteaux mother and a Cree father. I was born in Winnipeg more than 40 years ago... child welfare officials from the city stepped in and took me and three other siblings away from her. When I was 3 years old, my sister and I were adopted together into an affluent Caucasian family and brought to live in Ontario. My childhood was not happy. In fact, it was rather traumatic and has left searing emotional scars on me to this day. My adoptive home was fraught with many emotional, physical, mental and spiritual abuses... I was treated like a prisoner."',
-    timeline: [
-      { phase: 'Born', label: 'Winnipeg, Anishnaabe family' },
-      { phase: 'Taken', label: 'Removed at age 3 with sister' },
-      { phase: 'Placed', label: 'Adopted into affluent Ontario household' },
-      { phase: 'Harmed', label: 'Years of abuse emotional, physical, spiritual' },
-    ],
-    analysis: {
-      impact: 'Christine\'s story exposes one of the most devastating myths of the Sixties Scoop, that the placement with a wealthier, white family was an act of "care." The state used class and race as ways to determine fitness, assuming that a rich white home was better than an Indigenous one. That assumption was wrong, and children paid the price.',
-      lens: 'Through an anti-oppressive it shows that this was a system built on anti-Indigenous racism and white paternalism. The government did not intervene because Christine\'s family was unsafe, it intervened because her family was Indigenous. Her use of Bill C-31 status language also matters as it reflects the ongoing dehumanization of Indigenous identity, where belonging to a Nation is reduced to a legislative category.',
-    },
-  },
+
   {
     name: 'Tauni Sheldon',
     nation: 'Inuit, taken 1970',
