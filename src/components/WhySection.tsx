@@ -574,7 +574,7 @@ export default function WhySection() {
               }}
             >
               <img
-                src="https://www.theguardian.com/world/2017/feb/14/canada-sixities-scoop-ruling-first-nations-children#img-1"
+                src="https://scontent.fyyz1-1.fna.fbcdn.net/v/t1.6435-9/37073146_606525883064443_3001433204981760000_n.png?stp=dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=a74216&_nc_ohc=FNRVayF8VbEQ7kNvwFIn_oM&_nc_oc=AdqDjzuwFEtOLJvxE1I-dwAaVQ0vcyuJkrlxKfTk5kJUCQ93jycjKeFguA9tNx2cTS_j6jOGLU-3FRt_7haxXtZO&_nc_zt=23&_nc_ht=scontent.fyyz1-1.fna&_nc_gid=79H8UiOht-LR24rrUkcQEw&_nc_ss=7a3a8&oh=00_Af3_gjyNVDYhRG2pBpYNUzazCzfVM0eFKG_vS2c-IOMl4w&oe=69FD2EF2"
                 alt="Bureaucratic paperwork representing the machinery of state removal"
                 onLoad={() => setImgLoaded(true)}
                 style={{
