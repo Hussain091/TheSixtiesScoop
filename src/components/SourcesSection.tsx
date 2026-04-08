@@ -102,7 +102,7 @@ const sources = [
   },
   {
     author: 'Stevenson, Allyson.',
-    title: '"Selling the Sixties Scoop: Saskatchewan’s Adopt Indian and Métis Project."',
+    title: '"Selling the Sixties Scoop: Saskatchewan\'s Adopt Indian and Métis Project."',
     publication: 'Active History',
     date: '19 October 2017',
     url: 'https://activehistory.ca/blog/2017/10/19/selling-the-sixties-scoop-saskatchewans-adopt-indian-and-metis-project/',
@@ -132,6 +132,64 @@ const sources = [
     date: '6 Jan. 2023',
     url: 'https://www.cbc.ca/news/canada/montreal/sixties-scoop-survivor-reconnects-with-birth-mom-discovers-her-culture-decades-after-separation-1.6672484',
     type: 'article',
+  },
+  // ── NEW SOURCES ──
+  {
+    author: 'ANCFSAO.',
+    title: 'The Outcomes of Indigenous Youth Aging out of Care and Exiting Care in Canada Environmental Scan.',
+    publication: 'ANCFSAO',
+    date: null,
+    url: null,
+    type: 'book',
+  },
+  {
+    author: 'Fallon, Barbara, et al.',
+    title: 'Birth Alerts.',
+    publication: null,
+    date: '2023',
+    url: null,
+    type: 'book',
+  },
+  {
+    author: 'Healing on the Land with Horses.',
+    title: '"Home - HMS Learning through Equine."',
+    publication: 'HMS Learning through Equine',
+    date: '24 Feb. 2026',
+    url: 'https://horsebasedhealing.ca/',
+    type: 'web',
+    accessed: 'Accessed 8 Apr. 2026',
+  },
+  {
+    author: 'Indigenous Services Canada.',
+    title: '"Bill C-92: An Act Respecting First Nations, Inuit and Métis Children, Youth and Families Receives Royal Assent."',
+    publication: 'Canada.ca, Government of Canada',
+    date: '21 June 2019',
+    url: 'https://www.canada.ca/en/indigenous-services-canada/news/2019/06/an-act-respecting-first-nations-inuit-and-metis-children-youth-and-families-receives-royal-assent.html',
+    type: 'web',
+  },
+  {
+    author: 'Karpa, Alex.',
+    title: '"\'It\'s Been a Painful Journey\': Sixties Scoop Survivor Recounts Difficulties Finding Biological Family."',
+    publication: 'CTVNews',
+    date: '29 Aug. 2025',
+    url: 'https://www.ctvnews.ca/canada/article/its-been-a-painful-journey-sixties-scoop-survivor-recounts-difficulties-finding-biological-family/',
+    type: 'article',
+  },
+  {
+    author: 'Sixties Scoop Network.',
+    title: '"National Indigenous Survivors of Child Welfare Network | Connect with Resources and Others like You."',
+    publication: 'Sixtiesscoopnetwork.org',
+    date: '2019',
+    url: 'https://sixtiesscoopnetwork.org/',
+    type: 'web',
+  },
+  {
+    author: 'wabaseemoong.',
+    title: '"History » Wabaseemoong Independent Nations."',
+    publication: 'Wabaseemoong Independent Nations',
+    date: null,
+    url: 'https://wabaseemoong.ca/about-win/history/',
+    type: 'web',
   },
 ];
 
@@ -440,7 +498,9 @@ export default function SourcesSection() {
                     }}>
                       {source.author}{' '}
                       <span style={{ color: 'rgba(245,240,232,0.9)' }}>{source.title}</span>{' '}
-                      <em style={{ color: 'rgba(245,240,232,0.65)' }}>{source.publication}</em>
+                      {source.publication && (
+                        <em style={{ color: 'rgba(245,240,232,0.65)' }}>{source.publication}</em>
+                      )}
                       {source.date ? `, ${source.date}` : ''}
                       {source.pages ? `, ${source.pages}` : ''}
                       {source.accessed ? `, ${source.accessed}` : ''}
