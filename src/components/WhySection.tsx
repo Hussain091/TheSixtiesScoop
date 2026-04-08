@@ -549,7 +549,7 @@ export default function WhySection() {
               lineHeight: 1.75,
             }}>
               Poverty caused by the Indian Act and colonial laws was used as justification
-              to remove children, creating a circular trap. The state created the
+              to remove children, creating a circular trap. The government created the
               conditions, then punished families for living in them.
             </p>
           </div>
@@ -598,9 +598,9 @@ export default function WhySection() {
                   fontSize: '0.8rem', color: 'rgba(245,240,232,0.6)',
                   margin: 0, lineHeight: 1.55,
                 }}>
-                  "Child removal were approved at the power of the social worker who
+                  "Child removal were approved based on the social worker who
                   was not required to receive any formal, professional training and was often
-                  unfamiliar with the complex history of colonialism."
+                  unfamiliar with the complex history of colonialism. (James Sinclair)"
                 </p>
               </div>
             </div>
@@ -631,7 +631,7 @@ export default function WhySection() {
                   Social workers who removed children did not need to understand Indigenous
                   cultures, Nations, or languages. They were not required to understand what
                   colonialism had done to the families, they were just judging. They decided, again and again, that Indigenous homes were not
-                  good enough.
+                  good enough (James Sinclair).
                 </p>
               </div>
 
@@ -660,7 +660,7 @@ export default function WhySection() {
                   not been investigated for abuse. The reasons recorded on file were things like
                   poverty, inadequate housing, and neglect, all conditions that the Indian Act
                   itself had created by stripping communities of land, income, and resources.
-                  It was a trap.
+                  It was a trap. Many cases they blamed the Indigenous families for abuse when, in reality the colonists families were the ones abusing the children. (Dixon)
                 </p>
               </div>
 
@@ -685,14 +685,13 @@ export default function WhySection() {
                   fontFamily: 'sans-serif', fontSize: '0.88rem',
                   color: 'rgba(245,240,232,0.72)', lineHeight: 1.8, margin: 0,
                 }}>
-                  Children were not only placed across Canada. They were sent to the United States,
-                  the United Kingdom, Germany, the Netherlands, New Zealand, India, and Botswana.
+                  Children were not only placed across Canada. They were sent to the United States.
                   In 1981, between 45 and 55 percent of adoptees were placed with American families.
-                  Some children had no idea they were Canadian.
+                  Some children had no idea they were Canadian.(James Sinclair)
                 </p>
                 <div style={{ marginTop: '0.75rem' }}>
                   <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-                    {['USA', 'UK', 'Germany', 'Netherlands', 'NZ', 'India', 'Botswana'].map((c) => (
+                    {['USA', 'Canada'].map((c) => (
                       <span key={c} style={{
                         fontFamily: 'sans-serif', fontSize: '0.6rem',
                         letterSpacing: '0.08em',
@@ -744,7 +743,7 @@ export default function WhySection() {
                 The Adopt Indian and Métis (AIM) program in Saskatchewan ran newspaper ads
                 that listed Indigenous children who were available for adoption. These were not
                 missing children alerts but were advertisements. The children were described
-                by race, age, and temperament as if they were being matched to buyers. On the right is an example of a newspaper ad created by me. This shows how inhumane the AIM program really was.
+                by race, age, and temperament as if they were being matched to buyers. On the right is an example of a newspaper ad created by me. This shows how inhumane the AIM program really was. (Stevenson)
               </p>
               <p style={{
                 fontFamily: 'sans-serif', fontSize: '0.9rem',
@@ -752,7 +751,7 @@ export default function WhySection() {
               }}>
                 The program ran through the 1960s and 1970s and was official government policy.
                 It had a name, a budget, and a staff. The children listed in those ads had
-                families who did not consent to any of it.
+                families who did not consent to any of it. (Stevenson)
               </p>
             </div>
 
