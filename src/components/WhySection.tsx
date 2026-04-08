@@ -544,12 +544,12 @@ export default function WhySection() {
 
             <p style={{
               fontFamily: 'sans-serif', fontSize: '1rem',
-              color: 'rgba(245,240,232,0.58)',
+              color: 'rgba(245,240,232,0.6)',
               maxWidth: 640, margin: '0 auto',
               lineHeight: 1.75,
             }}>
-              Poverty caused by the Indian Act and colonial dispossession was used as justification
-              to remove children, creating a deliberate circular trap. The state created the
+              Poverty caused by the Indian Act and colonial laws was used as justification
+              to remove children, creating a circular trap. The state created the
               conditions, then punished families for living in them.
             </p>
           </div>
@@ -598,7 +598,7 @@ export default function WhySection() {
                   fontSize: '0.8rem', color: 'rgba(245,240,232,0.6)',
                   margin: 0, lineHeight: 1.55,
                 }}>
-                  "Child apprehensions were approved at the discretion of the social worker who
+                  "Child removal were approved at the power of the social worker who
                   was not required to receive any formal, professional training and was often
                   unfamiliar with the complex history of colonialism."
                 </p>
@@ -628,10 +628,9 @@ export default function WhySection() {
                   fontFamily: 'sans-serif', fontSize: '0.88rem',
                   color: 'rgba(245,240,232,0.72)', lineHeight: 1.8, margin: 0,
                 }}>
-                  Social workers who removed children were not required to understand Indigenous
+                  Social workers who removed children did not need to understand Indigenous
                   cultures, Nations, or languages. They were not required to understand what
-                  colonialism had done to the families they were judging. They just needed to
-                  decide. And they decided, again and again, that Indigenous homes were not
+                  colonialism had done to the families, they were just judging. They decided, again and again, that Indigenous homes were not
                   good enough.
                 </p>
               </div>
@@ -657,11 +656,11 @@ export default function WhySection() {
                   fontFamily: 'sans-serif', fontSize: '0.88rem',
                   color: 'rgba(245,240,232,0.72)', lineHeight: 1.8, margin: 0,
                 }}>
-                  Children were not being removed because they were in danger. Most families had
+                  Children were not being removed because they were in danger, as most families had
                   not been investigated for abuse. The reasons recorded on file were things like
                   poverty, inadequate housing, and neglect, all conditions that the Indian Act
                   itself had created by stripping communities of land, income, and resources.
-                  It was a trap with no exit door built in.
+                  It was a trap.
                 </p>
               </div>
 
@@ -742,16 +741,16 @@ export default function WhySection() {
                 color: 'rgba(245,240,232,0.7)', lineHeight: 1.8,
                 marginBottom: '1rem',
               }}>
-                The Adopt Indian and Métis (AIM) program in Saskatchewan ran actual newspaper ads
-                listing Indigenous children who were available for adoption. These were not
-                missing children alerts. They were advertisements. The children were described
-                by race, age, and temperament as if they were being matched to buyers.
+                The Adopt Indian and Métis (AIM) program in Saskatchewan ran newspaper ads
+                that listed Indigenous children who were available for adoption. These were not
+                missing children alerts but were advertisements. The children were described
+                by race, age, and temperament as if they were being matched to buyers. On the right is an example of a newspaper ad created by me. This shows how inhumane the AIM program really was.
               </p>
               <p style={{
                 fontFamily: 'sans-serif', fontSize: '0.9rem',
                 color: 'rgba(245,240,232,0.7)', lineHeight: 1.8,
               }}>
-                The program ran through the 1960s and 1970s. It was official government policy.
+                The program ran through the 1960s and 1970s and was official government policy.
                 It had a name, a budget, and a staff. The children listed in those ads had
                 families who did not consent to any of it.
               </p>
@@ -864,20 +863,15 @@ export default function WhySection() {
                 color: 'rgba(245,240,232,0.68)', lineHeight: 1.75,
                 marginBottom: '1rem', margin: '0 0 1rem',
               }}>
-                These children did not just lose their family. Many of them lost their country.
-                Placed in homes thousands of kilometers away, sometimes on different continents,
-                they grew up with no connection to their Nation, their land, or the people
-                who were looking for them.
+                These children did not just lose their family. They lost their identity. Who they were. Below there will be a more in depth view on the impacts caused by the sixties scoop. 
               </p>
               <p style={{
                 fontFamily: 'sans-serif', fontSize: '0.88rem',
                 color: 'rgba(245,240,232,0.68)', lineHeight: 1.75, margin: 0,
               }}>
-                In 1981, between{' '}
-                <span className="highlight-shimmer">45 and 55 percent</span>{' '}
-                of all adoptees were placed with American families. Some never knew they were
-                Canadian. Some never knew they were Indigenous. Some only found out as adults,
-                through DNA tests, decades later.
+                Many did not know they were {' '}
+                <span className="highlight-shimmer">Indigenous</span>{' '}
+                some only found out as adults, through DNA tests, decades later.
               </p>
             </div>
           </div>
@@ -914,8 +908,8 @@ export default function WhySection() {
               marginBottom: '1.5rem', lineHeight: 1.65,
               maxWidth: 560,
             }}>
-              Based on real themes from survivor testimonies. These stories are fictionalized
-              composites, but they reflect documented experiences. Every path is different.
+              Based on real themes from survivor testimonies found below. These stories are fictionalized
+              made, but reflect documented experiences. Every path is different.
               None of them should have happened.
             </p>
             <StorySimulator />
