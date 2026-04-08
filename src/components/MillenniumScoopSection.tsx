@@ -83,27 +83,27 @@ function Bar({ label, pct, color, subLabel, started, delay = 0 }) {
 const millenniumFacts = [
   {
     label: 'Same Goal, New Name',
-    body: 'The Millennium Scoop is not an official government term. It is what advocates, survivors, and researchers started calling it because the pattern was so obvious. The government never said "we are doing the Sixties Scoop again.".',
+    body: 'The Millennium Scoop is not an official government term. It is what advocates, survivors, and researchers started calling it because the pattern was so obvious.(Koch)',
   },
   {
     label: 'Why Did It Keep Happening?',
-    body: 'The Sixties Scoop officially ended around 1984. But the child welfare laws that made it possible were never fully changed. Social workers still had the power to remove Indigenous children based on poverty and neglect, even when poverty was caused by decades of colonial policy. The conditions that led to the Sixties Scoop were never fixed, so the removals never actually stopped.',
+    body: 'The Sixties Scoop officially ended around 1984. But the child welfare laws that made it possible were never fully changed. Social workers still had the power to remove Indigenous children based on poverty and neglect, even when poverty was caused by decades of colonial policy. The conditions that led to the Sixties Scoop were never fixed, so the removals never actually stopped (Koch).',
   },
   {
     label: 'Poverty Was Used as Proof',
-    body: 'If a family did not have stable housing, enough food, or consistent income, child welfare could decide the home was "unsafe." But Indigenous communities had been stripped of land, resources, and economic opportunity for generations. So they were judging families by standards they were never given a fair chance to meet is not child protection.',
+    body: 'If a family did not have stable housing, enough food, or consistent income, child welfare could decide the home was "unsafe." But Indigenous communities had been stripped of land, resources, and economic opportunity for generations. So they were judging families by standards they were never given a fair chance to meet is not child protection. (Koch)',
   },
   {
     label: 'The Numbers Grew, Not Shrank',
-    body: 'In 1990, there were roughly 15,000 Indigenous children in care across Canada. By 2016, that number had grown to over 52,000. That is not a system improving. That is a system getting worse while calling itself child welfare. More children were being taken in the 2000s and 2010s than during the original Sixties Scoop.',
+    body: 'In 1990, there were roughly 15,000 Indigenous children in care across Canada. By 2016, that number had grown to over 52,000. That is not a system improving. That is a system getting worse while calling itself child welfare. More children were being taken in the 2000s and 2010s than during the original Sixties Scoop.(Koch)',
   },
   {
     label: 'The International Response',
-    body: 'In 2016, the Canadian Human Rights Tribunal ruled that the federal government was racially discriminating against First Nations children and families by underfunding child welfare services on reserves. They were spending far less per child on reserve than off reserve. Less money meant fewer support services, which meant more removals. The tribunal ordered the government to fix it but were of course non-compliant multiple times.',
+    body: 'In 2016, the Canadian Human Rights Tribunal ruled that the federal government was racially discriminating against First Nations children and families by underfunding child welfare services on reserves. They were spending far less per child on reserve than off reserve. Less money meant fewer support services, which meant more removals. The tribunal ordered the government to fix it but were of course non compliant multiple times.(James Sinclair)',
   },
   {
     label: 'Bill C-92 and What Changed',
-    body: 'In 2019, Canada passed Bill C-92, which gave Indigenous communities the legal right to govern their own child welfare. For the first time, a First Nation could create its own child welfare laws and have them recognized federally. This was a major shift. But passing a law and actually changing what happens are two very different things.',
+    body: 'In 2019, Canada passed Bill C-92, which gave Indigenous communities the legal right to govern their own child welfare. For the first time, a First Nation could create its own child welfare laws and have them recognized federally. This was a major shift. But passing a law and actually changing what happens are two very different things. (Indigenous Services Canada)',
   },
 ];
 
@@ -368,14 +368,14 @@ export default function MillenniumScoopSection() {
                       color: 'rgba(245,240,232,0.78)',
                       lineHeight: 1.85, margin: '0 0 1rem',
                     }}>
-                      After the Sixties Scoop officially ended, child welfare systems kept pulling Indigenous children from their families. This then earned a new term the Millennium Scoop. 
+                      After the Sixties Scoop officially ended, child welfare systems kept pulling Indigenous children from their families. This then earned a new term the Millennium Scoop.(Koch)
                     </p>
                     <p style={{
                       fontFamily: 'sans-serif', fontSize: '0.93rem',
                       color: 'rgba(245,240,232,0.78)',
                       lineHeight: 1.85, margin: 0,
                     }}>
-                      All throughout the 1990s, 2000s, and 2010s, Indigenous children were kept being taken from their families at high rates. The name "Millennium Scoop" came from the fact that this was not ancient history. It is happening right now.
+                      All throughout the 1990s, 2000s, and 2010s, Indigenous children were kept being taken from their families at high rates. The name "Millennium Scoop" came from the fact that this was not ancient history. It is happening right now. (Koch)
                     </p>
                   </div>
                   <div>
@@ -850,7 +850,7 @@ export default function MillenniumScoopSection() {
                     Birth alerts meant that whenever an Indigenous woman arrived at the hospital to give birth,
                     the hospital would contact child welfare services. Even before she reached home,
                     her baby could be removed from her. She did not have to do anything illegal.
-                    It was simply enough to be Indigenous.
+                    It was simply enough to be Indigenous. (Fallon et al.)
                   </p>
 
                   <p style={{
@@ -860,7 +860,7 @@ export default function MillenniumScoopSection() {
                   }}>
                     This was legal in most provinces until recently when people started to realize how wrong this process was. B.C. banned birth alerts
                     in 2019. Alberta in 2021. Some provinces only stopped because people fought hard
-                    to end it.
+                    to end it. (Fallon et al.)
                   </p>
 
                   <div style={{
@@ -946,7 +946,7 @@ export default function MillenniumScoopSection() {
                 lineHeight: 1.75,
               }}>
                 The removal of Indigenous children from their families is not a historical injustice.
-                It is a present-day crisis.
+                It is a present day crisis.
               </p>
             </div>
           </div>
