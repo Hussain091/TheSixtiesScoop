@@ -10,7 +10,7 @@ const testimonies = [
     initials: 'CM',
     tags: ['Memoir', 'Reclamation', 'Education'],
     story:
-      'She was taken as a child and placed in the child welfare system. In her 2021 memoir These Are the Stories: Memories of a 60s Scoop Survivor, she describes moving through the system, losing connection to her birth mother, and eventually reconnecting before her mother died. She wrote that reconnection allowed her to finally feel "complete, whole, and home." She has since published two books, earned a Master\'s in Education in Social Justice, and edits anthologies of survivor voices. Her work is an act of reclamation and resurgence.',
+      'She was taken as a child and placed in the child welfare system. In her 2021 memoir These Are the Stories: Memories of a 60s Scoop Survivor, she describes moving through the system, losing connection to her birth mother, and eventually reconnecting before her mother died. She wrote that reconnection allowed her to finally feel "complete, whole, and home." She has since published two books, earned a Master\'s in Education in Social Justice, and edits anthologies of survivor voices. Her work is an act of reclamation and resurgence.(Smith)',
     
     // Timeline of key life moments
     timeline: [
@@ -33,7 +33,7 @@ const testimonies = [
     initials: 'TS',
     tags: ['Racism', 'Identity Loss', 'Reunion'],
     story:
-      'Taken from her birth mother three hours after birth. Advertised in the Toronto Telegram as an "Eskimo Baby" — the ad described her like a product. Adopted by a white family in southern Ontario. First saw her biological mother at age 23 at the Winnipeg airport. Describes experiencing severe racism growing up, rejecting her own identity, and years of anger: "I experienced a lot of racism... I didn\'t want to be who I was." She has since worked to rebuild the relationship with her biological mother.',
+      'Taken from her birth mother three hours after birth. Advertised in the Toronto Telegram as an "Eskimo Baby" — the ad described her like a product. Adopted by a white family in southern Ontario. First saw her biological mother at age 23 at the Winnipeg airport. Describes experiencing severe racism growing up, rejecting her own identity, and years of anger: "I experienced a lot of racism... I didn\'t want to be who I was." She has since worked to rebuild the relationship with her biological mother.(Watts)',
     timeline: [
       { phase: 'Birth', label: 'Removed 3 hours after birth' },
       { phase: 'Advertised', label: 'Listed in newspaper as "Eskimo Baby"' },
@@ -52,7 +52,7 @@ const testimonies = [
     initials: 'KS',
     tags: ['Hidden Truth', 'Adoption', 'Family Search'],
     story:
-      '"I always knew I was adopted, I always knew I was Indigenous, but I didn’t know what my connection to the community was" "“It was difficult to navigate that connection to community and try to reunify with siblings without some kind of intervention”',
+      '"I always knew I was adopted, I always knew I was Indigenous, but I didn’t know what my connection to the community was" "“It was difficult to navigate that connection to community and try to reunify with siblings without some kind of intervention” (Karpa)',
     timeline: [
       { phase: 'Taken', label: 'Removed as a child and placed into adoption through the Sixties Scoop' },
       { phase: 'Hidden', label: 'Grew up knowing she was adopted but without full knowledge of her biological family or connection' },
@@ -71,7 +71,7 @@ const testimonies = [
     initials: 'RM',
     tags: ['Language', 'Teaching', 'Community'],
     story:
-      'She and her two-year-old sister Kati were taken from their birth family. She did not learn about her Indigenous heritage until much later in life. She is now a teacher at the Pearson Electrotechnology Centre, an army reservist, a cadet officer, and an artist. She works with youth aged 12–18 and shares her story publicly. She holds an eagle feather gifted by former Chief Donovan Fontaine for her efforts to reconnect with her community. She is learning Ojibway, her language. She says: "Education is key. People need to hear the stories."',
+      'She and her two-year-old sister Kati were taken from their birth family. She did not learn about her Indigenous heritage until much later in life. She is now a teacher at the Pearson Electrotechnology Centre, an army reservist, a cadet officer, and an artist. She works with youth aged 12–18 and shares her story publicly. She holds an eagle feather gifted by former Chief Donovan Fontaine for her efforts to reconnect with her community. She is learning Ojibway, her language. She says: "Education is key. People need to hear the stories."(Ruivo)',
     timeline: [
       { phase: 'Taken', label: 'Removed at 8 months with sister Kati' },
       { phase: 'Disconnected', label: 'Grew up unaware of Indigenous heritage' },
