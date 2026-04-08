@@ -101,6 +101,14 @@ const sources = [
     type: 'article',
   },
   {
+    author: 'Stevenson, Allyson.',
+    title: '"Selling the Sixties Scoop: Saskatchewan’s Adopt Indian and Métis Project."',
+    publication: 'Active History',
+    date: '19 October 2017',
+    url: 'https://activehistory.ca/blog/2017/10/19/selling-the-sixties-scoop-saskatchewans-adopt-indian-and-metis-project/',
+    type: 'article',
+  },
+  {
     author: 'The Aboriginal Justice Implementation Commission.',
     title: '"Child Welfare."',
     publication: 'Ajic.mb.ca',
