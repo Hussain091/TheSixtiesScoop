@@ -31,7 +31,7 @@ const fourRs = [
       },
       {
         title: 'Justice Won',
-        text: 'Legal resistance resulted in an $800 million settlement in 2017 and a federal apology from Prime Minister Trudeau in 2018. This was not enough — but acknowledgment forced this matter into the open. (James Sinclair) ',
+        text: 'Legal resistance resulted in an $800 million settlement in 2017 and a federal apology from Prime Minister Trudeau in 2018. This was not enough but acknowledgment forced this matter into the open. (James Sinclair) ',
       },
     ],
   },
