@@ -19,19 +19,19 @@ const fourRs = [
     content: [
       {
         title: 'Community Blockades',
-        text: 'In 1990 the Wabaseemoong community physically blocked the Children\'s Aid Society from entering their reserve and prevented the removal of more children. This was a direct action to protect their children showing resistance agaisnt the scoop.',
+        text: 'In 1990 the Wabaseemoong community physically blocked the Children\'s Aid Society from entering their reserve and prevented the removal of more children. This was a direct action to protect their children showing resistance agaisnt the scoop.(wabaseemoong)',
       },
       {
         title: 'Legal Action',
-        text: 'Class action lawsuits began in 2009 in Manitoba, and the first major legal challenge against Canada for failing to protect Aboriginal children\'s cultural identity occurred. Survivors used the colonial legal system against itself.',
+        text: 'Class action lawsuits began in 2009 in Manitoba, and the first major legal challenge against Canada for failing to protect Aboriginal children\'s cultural identity occurred. Survivors used the colonial legal system against itself.(James Sinclair) ',
       },
       {
         title: 'Survivor Networks',
-        text: 'The 60s Scoop Network was founded by survivors to demand justice, recognition, and compensation. Colleen Hele Cardinalstated: "The trafficking of Indigenous children through the child welfare policies known as the 60s Scoop caused tremendous harm, yet Canada has swept us under the rug without acknowledgement or apology."',
+        text: 'The 60s Scoop Network was founded by survivors to demand justice, recognition, and compensation. Colleen Hele Cardinal stated: "The trafficking of Indigenous children through the child welfare policies known as the 60s Scoop caused tremendous harm, yet Canada has swept us under the rug without acknowledgement or apology."(Sixties Scoop Network) ',
       },
       {
         title: 'Justice Won',
-        text: 'Legal resistance resulted in an $800 million settlement in 2017 and a federal apology from Prime Minister Trudeau in 2018. This was not enough — but acknowledgment forced this matter into the open.',
+        text: 'Legal resistance resulted in an $800 million settlement in 2017 and a federal apology from Prime Minister Trudeau in 2018. This was not enough — but acknowledgment forced this matter into the open. (James Sinclair) ',
       },
     ],
   },
@@ -51,19 +51,19 @@ const fourRs = [
     content: [
       {
         title: 'Rebuilding Identity',
-        text: 'Indigenous Survivors rebuilt their identities that were systematically destroyed. Christine Smith went from being a ward of the state to publishing memoirs and editing anthologies of survivor voices.',
+        text: 'Indigenous Survivors rebuilt their identities that were systematically destroyed. Christine Smith went from being a ward of the state to publishing memoirs and editing anthologies of survivor voices.(Baswan and Yenilmez) ',
       },
       {
         title: 'Teaching the Next Generation',
-        text: 'Rolanda Murphy McPhee is now a teacher and army reservist who shares her story with young people. She turned her pain into a method of teaching making sure the next generation knows what happened.',
+        text: 'Rolanda Murphy McPhee is now a teacher and army reservist who shares her story with young people. She turned her pain into a method of teaching making sure the next generation knows what happened.(Ruivo)',
       },
       {
         title: 'Reframing the Narrative',
-        text: 'David Mortimer writes: "I survived Canada\'s child welfare system and its failed Sixties Scoop policy" this frames survival as strength, not victimhood.',
+        text: 'Survivors write their story in the perspective that they survived Canada\'s child welfare system and its failed Sixties Scoop policy. This frames survival as strength, not victimhood.',
       },
       {
         title: 'Cultural Reconnection as Healing',
-        text: 'Many survivors describe reconnection with culture as literally life-saving. Resilience is not just enduring trauma but it is choosing to live fully despite it, and working to overcome it.',
+        text: 'Many survivors describe reconnection with culture as literally life saving. Resilience is not just enduring trauma but it is choosing to live fully despite it, and working to overcome it.(Smith)',
       },
     ],
   },
@@ -74,7 +74,7 @@ const fourRs = [
     image: {
       src: 'https://images.seattletimes.com/wp-content/uploads/2022/09/09272022_10-A1-Revisited-Historical_211228.jpg?d=1536x1279',
       alt: 'Hands holding earth — reclamation of land and identity',
-      caption: '"Land is not property — it is relation."',
+      caption: '"Land is not property: it is relation."',
     },
     definition: {
       short: 'To take back what was never truly lost.',
@@ -83,23 +83,23 @@ const fourRs = [
     content: [
       {
         title: 'Coming Home',
-        text: 'Survivors returning back to their communities, learning languages, reconnecting with Elders and ceremonies basically reclaiming everything that was stolen.',
+        text: 'Survivors returning back to their communities, learning languages, reconnecting with Elders and ceremonies basically reclaiming everything that was stolen.(Baswan and Yenilmez)',
       },
       {
         title: 'Bill C-92',
-        text: 'The 2019 Act Respecting First Nations, Inuit, and Métis Children, Youth, and Families gives Indigenous communities legal control over their own child welfare for the first time.',
+        text: 'The 2019 Act Respecting First Nations, Inuit, and Métis Children, Youth, and Families gives Indigenous communities legal control over their own child welfare for the first time.(Indigenous Services Canada) ',
       },
       {
         title: 'Reclaiming Names and Status',
-        text: 'Survivors are reclaiming birth names, Indian status, and community membership. Legal recognition of who they always were.',
+        text: 'Survivors are reclaiming birth names, Indian status, and community membership. Legal recognition of who they always were.(James Sinclair)',
       },
       {
         title: 'Survivor-Led Healing',
-        text: 'The National Sixties Scoop Healing Foundation supports cultural reclamation and family reunion, building structures that serve the community on the community\'s own terms.',
+        text: 'The National Sixties Scoop Healing Foundation supports cultural reclamation and family reunion, building structures that serve the community on the community\'s own terms. (Healing on the Land with Horses)',
       },
       {
         title: 'Mapping the Diaspora',
-        text: 'The "In Our Own Words: Mapping the Sixties Scoop Diaspora" project by the 60s Scoop Network lets survivors map their displacement and reclaim their own story. This helps visualize 22,500+ children\'s journeys.',
+        text: 'The "In Our Own Words: Mapping the Sixties Scoop Diaspora" project by the 60s Scoop Network lets survivors map their displacement and reclaim their own story. This helps visualize 22,500+ children\'s journeys.(Sixties Scoop Network) ',
       },
     ],
   },
@@ -119,23 +119,23 @@ const fourRs = [
     content: [
       {
         title: 'Land-Based Healing',
-        text: 'Indigenous led healing programs like "Healing on the Land with Horses" in Saskatchewan connect survivors to land and culture. Healing happens in relationship to the land.',
+        text: 'Indigenous led healing programs like "Healing on the Land with Horses" in Saskatchewan connect survivors to land and culture. Healing happens in relationship to the land. (Healing on the Land with Horses)',
       },
       {
         title: 'Telling Our Own Stories',
-        text: 'Jennifer Podemski (Anishnabe/Ashkenazi), award-winning showrunner, created the TV series Little Bird about a Sixties Scoop survivor. The show told the story from an Indigenous perspective to a national audience.',
+        text: 'Jennifer Podemski (Anishnabe/Ashkenazi), award-winning showrunner, created the TV series Little Bird about a Sixties Scoop survivor. The show told the story from an Indigenous perspective to a national audience.(Baswan and Yenilmez)',
       },
       {
         title: 'Survivor-Led Institutions',
-        text: 'The Sixties Scoop Healing Foundation (2020) is survivor-led, Inuit/First Nations/Métis/status/non-status inclusive, and fully independent building institutions that serve the community.',
+        text: 'The Sixties Scoop Network (2020) is survivor-led, Inuit/First Nations/Métis/status/non-status inclusive, and fully independent building institutions that serve the community. (Sixties Scoop Network)',
       },
       {
         title: 'Anthology as Resistance',
-        text: 'Survivors like Christine Smith editing anthologies like Silence to Strength (2022) so that the community can tell its own story.',
+        text: 'Survivors like Christine Smith editing anthologies like Silence to Strength (2022) so that the community can tell its own story. (Smith)',
       },
       {
         title: 'Language Revitalization',
-        text: 'Language revitalization programs like Rolanda learning Ojibway, schools teaching Indigenous languages, survivors reconnecting with oral traditions. Resurgence is not going back but it is carrying forward and regaining what was lost.',
+        text: 'Language revitalization programs like schools teaching Indigenous languages, survivors reconnecting with oral traditions. Resurgence is not going back but it is carrying forward and regaining what was lost.(Baswan and Yenilmez)',
       },
     ],
   },
