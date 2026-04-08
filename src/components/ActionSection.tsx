@@ -961,6 +961,7 @@ export default function ActionSection() {
                 maxWidth: 560, margin: '0 auto 2.5rem',
                 lineHeight: 1.75,
               }}>
+                </p>
  
               <div style={{
                 display: 'grid',
