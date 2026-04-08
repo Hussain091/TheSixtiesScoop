@@ -8,9 +8,9 @@ const impactAreas = [
     title: 'Identity',
     accentColor: '#c8873a',
     image: 'https://cdn.sanity.io/images/hzw28nbp/production/19195fde8676c6e285fdf05d809efdec424eb1d4-612x408.jpg?w=1920&q=75&fit=clip&auto=format',
-    imageAlt: 'Reflection in water — fractured identity',
+    imageAlt: 'Reflection in water: fractured identity',
     content:
-      'Many children who were taken did not learn they were Indigenous until adulthood. Birth records were sealed and could only be opened with consent of both parties which meant that survivors grew up not knowing their language, their nation, their family. Identity is not just a name or a status number, it is belonging. It is knowing where you come from and who your people are and the Scoop stole that.',
+      'Many children who were taken did not learn they were Indigenous until adulthood. Birth records were sealed and could only be opened with consent of both parties which meant that survivors grew up not knowing their language, their nation, their family. Identity is not just a name or a status number, it is belonging. It is knowing where you come from and who your people are and the Scoop stole that.(Baswan and Yenilmez)',
     stat: { value: '50+', label: 'years some survivors searched before finding family' },
   },
   {
@@ -20,7 +20,7 @@ const impactAreas = [
     image: 'https://www.mcislanguages.com/wp-content/uploads/2-3.22.23-PM.png',
     imageAlt: 'Open book — the loss of written and spoken language',
     content:
-      'Indigenous languages are not just words but they carry worldview, law, medicine, spirituality and the removal of children broke intergenerational language transmission. Over 60 Indigenous languages in Canada are now endangered. When a language dies, an entire way of understanding the world disappears and an entire community loses a part of their identity. The Scoop silenced thousands of voices before they could learn to speak.',
+      'Indigenous languages are not just words but they carry worldview, law, medicine, spirituality and the removal of children broke intergenerational language transmission. Over 60 Indigenous languages in Canada are now endangered. When a language dies, an entire way of understanding the world disappears and an entire community loses a part of their identity. The Scoop silenced thousands of voices before they could learn to speak. (Baswan and Yenilmez)',
     stat: { value: '60+', label: 'Indigenous languages in Canada now endangered' },
   },
   {
@@ -30,7 +30,7 @@ const impactAreas = [
     image: 'https://indigenouspeoplesatlasofcanada.ca/wp-content/uploads/2018/06/family25-900x934.gif',
     imageAlt: 'Empty swings — absence of children from community',
     content:
-      'Indigenous cultures are built around kinship networks. Removing a child does not just affect one family but it affects the connection across entire communities. Many families searched for decades but never found them. Siblings were separated and never saw each other again. Grandparents lost the chance to pass on knowledge. The Scoop didn\'t just remove children. It tore apart the foundations of a community.',
+      'Indigenous cultures are built around kinship networks. Removing a child does not just affect one family but it affects the connection across entire communities. Many families searched for decades but never found them. Siblings were separated and never saw each other again. Grandparents lost the chance to pass on knowledge. The Scoop didn\'t just remove children. It tore apart the foundations of a community. (ANCFSAO)',
     stat: { value: '20,000+', label: 'children separated from their kinship networks' },
   },
   {
@@ -40,7 +40,7 @@ const impactAreas = [
     image: 'https://www.lakeheadu.ca/sites/default/files/uploads/249/Campus-Connection/2%20-%20Indigenous%20Youth%20Mental%20Health%20graphic%20April%202023.jpg',
     imageAlt: 'Storm clouds — the weight of intergenerational trauma',
     content:
-      'The scoop also led to long-term effects that include loss of cultural identity, low self-esteem, shame, loneliness, confusion, depression and PTSD. Many survivors reported abuse in adoptive homes. Which led to an increase in suicide rates, substance use, and mental health crises for survivors. These are not individual failures. They are the predictable result of systemic trauma.',
+      'The scoop also led to long-term effects that include loss of cultural identity, low self-esteem, shame, loneliness, confusion, depression and PTSD. Many survivors reported both physical and sexual abuse in adoptive homes. Which led to an increase in suicide rates, substance use, and mental health crises for survivors. These are not individual failures. They are the predictable result of systemic trauma.(Baswan and Yenilmez)',
     stat: { value: 'Higher', label: 'rates of PTSD, depression, and crisis among survivors' },
   },
   {
@@ -50,7 +50,7 @@ const impactAreas = [
     image: 'https://casamentalhealth.org/wp-content/uploads/2025/04/CASA-162.jpg',
     imageAlt: 'Abandoned path — disrupted transmission of knowledge',
     content:
-      'The knowledge that was passed through oral tradition, through Elders, through lived community experience was ruined. The Scoop disrupted not just individual lives but the transmission of knowledge across generations. How do you teach a ceremony if the children are gone? How do you pass on stories? How do you keep a culture alive when its future is taken?',
+      'The knowledge that was passed through oral tradition, through Elders, through lived community experience was ruined. The Scoop disrupted not just individual lives but the transmission of knowledge across generations. How do you teach a ceremony if the children are gone? How do you pass on stories? How do you keep a culture alive when its future is taken? (Baswan and Yenilmez)',
     stat: { value: 'Generations', label: 'of oral tradition and ceremony interrupted' },
   },
   {
@@ -60,7 +60,7 @@ const impactAreas = [
     image: 'https://www.firstpeopleslaw.com/files/image/6356df9fa8088/display/shutterstock_1044127738-1.jpg',
     imageAlt: 'Legal documents — bureaucratic barriers to belonging',
     content:
-      'For status the removal of First Nations children resulted in loss of Indian status stripping them of treaty rights, land rights, and the ability to return to their communities. Even when survivors reconnected with their nations, they often found themselves legally excluded from the communities they belonged to. The colonial legal system created another barrier to coming home.',
+      'For status the removal of First Nations children resulted in loss of Indian status stripping them of treaty rights, land rights, and the ability to return to their communities. Even when survivors reconnected with their nations, they often found themselves legally excluded from the communities they belonged to. The colonial legal system created another barrier to coming home.(CBC News)',
     stat: { value: 'Denied', label: 'treaty rights, land rights, and community membership' },
   },
 ];
