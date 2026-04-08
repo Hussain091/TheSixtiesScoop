@@ -281,7 +281,7 @@ export default function WhatWasSection() {
               <p>
                 In 1951, the government had created the Indian Act to give provincial governments
                 power over Indigenous child welfare. As residential schools were being stopped, so
-                they found a new way to finish the goal of assimilation never stopped.
+                they found a new way to finish the goal of assimilation never stopped. (Baswan and Yenilmez).
               </p>
               <p>
                 In simple terms when Indian Residential Schools didn't "kill the Indigenous in the
@@ -289,13 +289,13 @@ export default function WhatWasSection() {
               </p>
               <p>
                 They took children without consent, without warning, without families being told
-                where their children went.
+                where their children went. (Baswan and Yenilmez)
               </p>
               <p>
                 Between the 1950s and 1980s, over{' '}
                 <span className="highlight-shimmer">20,000 Indigenous children</span>{' '}
                 were removed from their families and communities and placed into non-Indigenous
-                homes across Canada and around the world.
+                homes across Canada and around the world. (Baswan and Yenilmez)
               </p>
             </div>
           </div>
@@ -454,13 +454,13 @@ export default function WhatWasSection() {
                 color: 'rgba(245,240,232,0.75)',
                 lineHeight: 1.55, marginBottom: '0.35rem',
               }}>
-                Indigenous children in B.C. provincial care in 1964
+                Indigenous children in B.C. provincial care in 1964 (Truth and Reconciliation Commission of Canada)
               </div>
               <div style={{
                 fontFamily: 'sans-serif', fontSize: '0.72rem',
                 color: 'rgba(245,240,232,0.38)', marginBottom: '1.5rem',
               }}>
-                Up from approximately 30 in 1951
+                Up from approximately 30 in 1951 (Truth and Reconciliation Commission of Canada)
               </div>
 
               {started && (
@@ -528,7 +528,7 @@ export default function WhatWasSection() {
                 color: 'rgba(245,240,232,0.75)',
                 lineHeight: 1.55, marginBottom: '0.35rem',
               }}>
-                Indigenous children adopted in Manitoba
+                Indigenous children adopted in Manitoba (James Sinclair)
               </div>
               <div style={{
                 fontFamily: 'sans-serif', fontSize: '0.72rem',
@@ -604,7 +604,7 @@ export default function WhatWasSection() {
               <span className="highlight-shimmer" style={{ fontSize: '1.15em' }}>
                 4.5 times more likely
               </span>{' '}
-              than non-Aboriginal children to be in the care of child welfare authorities.
+              than non-Aboriginal children to be in the care of child welfare authorities. (James Sinclair)
             </p>
           </div>
 
