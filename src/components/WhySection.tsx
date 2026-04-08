@@ -574,7 +574,7 @@ export default function WhySection() {
               }}
             >
               <img
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
+                src="https://www.theguardian.com/world/2017/feb/14/canada-sixities-scoop-ruling-first-nations-children#img-1"
                 alt="Bureaucratic paperwork representing the machinery of state removal"
                 onLoad={() => setImgLoaded(true)}
                 style={{
