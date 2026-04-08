@@ -413,10 +413,6 @@ export default function WhySection() {
           0%,100% { transform: translateY(0) rotate(-0.5deg); }
           50%      { transform: translateY(-7px) rotate(0.5deg); }
         }
-        @keyframes borderPulse {
-          0%,100% { border-color: rgba(184,92,42,0.22); }
-          50%      { border-color: rgba(184,92,42,0.48); }
-        }
         @keyframes newsFlicker {
           0%,97%,100% { opacity: 1; }
           98%          { opacity: 0.85; }
@@ -433,8 +429,8 @@ export default function WhySection() {
         .img-reveal { animation: imgReveal 1.1s cubic-bezier(0.16,1,0.3,1) 0.3s both; }
         .soft-float { animation: softFloat 7s ease-in-out infinite; }
 
+        /* ── FIX: info cards are static — no fading border animation, full-brightness text ── */
         .info-card {
-          animation: borderPulse 4s ease-in-out infinite;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .info-card:hover {
@@ -554,7 +550,7 @@ export default function WhySection() {
             </p>
           </div>
 
-          {/* ── IMAGE + QUOTE BLOCK ── */}
+          {/* ── IMAGE + CARDS BLOCK ── */}
           <div className="fade-up-2" style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -605,13 +601,15 @@ export default function WhySection() {
               </div>
             </div>
 
-            {/* Right text column */}
+            {/* ── RIGHT COLUMN — three info cards, bright and static ── */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+
+              {/* Card 1 — No Training */}
               <div
                 className="info-card"
                 style={{
-                  background: 'rgba(20,16,12,0.8)',
-                  border: '1px solid rgba(200,135,58,0.18)',
+                  background: 'rgba(30,22,14,0.95)',
+                  border: '1px solid rgba(200,135,58,0.35)',
                   borderRadius: 12,
                   padding: '1.5rem',
                   boxShadow: '0 8px 28px rgba(0,0,0,0.3)',
@@ -620,26 +618,28 @@ export default function WhySection() {
                 <div style={{
                   fontFamily: 'sans-serif', fontSize: '0.62rem',
                   letterSpacing: '0.18em', textTransform: 'uppercase',
-                  color: '#c8873a', fontWeight: 700, marginBottom: '0.75rem',
+                  color: '#e8a050', fontWeight: 700, marginBottom: '0.75rem',
                 }}>
                   No Training. No Accountability.
                 </div>
                 <p style={{
                   fontFamily: 'sans-serif', fontSize: '0.88rem',
-                  color: 'rgba(245,240,232,0.72)', lineHeight: 1.8, margin: 0,
+                  color: '#f0ead8',
+                  lineHeight: 1.8, margin: 0,
                 }}>
                   Social workers who removed children did not need to understand Indigenous
                   cultures, Nations, or languages. They were not required to understand what
-                  colonialism had done to the families, they were just judging. They decided, again and again, that Indigenous homes were not
-                  good enough (James Sinclair).
+                  colonialism had done to the families, they were just judging. They decided,
+                  again and again, that Indigenous homes were not good enough (James Sinclair).
                 </p>
               </div>
 
+              {/* Card 2 — Race, Not Abuse */}
               <div
                 className="info-card"
                 style={{
-                  background: 'rgba(20,16,12,0.8)',
-                  border: '1px solid rgba(200,135,58,0.18)',
+                  background: 'rgba(30,22,14,0.95)',
+                  border: '1px solid rgba(184,92,42,0.35)',
                   borderRadius: 12,
                   padding: '1.5rem',
                   boxShadow: '0 8px 28px rgba(0,0,0,0.3)',
@@ -648,27 +648,30 @@ export default function WhySection() {
                 <div style={{
                   fontFamily: 'sans-serif', fontSize: '0.62rem',
                   letterSpacing: '0.18em', textTransform: 'uppercase',
-                  color: '#b85c2a', fontWeight: 700, marginBottom: '0.75rem',
+                  color: '#d4763a', fontWeight: 700, marginBottom: '0.75rem',
                 }}>
                   Race, Not Abuse
                 </div>
                 <p style={{
                   fontFamily: 'sans-serif', fontSize: '0.88rem',
-                  color: 'rgba(245,240,232,0.72)', lineHeight: 1.8, margin: 0,
+                  color: '#f0ead8',
+                  lineHeight: 1.8, margin: 0,
                 }}>
                   Children were not being removed because they were in danger, as most families had
                   not been investigated for abuse. The reasons recorded on file were things like
                   poverty, inadequate housing, and neglect, all conditions that the Indian Act
                   itself had created by stripping communities of land, income, and resources.
-                  It was a trap. Many cases they blamed the Indigenous families for abuse when, in reality the colonists families were the ones abusing the children. (Dixon)
+                  It was a trap. Many cases they blamed the Indigenous families for abuse when,
+                  in reality the colonists families were the ones abusing the children. (Dixon)
                 </p>
               </div>
 
+              {/* Card 3 — Sent Across the World */}
               <div
                 className="info-card"
                 style={{
-                  background: 'rgba(20,16,12,0.8)',
-                  border: '1px solid rgba(200,135,58,0.18)',
+                  background: 'rgba(30,22,14,0.95)',
+                  border: '1px solid rgba(212,150,63,0.35)',
                   borderRadius: 12,
                   padding: '1.5rem',
                   boxShadow: '0 8px 28px rgba(0,0,0,0.3)',
@@ -683,30 +686,31 @@ export default function WhySection() {
                 </div>
                 <p style={{
                   fontFamily: 'sans-serif', fontSize: '0.88rem',
-                  color: 'rgba(245,240,232,0.72)', lineHeight: 1.8, margin: 0,
+                  color: '#f0ead8',
+                  lineHeight: 1.8, margin: 0,
                 }}>
                   Children were not only placed across Canada. They were sent to the United States.
                   In 1981, between 45 and 55 percent of adoptees were placed with American families.
-                  Some children had no idea they were Canadian.(James Sinclair)
+                  Some children had no idea they were Canadian. (James Sinclair)
                 </p>
-                <div style={{ marginTop: '0.75rem' }}>
-                  <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-                    {['USA', 'Canada'].map((c) => (
-                      <span key={c} style={{
-                        fontFamily: 'sans-serif', fontSize: '0.6rem',
-                        letterSpacing: '0.08em',
-                        padding: '0.15rem 0.5rem',
-                        background: 'rgba(200,135,58,0.08)',
-                        border: '1px solid rgba(200,135,58,0.2)',
-                        borderRadius: 4,
-                        color: 'rgba(200,135,58,0.65)',
-                      }}>
-                        {c}
-                      </span>
-                    ))}
-                  </div>
+                {/* Location tags — bright and fully visible */}
+                <div style={{ marginTop: '0.85rem', display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                  {['USA', 'Canada'].map((c) => (
+                    <span key={c} style={{
+                      fontFamily: 'sans-serif', fontSize: '0.72rem',
+                      fontWeight: 700, letterSpacing: '0.1em',
+                      padding: '0.25rem 0.75rem',
+                      background: 'rgba(200,135,58,0.18)',
+                      border: '1px solid rgba(200,135,58,0.5)',
+                      borderRadius: 4,
+                      color: '#e8a050',
+                    }}>
+                      {c}
+                    </span>
+                  ))}
                 </div>
               </div>
+
             </div>
           </div>
 
@@ -862,7 +866,7 @@ export default function WhySection() {
                 color: 'rgba(245,240,232,0.68)', lineHeight: 1.75,
                 marginBottom: '1rem', margin: '0 0 1rem',
               }}>
-                These children did not just lose their family. They lost their identity. Who they were. Below there will be a more in depth view on the impacts caused by the sixties scoop. 
+                These children did not just lose their family. They lost their identity. Who they were. Below there will be a more in depth view on the impacts caused by the sixties scoop.
               </p>
               <p style={{
                 fontFamily: 'sans-serif', fontSize: '0.88rem',
