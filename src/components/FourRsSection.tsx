@@ -33,6 +33,10 @@ const fourRs = [
         title: 'Justice Won',
         text: 'Legal resistance resulted in an $800 million settlement in 2017 and a federal apology from Prime Minister Trudeau in 2018. This was not enough but acknowledgment forced this matter into the open. (James Sinclair) ',
       },
+      {
+        title: 'Overall',
+        text: 'This resistance mattered as every child protected, every lawsuit filed, and every network built pushed back against a system that had been stealing Indigenous children for decades and forced Canada to finally face and compensate what it had done. An example being the $800 Million Compenation made',
+      },
     ],
   },
   {
@@ -64,6 +68,10 @@ const fourRs = [
       {
         title: 'Cultural Reconnection as Healing',
         text: 'Many survivors describe reconnection with culture as literally life saving. Resilience is not just enduring trauma but it is choosing to live fully despite it, and working to overcome it.(Smith)',
+      },
+      {
+        title: 'Overall',
+        text: 'For survivors of the Sixties Scoop, resilience had a massive impact as it meant that despite being taken from their families as children, being stripped of their names, and placed in homes that often erased their identity entirely, they still found their way back to themselves and showed the next generation that it was possible and ensuring their culture will be passed down through generations. ',
       },
     ],
   },
@@ -101,6 +109,10 @@ const fourRs = [
         title: 'Mapping the Diaspora',
         text: 'The "In Our Own Words: Mapping the Sixties Scoop Diaspora" project by the 60s Scoop Network lets survivors map their displacement and reclaim their own story. This helps visualize 22,500+ children\'s journeys.(Sixties Scoop Network) ',
       },
+      {
+        title: 'Overall',
+        text: 'For survivors of the Sixties Scoop, reclamation has been important as your entire identity was taken from you so early in life, and every step towards the language, family, or community survivors are taking is proof that what the child welfare system tried to erase was never actually gone. ',
+      },
     ],
   },
   {
@@ -136,6 +148,10 @@ const fourRs = [
       {
         title: 'Language Revitalization',
         text: 'Language revitalization programs like schools teaching Indigenous languages, survivors reconnecting with oral traditions. Resurgence is not going back but it is carrying forward and regaining what was lost.(Baswan and Yenilmez)',
+      },
+      {
+        title: 'Overall',
+        text: 'For Sixties Scoop survivors resurgance is important as it is building things that actually belong to them, from TV shows to healing programs to survivor led organizations. This allows survivors to express the story of what happened and what comes next on Indigenous terms instead of the government\'s. ',
       },
     ],
   },
