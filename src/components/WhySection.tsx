@@ -689,13 +689,13 @@ export default function WhySection() {
                   color: '#f0ead8',
                   lineHeight: 1.8, margin: 0,
                 }}>
-                  Children were not only placed across Canada. They were sent to the United States.
-                  In 1981, between 45 and 55 percent of adoptees were placed with American families.
-                  Some children had no idea they were Canadian. (James Sinclair)
+                  Children were not only placed across Canada. They were sent all around the world, even overseas.
+                  In 1981, between 45 and 55 percent of adoptees were placed with American families and many sent to countries including the United Kingdom, Germany, India, the Netherlands, New Zealand, and Botswana, which is far away from their traditional lands. 
+                  Some children had no idea they were Canadian. (James Sinclair)(Baswan and Yenilmez)
                 </p>
                 {/* Location tags — bright and fully visible */}
                 <div style={{ marginTop: '0.85rem', display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                  {['USA', 'Canada'].map((c) => (
+                  {['USA', 'Canada','United Kingdown', 'Germany', 'India', 'Nertherlands', ' New Zealand', 'Botswana' ].map((c) => (
                     <span key={c} style={{
                       fontFamily: 'sans-serif', fontSize: '0.72rem',
                       fontWeight: 700, letterSpacing: '0.1em',
