@@ -50,7 +50,7 @@ const fourRs = [
     },
     definition: {
       short: 'In short is the capacity to withstand or to recover quickly from difficulties.',
-      full: 'Resilience for Indigenous People in Canada is the ability to survive and go forward despite facing years of colonization, oppression, and systemic barriers. For Indigenous People in Canada, resilience means refusing to disappear, holding onto their culture and language even when the law said you could not. Through an anti-discriminatory lens, resilience adds a new perspective. Indigenous People are not defined by what happened to them but instead are defined by the fact that they kept going forward. Resilience is not a personality trait but a choice they made for hundreds of years and colonial pressure could not take that away despite how hard they tried. ',
+      full: 'Resilience for Indigenous Peoples in Canada means surviving and moving forward despite colonization, oppression, and systemic barriers, especially the impacts of the Sixties Scoop. During the Sixties Scoop, many Indigenous children were taken from their families and placed into non-Indigenous homes, losing access to their culture and identity. Despite this, Indigenous Peoples showed resilience by holding onto their language, traditions, and sense of community even when systems tried to erase them. Resilience highlights their strength rather than victimization, showing that Indigenous Peoples are defined by their ability to continue their cultural identity across generations.',
     },
     content: [
       {
@@ -86,7 +86,7 @@ const fourRs = [
     },
     definition: {
       short: 'To take back what was never truly lost.',
-      full: 'Reclamation from an Indigenous perspective, means taking back what was taken like their land, culture, language, and identity, and essentially restoring them so future generations can live with pride and connection to their roots. It\'s about healing from the harm caused by colonization, rebuilding traditions that were disrupted, and reclaiming the right to make decisions for their own communities.',
+      full: 'Reclamation, from an Indigenous perspective, means taking back what was taken like land, culture, language, and identity and then restoring them so future generations can live with pride and connection to their roots, especially after the Sixties Scoop. It involves healing from the damage caused by colonization, loss of identity caused by Sixties Scoop, rebuilding traditions that were disrupted when children were separated from their families and communities, and reclaiming the right to make decisions for their own communities.',
     },
     content: [
       {
@@ -126,7 +126,7 @@ const fourRs = [
     },
     definition: {
       short: 'In short means a growth or increase that occurs after a period without growth or increase.',
-      full: 'In the Indigenous perspective resurgence is about reconnecting with the land, language, governance, and information that have always been part of Indigenous life. It is not about looking back, but about actively rejecting the ongoing effects of colonialism today. For survivors of the Sixties Scoop, resurgence means creating a future on their own terms by building communities, art, and knowledge systems that reflect their identity and answer to their people, not the government.',
+      full: 'In the Indigenous perspective, resurgence is about reconnecting with the land, language, governance, and knowledge that have always been part of Indigenous life, especially after disruptions caused by policies like the Sixties Scoop. It is not about simply looking back, but about actively rejecting the ongoing effects of colonialism today. For survivors of the Sixties Scoop, resurgence means creating a future on their own terms by rebuilding communities, culture, and knowledge systems that reflect their identity and answer to their people, not the government.',
     },
     content: [
       {
