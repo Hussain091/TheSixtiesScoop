@@ -126,7 +126,7 @@ const fourRs = [
     },
     definition: {
       short: 'In short means a growth or increase that occurs after a period without growth or increase.',
-      full: 'In the Indigenous perspective, resurgence is about reconnecting with the land, language, governance, and knowledge that have always been part of Indigenous life, especially after disruptions caused by policies like the Sixties Scoop. It is not about simply looking back, but about actively rejecting the ongoing effects of colonialism today. For survivors of the Sixties Scoop, resurgence means creating a future on their own terms by rebuilding communities, culture, and knowledge systems that reflect their identity and answer to their people, not the government.',
+      full: 'In the Indigenous perspective, resurgence is about reconnecting with the land, language, governance, and knowledge that have always been part of Indigenous life, especially after the lasting harm caused by policies like the Sixties Scoop. It is not just about simply looking back, but about actively rejecting the ongoing effects of colonialism today. For survivors of the Sixties Scoop, resurgence means creating a future on their own terms by rebuilding communities, culture, and knowledge systems that reflect their identity essentially building back from a period of systemic injustice.',
     },
     content: [
       {
