@@ -33,7 +33,7 @@ const testimonies = [
     initials: 'TS',
     tags: ['Racism', 'Identity Loss', 'Reunion'],
     story:
-      'Taken from her birth mother three hours after birth. Advertised in the Toronto Telegram as an "Eskimo Baby" — the ad described her like a product. Adopted by a white family in southern Ontario. First saw her biological mother at age 23 at the Winnipeg airport. Describes experiencing severe racism growing up, rejecting her own identity, and years of anger: "I experienced a lot of racism... I didn\'t want to be who I was." She has since worked to rebuild the relationship with her biological mother.(Watts)',
+      'Taken from her birth mother three hours after birth. Then advertised in the Toronto Telegram as an "Eskimo Baby", the ad described her like a product. Then adopted by a white family in southern Ontario. First saw her biological mother at age 23 at the Winnipeg airport. She describes experiencing severe racism growing up, rejecting her own identity, and years of anger: "I experienced a lot of racism... I didn\'t want to be who I was." She has since worked to rebuild the relationship with her biological mother.(Watts)',
     timeline: [
       { phase: 'Birth', label: 'Removed 3 hours after birth' },
       { phase: 'Advertised', label: 'Listed in newspaper as "Eskimo Baby"' },
