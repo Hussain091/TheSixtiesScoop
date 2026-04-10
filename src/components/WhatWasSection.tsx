@@ -64,22 +64,17 @@ export default function WhatWasSection() {
     {
       num: '01',
       title: 'The Indian Act',
-      body: 'In 1876, the Indian Act gave the Canadian government control over almost every part of Indigenous life, including land, money, movement, and community decisions. It was not designed to protect Indigenous people. It was designed to eliminate Indigenous culture and make assimilation easier. Everything that came after, including the Sixties Scoop, was made possible by the power this law gave the government.',
+      body: 'In 1876, the Indian Act gave the Canadian government control over almost every part of Indigenous life. This included land, money, movement, and community decisions. The Act was not designed to protect Indigenous people rather was designed to eliminate Indigenous culture and make assimilation easier. Everything that came after, including the Sixties Scoop, was made possible by the power the Indian Act gave the government. (James Sinclair)',
     },
     {
       num: '02',
       title: 'Residential Schools Failed',
-      body: 'For over a century, the government used residential schools to separate Indigenous children from their families, language, and culture. By the 1950s, these schools were becoming harder to defend publicly. The government needed a new method to continue the same goal of assimilation. Child welfare became that method.',
+      body: 'For over a century, the government used residential schools to separate Indigenous children from their families, language, and culture and by the 1950s, these schools were becoming harder to defend publicly. The government needed a new method to continue the same goal of assimilation and they found child welfare the next way to continue their goal.(James Sinclair)',
     },
     {
       num: '03',
       title: 'Poverty Was Used as a Weapon',
-      body: 'The Indian Act had stripped Indigenous communities of their land, their ability to earn income, and their right to make decisions for themselves. This created widespread poverty. Social workers then used that poverty as the reason to remove children, calling it neglect or an unfit home. The government created the conditions and then punished families for living in them. That is not child welfare. That is a trap.',
-    },
-    {
-      num: '04',
-      title: 'No Oversight, No Training',
-      body: 'Social workers who removed children were not required to have any training in Indigenous culture, history, or colonialism. They had enormous personal power to decide whether a home was fit, and almost no accountability for those decisions. This meant that individual bias, including racial bias, directly determined which children got taken. Families had very little ability to fight back.',
+      body: 'The Indian Act mentioned above had stripped Indigenous communities of their land, their ability to earn income, and their right to make decisions for themselves. This essentially led to poverty and social workers then used that poverty as the reason to remove children, by calling it neglect or an unfit home. The government created the conditions and then punished families for living in them creating a trap. More information on social workers will be mentioned below. (James Sinclair)',
     },
   ];
 
@@ -456,7 +451,7 @@ export default function WhatWasSection() {
                   letterSpacing: '0.2em', textTransform: 'uppercase',
                   color: '#c8873a', fontWeight: 700,
                 }}>
-                  What Caused This
+                  What Caused This:
                 </span>
               </div>
 
