@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { Globe, AlertCircle, RotateCcw, ChevronRight } from 'lucide-react';
+import { AlertCircle, RotateCcw, ChevronRight } from 'lucide-react';
 
 // ── Survivor Story Simulator data ────────────────────────────────────────
 const story = {
@@ -429,7 +429,6 @@ export default function WhySection() {
         .img-reveal { animation: imgReveal 1.1s cubic-bezier(0.16,1,0.3,1) 0.3s both; }
         .soft-float { animation: softFloat 7s ease-in-out infinite; }
 
-        /* ── FIX: info cards are static — no fading border animation, full-brightness text ── */
         .info-card {
           transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -601,7 +600,7 @@ export default function WhySection() {
               </div>
             </div>
 
-            {/* ── RIGHT COLUMN — three info cards, bright and static ── */}
+            {/* ── RIGHT COLUMN — three info cards ── */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
 
               {/* Card 1 — No Training */}
@@ -690,12 +689,11 @@ export default function WhySection() {
                   lineHeight: 1.8, margin: 0,
                 }}>
                   Children were not only placed across Canada. They were sent all around the world, even overseas.
-                  In 1981, between 45 and 55 percent of adoptees were placed with American families and many sent to countries including the United Kingdom, Germany, India, the Netherlands, New Zealand, and Botswana, which is far away from their traditional lands. 
+                  In 1981, between 45 and 55 percent of adoptees were placed with American families and many sent to countries including the United Kingdom, Germany, India, the Netherlands, New Zealand, and Botswana, which is far away from their traditional lands.
                   Some children had no idea they were Canadian. (James Sinclair)(Baswan and Yenilmez)
                 </p>
-                {/* Location tags — bright and fully visible */}
                 <div style={{ marginTop: '0.85rem', display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                  {['USA', 'Canada','United Kingdown', 'Germany', 'India', 'Nertherlands', ' New Zealand', 'Botswana' ].map((c) => (
+                  {['USA', 'Canada', 'United Kingdom', 'Germany', 'India', 'Netherlands', 'New Zealand', 'Botswana'].map((c) => (
                     <span key={c} style={{
                       fontFamily: 'sans-serif', fontSize: '0.72rem',
                       fontWeight: 700, letterSpacing: '0.1em',
@@ -829,52 +827,67 @@ export default function WhySection() {
             </div>
           </div>
 
-          {/* ── GLOBE DESTINATIONS ── */}
-          <div className="fade-up-4" style={{
-            background: 'rgba(20,16,12,0.8)',
-            border: '1px solid rgba(200,135,58,0.18)',
-            borderRadius: 14,
-            padding: 'clamp(1.5rem, 3vw, 2.5rem)',
-            marginBottom: '3rem',
-            display: 'flex', alignItems: 'flex-start', gap: '1.25rem', flexWrap: 'wrap',
-            boxShadow: '0 10px 36px rgba(0,0,0,0.3)',
-            position: 'relative', overflow: 'hidden',
-          }}>
+          {/* ── PURPOSE OF THE SIXTIES SCOOP ── */}
+          <div className="fade-up-4" style={{ marginBottom: '3rem' }}>
             <div style={{
-              position: 'absolute', top: 0, left: 0, right: 0, height: 2,
-              background: 'linear-gradient(90deg, transparent, #d4963f, transparent)',
-            }} />
-            <div style={{
-              width: 40, height: 40, flexShrink: 0,
-              borderRadius: 10,
-              background: 'rgba(200,135,58,0.1)',
-              border: '1px solid rgba(200,135,58,0.25)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              fontFamily: 'sans-serif', fontSize: '0.62rem',
+              letterSpacing: '0.18em', textTransform: 'uppercase',
+              color: '#c8873a', fontWeight: 700, marginBottom: '0.75rem',
             }}>
-              <Globe size={18} color="#c8873a" />
+              Why It Happened
             </div>
-            <div style={{ flex: 1, minWidth: 200 }}>
-              <div style={{
-                fontFamily: 'sans-serif', fontSize: '0.62rem',
-                letterSpacing: '0.18em', textTransform: 'uppercase',
-                color: '#c8873a', fontWeight: 700, marginBottom: '0.5rem',
-              }}>
-                Where Children Were Sent
-              </div>
+            <h3 style={{
+              fontFamily: 'Georgia, serif',
+              fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)',
+              color: '#f5f0e8',
+              marginBottom: '1rem', lineHeight: 1.2,
+            }}>
+              The Goal Was Assimilation, Not Protection
+            </h3>
+
+            <p style={{
+              fontFamily: 'sans-serif', fontSize: '0.9rem',
+              color: 'rgba(245,240,232,0.7)', lineHeight: 1.8,
+              marginBottom: '1rem',
+            }}>
+              The Sixties Scoop was not really about keeping children safe. The Canadian government
+              wanted to break the connection between Indigenous children and their cultures. If children
+              grew up in non-Indigenous homes, they would lose their language, their ceremonies, and
+              their sense of who they were. Over time, Indigenous communities would fade away. This
+              thinking was rooted in racism. The government saw Indigenous ways of life as lesser and
+              believed assimilation was progress.
+            </p>
+
+            <p style={{
+              fontFamily: 'sans-serif', fontSize: '0.9rem',
+              color: 'rgba(245,240,232,0.7)', lineHeight: 1.8,
+              marginBottom: '1.25rem',
+            }}>
+              For specific nations like the Anishinaabe, Cree, and Metis peoples of the Prairies,
+              this was devastating. These communities had already lost their land and livelihoods
+              under the Indian Act. Now they were losing their children too. Cree children placed
+              in English-speaking homes could not talk to their grandparents. Anishinaabe kids were
+              cut off from ceremonies that had been passed down for generations. The government called
+              it child welfare. But the real goal was erasure.
+            </p>
+
+            {/* Anti-discriminatory lens callout */}
+            <div style={{
+              background: 'rgba(200,135,58,0.06)',
+              border: '1px solid rgba(200,135,58,0.22)',
+              borderLeft: '3px solid #c8873a',
+              borderRadius: '0 8px 8px 0',
+              padding: '1rem 1.25rem',
+            }}>
               <p style={{
-                fontFamily: 'sans-serif', fontSize: '0.88rem',
-                color: 'rgba(245,240,232,0.68)', lineHeight: 1.75,
-                marginBottom: '1rem', margin: '0 0 1rem',
+                fontFamily: 'sans-serif', fontSize: '0.85rem',
+                color: 'rgba(245,240,232,0.75)', lineHeight: 1.75, margin: 0,
               }}>
-                These children did not just lose their family. They lost their identity. Who they were. Below there will be a more in depth view on the impacts caused by the sixties scoop.
-              </p>
-              <p style={{
-                fontFamily: 'sans-serif', fontSize: '0.88rem',
-                color: 'rgba(245,240,232,0.68)', lineHeight: 1.75, margin: 0,
-              }}>
-                Many did not know they were {' '}
-                <span className="highlight-shimmer">Indigenous</span>{' '}
-                some only found out as adults, through DNA tests, decades later.
+                <span style={{ color: '#c8873a', fontWeight: 700 }}>Anti-discriminatory lens: </span>
+                The system did not treat all families the same. A white family living in poverty
+                was rarely seen as unfit. But an Indigenous family in the same situation was. That
+                is systemic racism. The bias was built into the system itself, not just the individual
+                social workers making decisions.
               </p>
             </div>
           </div>
