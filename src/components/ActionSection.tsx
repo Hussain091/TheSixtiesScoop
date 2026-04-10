@@ -38,7 +38,7 @@ const actions = [
     tagline: 'What you follow matters. Algorithms reward what you engage with consistently.',
     impact: 'Social media algorithms are built on engagement. When you like, comment, share, and save posts from Indigenous creators and organizations, you send a signal to the algorithm that this content has an audience, so it gets shown to more people who do not already follow those accounts. The 60s Scoop Network then could reach a non-Indigenous teenager who had never heard of the Scoop all because someone in their network shared a post. This is very important as it is how especially teenagers become aware of issues and apply pressure for policy change.',
     resources: [
-      { label: '@sixtiesscoopnetwork on Instagram: follow and share', url: 'https://www.instagram.com/sixtiesscoopnetwork', tag: 'Instagram' },
+      { label: '@60scoophealingfoundations on Instagram: follow and share', url: 'https://www.instagram.com/60scoophealingfoundation/', tag: 'Instagram' },
       { label: '@aptnnews :  ongoing Indigenous news coverage', url: 'https://www.instagram.com/aptnnews', tag: 'Instagram' },
       { label: '@cbcindigenous : stories centred on Indigenous voices', url: 'https://www.instagram.com/cbcindigenous', tag: 'Instagram' },
       { label: 'Challenge harmful narratives : in your family, your feed, your school', url: null, tag: null },
@@ -73,7 +73,7 @@ const actions = [
     resources: [
       { label: 'Contact your MP: demand full implementation of TRC Calls to Action 1–5', url: 'https://www.ourcommons.ca/Members/en', tag: null },
       { label: 'TRC Calls to Action 1–5: read them yourself', url: 'https://www.rcaanc-cirnac.gc.ca/eng/1524494530110/1557511412801', tag: null },
-      { label: 'Bill C-92: An Act Respecting First Nations, Inuit and Métis Children', url: 'https://laws-lois.justice.gc.ca/eng/acts/S-20.2/index.html', tag: null },
+      { label: 'Bill C-92: An Act Respecting First Nations, Inuit and Métis Children', url: 'https://www.canada.ca/en/indigenous-services-canada/news/2019/06/an-act-respecting-first-nations-inuit-and-metis-children-youth-and-families-receives-royal-assent.html', tag: null },
       { label: 'Demand the end of birth alerts across all provinces', url: null, tag: null },
       { label: 'Support Indigenous led child welfare at every level of government', url: null, tag: null },
     ],
