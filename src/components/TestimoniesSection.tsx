@@ -18,6 +18,7 @@ const testimonies = [
       { phase: 'Lost', label: 'Lost connection to birth mother' },
       { phase: 'Reconnected', label: 'Reunited before her mother\'s passing' },
       { phase: 'Reclaimed', label: 'Master\'s in Education, author, editor' },
+      { phase: 'Interview', label: 'https://www.youtube.com/watch?v=lAIi5BA9YZY'},
     ],
 
     analysis: {
