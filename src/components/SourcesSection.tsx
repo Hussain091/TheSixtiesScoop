@@ -588,7 +588,7 @@ export default function SourcesSection() {
                   letterSpacing: '0.2em', textTransform: 'uppercase',
                   color: 'rgba(200,135,58,0.6)', fontWeight: 600,
                 }}>
-                  Land Acknowledgement
+                  Disclaimer
                 </span>
                 <div style={{
                   width: 24, height: 1, background: 'rgba(200,135,58,0.4)',
@@ -603,9 +603,8 @@ export default function SourcesSection() {
                 maxWidth: 640,
                 margin: '0 auto',
               }}>
-                This project was created on the traditional territory of the Haudenosaunee,
-                Anishinaabe, and Mississaugas of the Credit. We acknowledge this land and the
-                ongoing impacts of colonialism with responsibility.
+                This website does not aim to portray Indigenous Peoples as victims, but to present their experiences with honesty and respect. It emphasizes strength, resilience, and self-determination rather than deficit or pity-based narratives.
+
               </p>
             </div>
           </div>
