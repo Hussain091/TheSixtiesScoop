@@ -856,7 +856,7 @@ export default function ActionSection() {
                   letterSpacing: '0.22em', textTransform: 'uppercase',
                   color: 'rgba(200,80,60,0.7)', fontWeight: 700,
                 }}>
-                  Common Pitfalls
+                  Common Downfalls
                 </span>
                 <div style={{ width: 32, height: 1, background: 'linear-gradient(90deg, rgba(200,80,60,0.5), transparent)' }} />
               </div>
