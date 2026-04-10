@@ -837,7 +837,7 @@ export default function ActionSection() {
               color: 'rgba(242,232,213,0.2)',
               textAlign: 'center', marginTop: '1.5rem', lineHeight: 1.5,
             }}>
-              Estimates based on advocacy organization reports and RCAANC progress audits. Much work remains.
+              The Truth and Reconciliation Commission of Canada Calls to Action 1-5 focuses on reducing the overrepresentation of Indigenous children in the child welfare system by addressing its root causes and transferring control to Indigenous communities. The estimates above are based on advocacy organization reports and RCAANC progress audits. Shows that much work remains.
             </p>
           </div>
  
