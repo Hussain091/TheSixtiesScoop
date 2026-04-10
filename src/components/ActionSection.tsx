@@ -42,7 +42,7 @@ const actions = [
       { label: '@aptnnews :  ongoing Indigenous news coverage', url: 'https://www.instagram.com/aptnnews', tag: 'Instagram' },
       { label: '@cbcindigenous : stories centred on Indigenous voices', url: 'https://www.instagram.com/cbcindigenous', tag: 'Instagram' },
       { label: 'Challenge harmful narratives : in your family, your feed, your school', url: null, tag: null },
-      { label: 'Do not limit this to September 30. Reconciliation is year-round.', url: null, tag: null },
+      { label: 'Do not limit this to September 30. Reconciliation is year round.', url: null, tag: null },
     ],
     accent: 'rgba(200,135,58,0.15)',
     borderAccent: 'rgba(200,135,58,0.35)',
@@ -55,8 +55,8 @@ const actions = [
     tagline: 'Direct financial support to survivor-led organizations makes a measurable difference.',
     impact: 'The National Sixties Scoop Healing Foundation is fully independent from the federal government and when you donate, you are not giving money to a government program that may change with the next election but rather sustaining an organization run by survivors, for survivors. Funding supports cultural reconnection programs, family reunification efforts, language reclamation workshops, and mental health services that are built around Indigenous healing practices. Even small donations give organizations the financial stability to plan long-term programs and support them pursue more initiatives.',
     resources: [
-      { label: 'National Sixties Scoop Healing Foundation: survivor-led, registered charity', url: 'https://www.sixtiesscoophealingfoundation.ca', tag: 'Charity' },
-      { label: 'Sixties Scoop Network: grassroots survivor-founded advocacy', url: 'https://sixtiesscoopnetwork.org', tag: null },
+      { label: 'National Sixties Scoop Healing Foundation: survivor led, registered charity', url: 'https://www.sixtiesscoophealingfoundation.ca', tag: 'Charity' },
+      { label: 'Sixties Scoop Network: grassroots survivor founded advocacy', url: 'https://sixtiesscoopnetwork.org', tag: null },
       { label: 'Southern Chiefs\' Organization: funds healing programs in Manitoba', url: 'https://scoinc.mb.ca', tag: null },
       { label: 'Find your local Indigenous Friendship Centre via NAFC', url: 'https://nafc.ca/en/friendship-centres/', tag: 'Directory' },
     ],
@@ -973,7 +973,7 @@ export default function ActionSection() {
                 border: '1px solid rgba(200,135,58,0.12)',
               }}>
                 {[
-                  { label: 'Indian Act', note: '1876 — the legal foundation of removal' },
+                  { label: 'Indian Act', note: '1876: the legal foundation of removal' },
                   { label: 'Residential Schools', note: '1876 – 1996' },
                   { label: 'Sixties Scoop', note: '1951 – 1984' },
                   { label: 'Overrepresentation Today', note: 'The same logic, ongoing' },
