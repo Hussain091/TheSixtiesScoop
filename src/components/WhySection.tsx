@@ -834,7 +834,7 @@ export default function WhySection() {
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: '#c8873a', fontWeight: 700, marginBottom: '0.75rem',
             }}>
-              Why It Happened
+              Purpose:
             </div>
             <h3 style={{
               fontFamily: 'Georgia, serif',
@@ -842,7 +842,7 @@ export default function WhySection() {
               color: '#f5f0e8',
               marginBottom: '1rem', lineHeight: 1.2,
             }}>
-              The Goal Was Assimilation, Not Protection
+              The Purpose Was Assimilation, Not Protection
             </h3>
 
             <p style={{
@@ -850,12 +850,11 @@ export default function WhySection() {
               color: 'rgba(245,240,232,0.7)', lineHeight: 1.8,
               marginBottom: '1rem',
             }}>
-              The Sixties Scoop was not really about keeping children safe. The Canadian government
+              The Sixties Scoop was not about keeping Indigenous children safe but instead, the Canadian government
               wanted to break the connection between Indigenous children and their cultures. If children
               grew up in non-Indigenous homes, they would lose their language, their ceremonies, and
-              their sense of who they were. Over time, Indigenous communities would fade away. This
-              thinking was rooted in racism. The government saw Indigenous ways of life as lesser and
-              believed assimilation was progress.
+              their identity. Over time, this would result in Indigenous communities would fade away. The government
+              believed assimilation was progress. The Indigenous communities demonstrated resislience and fought back to maintain their identity. This will be discussed in more depth below (James Sinclair).
             </p>
 
             <p style={{
@@ -863,12 +862,12 @@ export default function WhySection() {
               color: 'rgba(245,240,232,0.7)', lineHeight: 1.8,
               marginBottom: '1.25rem',
             }}>
-              For specific nations like the Anishinaabe, Cree, and Metis peoples of the Prairies,
-              this was devastating. These communities had already lost their land and livelihoods
-              under the Indian Act. Now they were losing their children too. Cree children placed
-              in English-speaking homes could not talk to their grandparents. Anishinaabe kids were
+              For specific communities like the Anishinaabe, Cree, and the Metis
+              this was devastating as these communities had already lost their land
+              under the Indian Act. Now they were losing their children too. Many children placed
+              in English-speaking homes could not talk to their family or elders. Indigenous kids were
               cut off from ceremonies that had been passed down for generations. The government called
-              it child welfare. But the real goal was erasure.
+              it child welfare. But the as dicussed above the real goal was assimilation. (Baswan and Yenilmez)
             </p>
 
             {/* Anti-discriminatory lens callout */}
@@ -884,10 +883,9 @@ export default function WhySection() {
                 color: 'rgba(245,240,232,0.75)', lineHeight: 1.75, margin: 0,
               }}>
                 <span style={{ color: '#c8873a', fontWeight: 700 }}>Anti-discriminatory lens: </span>
-                The system did not treat all families the same. A white family living in poverty
-                was rarely seen as unfit. But an Indigenous family in the same situation was. That
-                is systemic racism. The bias was built into the system itself, not just the individual
-                social workers making decisions.
+               The lens shows us that the system did not treat all families the same. A white family living in poverty
+                was rarely seen as unfit,but an Indigenous family in the same situation was. That
+                is systemic racism. =
               </p>
             </div>
           </div>
