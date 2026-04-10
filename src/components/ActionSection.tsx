@@ -578,7 +578,7 @@ export default function ActionSection() {
               maxWidth: 560, margin: '0 auto',
               lineHeight: 1.75,
             }}>
-              Knowledge without action is incomplete. Here is how you can show up — for survivors, for truth, and for lasting reconciliation.
+              Being an ally to Indigenous peoples means educating yourself about their history and listening to their voices with respect. It also involves challenging misinformation and supporting Indigenous communities in meaningful, consistent ways. Here is how to do it. 
             </p>
           </div>
  
@@ -792,7 +792,7 @@ export default function ActionSection() {
               color: 'rgba(200,135,58,0.6)', fontWeight: 700,
               textAlign: 'center', marginBottom: '2rem',
             }}>
-              TRC Calls to Action 1–5 — Progress as of 2024
+              TRC Calls to Action 1–5: Progress as of 2024
             </div>
  
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem' }}>
@@ -878,7 +878,7 @@ export default function ActionSection() {
                 maxWidth: 520, margin: '0 auto',
                 lineHeight: 1.75,
               }}>
-                Good intentions are not enough on their own. These are the patterns that feel like allyship but end up causing harm or simply changing nothing.
+                These are the patterns that feel like allyship but end up causing harm or simply changing nothing.
               </p>
             </div>
  
