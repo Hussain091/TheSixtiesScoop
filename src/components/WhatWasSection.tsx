@@ -24,7 +24,7 @@ function AnimatedNumber({ target, duration = 2200, started }) {
   return <span style={{ fontVariantNumeric: 'tabular-nums' }}>{display.toLocaleString()}</span>;
 }
 
-// Typewriter for the badge labels (50×, 80%)
+// Typewriter for the badge labels (50x, 80%)
 function Typewriter({ text, started, delay = 0 }) {
   const [shown, setShown] = useState('');
   const [active, setActive] = useState(false);
@@ -59,6 +59,29 @@ export default function WhatWasSection() {
   useEffect(() => {
     if (isIntersecting && !started) setStarted(true);
   }, [isIntersecting]);
+
+  const causes = [
+    {
+      num: '01',
+      title: 'The Indian Act',
+      body: 'In 1876, the Indian Act gave the Canadian government control over almost every part of Indigenous life, including land, money, movement, and community decisions. It was not designed to protect Indigenous people. It was designed to eliminate Indigenous culture and make assimilation easier. Everything that came after, including the Sixties Scoop, was made possible by the power this law gave the government.',
+    },
+    {
+      num: '02',
+      title: 'Residential Schools Failed',
+      body: 'For over a century, the government used residential schools to separate Indigenous children from their families, language, and culture. By the 1950s, these schools were becoming harder to defend publicly. The government needed a new method to continue the same goal of assimilation. Child welfare became that method.',
+    },
+    {
+      num: '03',
+      title: 'Poverty Was Used as a Weapon',
+      body: 'The Indian Act had stripped Indigenous communities of their land, their ability to earn income, and their right to make decisions for themselves. This created widespread poverty. Social workers then used that poverty as the reason to remove children, calling it neglect or an unfit home. The government created the conditions and then punished families for living in them. That is not child welfare. That is a trap.',
+    },
+    {
+      num: '04',
+      title: 'No Oversight, No Training',
+      body: 'Social workers who removed children were not required to have any training in Indigenous culture, history, or colonialism. They had enormous personal power to decide whether a home was fit, and almost no accountability for those decisions. This meant that individual bias, including racial bias, directly determined which children got taken. Families had very little ability to fight back.',
+    },
+  ];
 
   return (
     <>
@@ -111,6 +134,7 @@ export default function WhatWasSection() {
         .fade-up-3 { animation: fadeUpIn 0.85s cubic-bezier(0.16,1,0.3,1) 0.35s both; }
         .fade-up-4 { animation: fadeUpIn 0.85s cubic-bezier(0.16,1,0.3,1) 0.5s both; }
         .fade-up-5 { animation: fadeUpIn 0.85s cubic-bezier(0.16,1,0.3,1) 0.65s both; }
+        .fade-up-6 { animation: fadeUpIn 0.85s cubic-bezier(0.16,1,0.3,1) 0.8s both; }
 
         .img-reveal { animation: imgReveal 1.2s cubic-bezier(0.16,1,0.3,1) 0.25s both; }
         .soft-float { animation: softFloat 7s ease-in-out infinite; }
@@ -141,6 +165,13 @@ export default function WhatWasSection() {
           background-clip: text;
           animation: shimmerMove 3.5s linear infinite;
           font-weight: 600;
+        }
+
+        .cause-cell {
+          transition: background 0.25s ease;
+        }
+        .cause-cell:hover {
+          background: rgba(200,135,58,0.04) !important;
         }
       `}</style>
 
@@ -225,7 +256,7 @@ export default function WhatWasSection() {
             }} />
           </div>
 
-          {/* ── QUOTE + TEXT + IMAGE ── */}
+          {/* ── QUOTE + TEXT ── */}
           <div className="fade-up-2" style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
@@ -233,7 +264,6 @@ export default function WhatWasSection() {
             marginBottom: '4rem',
             alignItems: 'start',
           }}>
-
             {/* Pull quote */}
             <div style={{
               borderLeft: '3px solid #c8873a',
@@ -285,7 +315,7 @@ export default function WhatWasSection() {
               </p>
               <p>
                 In simple terms when Indian Residential Schools didn't "kill the Indigenous in the
-                child," Child Welfare agencies stepped in to continue the policy of assimilation through a different system”.
+                child," Child Welfare agencies stepped in to continue the policy of assimilation through a different system.
               </p>
               <p>
                 They took children without consent, without warning, without families being told
@@ -328,7 +358,6 @@ export default function WhatWasSection() {
                   transition: 'opacity 0.9s ease',
                 }}
               />
-              {/* Gradient overlay */}
               <div style={{
                 position: 'absolute', inset: 0,
                 background: 'linear-gradient(90deg, rgba(22,18,14,0.85) 0%, transparent 40%, transparent 60%, rgba(22,18,14,0.85) 100%)',
@@ -338,7 +367,6 @@ export default function WhatWasSection() {
                 background: 'linear-gradient(180deg, transparent 50%, rgba(22,18,14,0.75) 100%)',
               }} />
 
-              {/* Left stat overlay */}
               <div style={{
                 position: 'absolute', top: '50%', left: '2rem',
                 transform: 'translateY(-50%)',
@@ -362,7 +390,6 @@ export default function WhatWasSection() {
                 </div>
               </div>
 
-              {/* Right stat overlay */}
               <div style={{
                 position: 'absolute', top: '50%', right: '2rem',
                 transform: 'translateY(-50%)',
@@ -386,7 +413,6 @@ export default function WhatWasSection() {
                 </div>
               </div>
 
-              {/* Center caption */}
               <div style={{
                 position: 'absolute', bottom: '1.25rem',
                 left: '50%', transform: 'translateX(-50%)',
@@ -404,8 +430,94 @@ export default function WhatWasSection() {
             </div>
           </div>
 
+          {/* ── WHAT CAUSED THIS ── */}
+          <div className="fade-up-4" style={{ marginBottom: '3rem' }}>
+            <div style={{
+              background: 'rgba(20,16,12,0.82)',
+              border: '1px solid rgba(200,135,58,0.18)',
+              borderRadius: 14,
+              overflow: 'hidden',
+              backdropFilter: 'blur(8px)',
+              boxShadow: '0 10px 36px rgba(0,0,0,0.3)',
+            }}>
+              {/* Header row */}
+              <div style={{
+                padding: '1.1rem 1.75rem',
+                borderBottom: '1px solid rgba(200,135,58,0.1)',
+                display: 'flex', alignItems: 'center', gap: 10,
+                background: 'rgba(200,135,58,0.04)',
+              }}>
+                <div style={{
+                  width: 6, height: 6, borderRadius: '50%',
+                  background: '#c8873a', flexShrink: 0,
+                }} />
+                <span style={{
+                  fontFamily: 'sans-serif', fontSize: '0.62rem',
+                  letterSpacing: '0.2em', textTransform: 'uppercase',
+                  color: '#c8873a', fontWeight: 700,
+                }}>
+                  What Caused This
+                </span>
+              </div>
+
+              {/* 2x2 grid of causes */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              }}>
+                {causes.map((cause, i) => (
+                  <div
+                    key={i}
+                    className="cause-cell"
+                    style={{
+                      padding: '1.5rem 1.75rem',
+                      borderRight: i % 2 === 0 ? '1px solid rgba(200,135,58,0.08)' : 'none',
+                      borderBottom: i < 2 ? '1px solid rgba(200,135,58,0.08)' : 'none',
+                    }}
+                  >
+                    <div style={{
+                      display: 'flex', alignItems: 'flex-start',
+                      gap: '0.65rem', marginBottom: '0.55rem',
+                    }}>
+                      <span style={{
+                        fontFamily: 'Georgia, serif',
+                        fontSize: '0.68rem',
+                        color: 'rgba(200,135,58,0.35)',
+                        fontWeight: 700,
+                        letterSpacing: '0.05em',
+                        flexShrink: 0,
+                        marginTop: 4,
+                      }}>
+                        {cause.num}
+                      </span>
+                      <h4 style={{
+                        fontFamily: 'Georgia, serif',
+                        fontSize: 'clamp(0.95rem, 1.6vw, 1.05rem)',
+                        color: '#f5f0e8',
+                        margin: 0,
+                        lineHeight: 1.25,
+                      }}>
+                        {cause.title}
+                      </h4>
+                    </div>
+                    <p style={{
+                      fontFamily: 'sans-serif',
+                      fontSize: '0.82rem',
+                      color: 'rgba(245,240,232,0.58)',
+                      lineHeight: 1.78,
+                      margin: 0,
+                      paddingLeft: '1.5rem',
+                    }}>
+                      {cause.body}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* ── STAT CARDS ── */}
-          <div className="fade-up-4" style={{
+          <div className="fade-up-5" style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
             gap: '1.25rem',
@@ -424,7 +536,6 @@ export default function WhatWasSection() {
                 position: 'relative', overflow: 'hidden',
               }}
             >
-              {/* Top accent */}
               <div style={{
                 position: 'absolute', top: 0, left: 0, right: 0, height: 2,
                 background: 'linear-gradient(90deg, transparent, #b85c2a, transparent)',
@@ -445,7 +556,7 @@ export default function WhatWasSection() {
               >
                 {started
                   ? <AnimatedNumber target={1400} duration={2200} started={started} />
-                  : <span style={{ opacity: 0.25 }}>—</span>
+                  : <span style={{ opacity: 0.25 }}>-</span>
                 }
               </div>
 
@@ -466,7 +577,9 @@ export default function WhatWasSection() {
               {started && (
                 <div
                   className="badge-pop"
-                  style={{ animationDelay: '2s', display: 'inline-flex', alignItems: 'center', gap: 6,
+                  style={{
+                    animationDelay: '2s',
+                    display: 'inline-flex', alignItems: 'center', gap: 6,
                     padding: '0.3rem 1rem',
                     background: 'rgba(184,92,42,0.12)',
                     border: '1px solid rgba(184,92,42,0.3)',
@@ -519,7 +632,7 @@ export default function WhatWasSection() {
               >
                 {started
                   ? <AnimatedNumber target={3400} duration={2400} started={started} />
-                  : <span style={{ opacity: 0.25 }}>—</span>
+                  : <span style={{ opacity: 0.25 }}>-</span>
                 }
               </div>
 
@@ -540,7 +653,9 @@ export default function WhatWasSection() {
               {started && (
                 <div
                   className="badge-pop"
-                  style={{ animationDelay: '2.2s', display: 'inline-flex', alignItems: 'center', gap: 6,
+                  style={{
+                    animationDelay: '2.2s',
+                    display: 'inline-flex', alignItems: 'center', gap: 6,
                     padding: '0.3rem 1rem',
                     background: 'rgba(184,92,42,0.12)',
                     border: '1px solid rgba(184,92,42,0.3)',
@@ -562,7 +677,7 @@ export default function WhatWasSection() {
           </div>
 
           {/* ── CLOSING STAT ── */}
-          <div className="fade-up-5" style={{
+          <div className="fade-up-6" style={{
             background: 'rgba(14,11,8,0.9)',
             border: '1px solid rgba(200,135,58,0.18)',
             borderRadius: 14,
@@ -572,12 +687,10 @@ export default function WhatWasSection() {
             overflow: 'hidden',
             backdropFilter: 'blur(10px)',
           }}>
-            {/* Top shimmer bar */}
             <div style={{
               position: 'absolute', top: 0, left: 0, right: 0, height: 2,
               background: 'linear-gradient(90deg, transparent, #c8873a, #d4963f, #c8873a, transparent)',
             }} />
-            {/* Ghost number */}
             <div style={{
               position: 'absolute', inset: 0,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -588,7 +701,7 @@ export default function WhatWasSection() {
                 fontSize: 'clamp(5rem, 14vw, 11rem)',
                 color: 'rgba(200,135,58,0.028)',
                 fontWeight: 700, userSelect: 'none',
-              }}>4.5×</span>
+              }}>4.5x</span>
             </div>
 
             <p style={{
