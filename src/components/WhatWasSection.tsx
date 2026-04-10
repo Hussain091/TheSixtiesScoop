@@ -285,7 +285,7 @@ export default function WhatWasSection() {
               </p>
               <p>
                 In simple terms when Indian Residential Schools didn't "kill the Indigenous in the
-                child," Child Welfare agencies stepped in to finish the job.
+                child," Child Welfare agencies stepped in to continue the policy of assimilation through a different system”.
               </p>
               <p>
                 They took children without consent, without warning, without families being told
