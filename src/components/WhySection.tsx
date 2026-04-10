@@ -864,30 +864,14 @@ export default function WhySection() {
             }}>
               For specific communities like the Anishinaabe, Cree, and the Metis
               this was devastating as these communities had already lost their land
-              under the Indian Act. Now they were losing their children too. Many children placed
+              under the Indian Act and now they were losing their children too. Many children placed
               in English-speaking homes could not talk to their family or elders. Indigenous kids were
               cut off from ceremonies that had been passed down for generations. The government called
               it child welfare. But the as dicussed above the real goal was assimilation. (Baswan and Yenilmez)
             </p>
 
-            {/* Anti-discriminatory lens callout */}
-            <div style={{
-              background: 'rgba(200,135,58,0.06)',
-              border: '1px solid rgba(200,135,58,0.22)',
-              borderLeft: '3px solid #c8873a',
-              borderRadius: '0 8px 8px 0',
-              padding: '1rem 1.25rem',
-            }}>
-              <p style={{
-                fontFamily: 'sans-serif', fontSize: '0.85rem',
-                color: 'rgba(245,240,232,0.75)', lineHeight: 1.75, margin: 0,
-              }}>
-                <span style={{ color: '#c8873a', fontWeight: 700 }}>Anti-discriminatory lens: </span>
-               The lens shows us that the system did not treat all families the same. A white family living in poverty
-                was rarely seen as unfit,but an Indigenous family in the same situation was. That
-                is systemic racism. =
-              </p>
-            </div>
+           
+            
           </div>
 
           {/* ── SURVIVOR STORY SIMULATOR ── */}
